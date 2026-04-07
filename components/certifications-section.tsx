@@ -10,7 +10,7 @@ export function CertificationsSection() {
     {
       id: "google-partner",
       name: "Google Partner",
-      image: "/google-partner-badge.png",
+      image: "https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg",
       issuer: "Google",
       url: "https://www.google.com/partners/agency?id=2992564471",
     },
@@ -40,7 +40,7 @@ export function CertificationsSection() {
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 hover:border-emerald-500/50 transition-all duration-300 group-hover:scale-[1.02]">
                 <div className="aspect-square p-8 flex items-center justify-center">
                   <img
-                    src={cert.image || "/placeholder.svg"}
+                    src={cert.image}
                     alt={cert.name}
                     className="w-full h-full object-contain"
                   />
