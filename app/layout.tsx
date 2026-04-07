@@ -3,12 +3,13 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import Script from "next/script"
 import "./globals.css"
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap"
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -58,7 +59,26 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.app'
+  generator: "v0.app",
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Didakto Marketing",
+  url: "https://didaktomarketing.com",
+  logo: "https://didaktomarketing.com/logo-didakto-iso.png",
+  description:
+    "Agencia especializada en publicidad digital B2B. Generamos leads calificados con Google Ads, LinkedIn Ads y estrategia de datos.",
+  serviceType: [
+    "Agencia de publicidad digital",
+    "Agencia de publicidad B2B",
+    "Google Ads",
+    "LinkedIn Ads",
+    "Meta Ads",
+  ],
+  areaServed: "Latinoamérica",
+  sameAs: ["https://www.google.com/partners/agency?id=2992564471"],
 }
 
 export default function RootLayout({
@@ -69,6 +89,11 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <Script
+          id="json-ld-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
