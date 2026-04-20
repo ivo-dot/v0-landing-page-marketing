@@ -19,7 +19,7 @@ const successCases = [
     description:
       "Gracias a esta implementación de Growth Funnel + Data Intelligence B2B y una estrategia multicanal logramos reducir el Coste por adquisición un 74%. Esta estrategia se implementó en Sika USA, Sika Bolivia, Sika Perú y Sika Paraguay.",
     metrics: "74% ↓ CPA",
-    logo: "/logos/sika.png",
+    logo: "/logo sika.png",
   },
   {
     company: "MSH Group y MSH Custom",
@@ -28,7 +28,7 @@ const successCases = [
     description:
       "MSH confió sus dos unidades de negocio a Didakto y gracias a nuestra metodología logramos diseñar un sistema de adquisición de leads con LinkedIn y Google Ads + Odoo. Esta integración nos permitió lograr un Coste por adquisición de tan solo 5 USD promedio en LinkedIn Ads.",
     metrics: "$5 USD CPA LinkedIn",
-    logo: "/logos/msh.png",
+    logo: "/logo msh.png",
   },
   {
     company: "Silat SA",
@@ -37,7 +37,7 @@ const successCases = [
     description:
       "Empresa argentina reconocida y con más de 40 años de experiencia confía en Didakto para su plan de digitalización donde construimos una estrategia de reconocimiento y generación de leads logrando un aumento del 40% en sus MQLs totales.",
     metrics: "+40% MQLs",
-    logo: "/logos/silat.png",
+    logo: "/silat logo.png",
   },
   {
     company: "RP Urbano",
@@ -46,7 +46,7 @@ const successCases = [
     description:
       "Desarrolladora inmobiliaria de Argentina con un gran producto en Nuñez se enfrenta a la necesidad de obtener leads calificados para generar ventas en el sector Real Estate.",
     metrics: "Real Estate B2C",
-    logo: "/logos/rp-urbano.png",
+    logo: "/logo rp urbano.png",
   },
 ]
 
