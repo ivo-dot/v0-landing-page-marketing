@@ -886,3 +886,133 @@ textarea.sd-input { min-height: 80px; resize: none; margin-bottom: 14px; }
   font-size: 13px;
   color: var(--sd-g);
 }
+
+/* ══════════════════════════════════════════════
+   MOBILE RESPONSIVE  ≤ 768px
+══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Header */
+  #sd-header { padding: 10px 16px; }
+  .sd-header-nav { display: none; }
+  .sd-logo img { height: 26px; }
+  .sd-header-cta { font-size: 12px; padding: 7px 14px; }
+
+  /* Dots — hide to save space */
+  #sd-dots { display: none; }
+
+  /* Slides — reduce padding, allow internal scroll */
+  .sd-slide {
+    padding: 70px 20px 72px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sd-slide.active { overflow-y: auto; }
+
+  /* ── Slide 1: Hero ── */
+  #sd-s1 .s1-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .sd-dash-wrap { display: none; }
+  #sd-s1 .s1-headline { font-size: clamp(34px, 9vw, 52px); }
+  #sd-s1 .s1-sub { font-size: 15px; }
+  #sd-s1 .s1-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sd-stat-val { font-size: 20px; }
+
+  /* ── Slide 2: Problema ── */
+  #sd-s2 .s2-inner { flex-direction: column; gap: 20px; }
+  #sd-s2 .s2-left { flex: none; width: 100%; }
+  #sd-s2 .sd-h2 { font-size: clamp(24px, 7vw, 36px); }
+
+  /* ── Slide 3: Statement ── */
+  #sd-s3 .s3-big { font-size: clamp(44px, 14vw, 80px); letter-spacing: -2px; }
+  #sd-s3 .s3-sub { font-size: 15px; }
+  #sd-s3 .s3-pills { gap: 8px; }
+  .sd-pill { font-size: 11px; padding: 6px 14px; }
+
+  /* ── Slide 4: Qué es Didakto ── */
+  #sd-s4 .s4-inner { flex-direction: column; gap: 20px; }
+  #sd-s4 .s4-left { flex: none; width: 100%; }
+  .sd-tagline-big { font-size: 16px; }
+
+  /* ── Slide IVO ── */
+  #sd-s-ivo .sivo-inner { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
+  .sd-avatar { width: 130px; height: 130px; }
+  .sd-mini-stats { justify-content: center; }
+  #sd-s-ivo .sivo-bio { text-align: left; }
+  .sd-bio-role { margin-bottom: 12px; }
+
+  /* ── Slide 5: Proceso ── */
+  #sd-s5 .s5-steps {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 28px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .sd-step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--sd-border);
+    width: 100%;
+  }
+  .sd-step:last-child { border-bottom: none; }
+  .sd-step-line { display: none; }
+  .sd-step-circle { flex-shrink: 0; width: 36px; height: 36px; font-size: 14px; }
+  .sd-step-phase { margin-top: 0; margin-bottom: 3px; }
+  .sd-step-name { font-size: 13px; }
+  .sd-step-desc { font-size: 11px; }
+  .sd-note { margin-top: 16px; font-size: 12px; padding: 10px 16px; }
+
+  /* ── Slide 6: Servicios ── */
+  #sd-s6 .s6-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
+  .sd-svc { padding: 20px; }
+  .sd-svc h3 { font-size: 16px; }
+
+  /* ── Slide AI ── */
+  #sd-s-ai .sai-grid { grid-template-columns: 1fr; gap: 12px; margin: 20px 0 16px; }
+  .sd-ai-card { padding: 20px; }
+  .sai-btns { flex-direction: column; align-items: center; }
+
+  /* ── Slide 7: Caso Sika ── */
+  #sd-s7 .s7-inner { flex-direction: column; gap: 20px; }
+  #sd-s7 .s7-left, #sd-s7 .s7-right { flex: none; width: 100%; }
+  .sd-client-name { font-size: 36px; }
+  .sd-metrics { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sd-metric { padding: 14px; }
+  .sd-metric .mval { font-size: 26px; }
+
+  /* ── Slide 8: Clientes + Herramientas ── */
+  #sd-s8 .s8-inner { flex-direction: column; gap: 28px; }
+  #sd-s8 .s8-col { flex: none; width: 100%; }
+
+  /* ── Slide 9: Por qué ── */
+  #sd-s9 .s9-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+  .sd-card2 { padding: 18px 16px; }
+  .sd-card2 h4 { font-size: 13px; }
+  .sd-card2 p { font-size: 12px; }
+
+  /* ── Slide 10: Contacto ── */
+  #sd-s10 .s10-inner { grid-template-columns: 1fr; gap: 24px; }
+  .sd-big-q { font-size: clamp(24px, 7vw, 40px); }
+  .sd-contact-form { padding: 22px 18px; }
+  .sd-form-row { grid-template-columns: 1fr; gap: 0; }
+
+  /* General h2 scaling */
+  .sd-h2 { font-size: clamp(24px, 6.5vw, 40px); }
+}
+
+/* ── Extra small phones ≤ 480px ── */
+@media (max-width: 480px) {
+  .sd-slide { padding: 68px 16px 68px; }
+  #sd-s1 .s1-stats { grid-template-columns: 1fr 1fr; }
+  #sd-s1 .s1-stats > div:last-child { display: none; }
+  #sd-s9 .s9-grid { grid-template-columns: 1fr; }
+  .sd-metrics { grid-template-columns: 1fr 1fr; }
+}

@@ -10,6 +10,8 @@ export default function SlideDeck() {
   const [sending, setSending] = useState(false)
   const [showOk, setShowOk] = useState(false)
   const touchX = useRef(0)
+  const touchY = useRef(0)
+  const curRef = useRef(0)
   const [utms, setUtms] = useState({
     utm_source: "", utm_medium: "", utm_campaign: "",
     utm_term: "", utm_content: "", url: "", referrer: "",
@@ -37,23 +39,51 @@ export default function SlideDeck() {
     }
   }, [])
 
-  const goTo = (i: number) => setCur(Math.max(0, Math.min(TOTAL - 1, i)))
+  const goTo = (i: number) => {
+    const next = Math.max(0, Math.min(TOTAL - 1, i))
+    curRef.current = next
+    setCur(next)
+  }
 
   // Keyboard nav
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (["ArrowRight", "ArrowDown", " "].includes(e.key)) { e.preventDefault(); goTo(cur + 1) }
-      if (["ArrowLeft", "ArrowUp"].includes(e.key)) { e.preventDefault(); goTo(cur - 1) }
+      if (["ArrowRight", "ArrowDown", " "].includes(e.key)) { e.preventDefault(); goTo(curRef.current + 1) }
+      if (["ArrowLeft", "ArrowUp"].includes(e.key)) { e.preventDefault(); goTo(curRef.current - 1) }
     }
     window.addEventListener("keydown", onKey)
     return () => window.removeEventListener("keydown", onKey)
-  }, [cur])
+  }, [])
 
-  // Touch / swipe
-  const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX }
+  // Wheel / scroll nav (desktop)
+  useEffect(() => {
+    let cooldown = false
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault()
+      if (cooldown) return
+      cooldown = true
+      if (e.deltaY > 0) goTo(curRef.current + 1)
+      else goTo(curRef.current - 1)
+      setTimeout(() => { cooldown = false }, 750)
+    }
+    const el = document.getElementById("sd-deck")
+    el?.addEventListener("wheel", onWheel, { passive: false })
+    return () => el?.removeEventListener("wheel", onWheel)
+  }, [])
+
+  // Touch / swipe (horizontal + vertical)
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchX.current = e.touches[0].clientX
+    touchY.current = e.touches[0].clientY
+  }
   const onTouchEnd = (e: React.TouchEvent) => {
     const dx = e.changedTouches[0].clientX - touchX.current
-    if (Math.abs(dx) > 40) dx < 0 ? goTo(cur + 1) : goTo(cur - 1)
+    const dy = e.changedTouches[0].clientY - touchY.current
+    if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 50) {
+      dy < 0 ? goTo(curRef.current + 1) : goTo(curRef.current - 1)
+    } else if (Math.abs(dx) > 40) {
+      dx < 0 ? goTo(curRef.current + 1) : goTo(curRef.current - 1)
+    }
   }
 
   // Contact form submit — same Zapier endpoint as current site
