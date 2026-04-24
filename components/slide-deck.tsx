@@ -17,22 +17,24 @@ export default function SlideDeck() {
     utm_term: "", utm_content: "", url: "", referrer: "",
   })
 
-  // Lock body scroll + capture UTMs
+  const isMobile = () => typeof window !== "undefined" && window.innerWidth <= 768
+
+  // Lock body scroll (desktop only) + capture UTMs
   useEffect(() => {
-    document.documentElement.style.overflow = "hidden"
-    document.body.style.overflow = "hidden"
-    if (typeof window !== "undefined") {
-      const p = new URLSearchParams(window.location.search)
-      setUtms({
-        utm_source: p.get("utm_source") || "",
-        utm_medium: p.get("utm_medium") || "",
-        utm_campaign: p.get("utm_campaign") || "",
-        utm_term: p.get("utm_term") || "",
-        utm_content: p.get("utm_content") || "",
-        url: window.location.href,
-        referrer: document.referrer || "",
-      })
+    if (!isMobile()) {
+      document.documentElement.style.overflow = "hidden"
+      document.body.style.overflow = "hidden"
     }
+    const p = new URLSearchParams(window.location.search)
+    setUtms({
+      utm_source: p.get("utm_source") || "",
+      utm_medium: p.get("utm_medium") || "",
+      utm_campaign: p.get("utm_campaign") || "",
+      utm_term: p.get("utm_term") || "",
+      utm_content: p.get("utm_content") || "",
+      url: window.location.href,
+      referrer: document.referrer || "",
+    })
     return () => {
       document.documentElement.style.overflow = ""
       document.body.style.overflow = ""
@@ -55,8 +57,9 @@ export default function SlideDeck() {
     return () => window.removeEventListener("keydown", onKey)
   }, [])
 
-  // Wheel / scroll nav (desktop)
+  // Wheel / scroll nav — desktop only
   useEffect(() => {
+    if (isMobile()) return
     let cooldown = false
     const onWheel = (e: WheelEvent) => {
       e.preventDefault()
@@ -71,12 +74,14 @@ export default function SlideDeck() {
     return () => el?.removeEventListener("wheel", onWheel)
   }, [])
 
-  // Touch / swipe (horizontal + vertical)
+  // Touch / swipe — desktop only (mobile scrolls naturally)
   const onTouchStart = (e: React.TouchEvent) => {
+    if (isMobile()) return
     touchX.current = e.touches[0].clientX
     touchY.current = e.touches[0].clientY
   }
   const onTouchEnd = (e: React.TouchEvent) => {
+    if (isMobile()) return
     const dx = e.changedTouches[0].clientX - touchX.current
     const dy = e.changedTouches[0].clientY - touchY.current
     if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 50) {
@@ -127,9 +132,7 @@ export default function SlideDeck() {
       {/* Fixed header */}
       <header id="sd-header">
         <a href="/" className="sd-logo">
-          <img src="/logo-didakto-horizontal.png" alt="Didakto"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = "none" }} />
-          <span style={{ marginLeft: 8 }}>didak<span>to</span></span>
+          <img src="/logo-didakto-horizontal.png" alt="Didakto" />
         </a>
         <nav className="sd-header-nav">
           <button className="sd-hnav-btn" onClick={() => goTo(6)}>Servicios</button>

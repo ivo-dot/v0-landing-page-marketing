@@ -889,27 +889,43 @@ textarea.sd-input { min-height: 80px; resize: none; margin-bottom: 14px; }
 
 /* ══════════════════════════════════════════════
    MOBILE RESPONSIVE  ≤ 768px
+   En mobile: scroll normal, sin paginación
 ══════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Header */
-  #sd-header { padding: 10px 16px; }
+  /* Deck: de fixed a flujo normal */
+  #sd-deck {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Todos los slides visibles, flujo normal */
+  .sd-slide {
+    position: static !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    padding: 80px 20px 48px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  /* Ocultar navegación de paginación */
+  #sd-dots { display: none !important; }
+  #sd-nav  { display: none !important; }
+  #sd-pbar { display: none !important; }
+
+  /* Header se mantiene fixed */
+  #sd-header {
+    position: fixed !important;
+    padding: 10px 16px;
+  }
   .sd-header-nav { display: none; }
   .sd-logo img { height: 26px; }
   .sd-header-cta { font-size: 12px; padding: 7px 14px; }
-
-  /* Dots — hide to save space */
-  #sd-dots { display: none; }
-
-  /* Slides — reduce padding, allow internal scroll */
-  .sd-slide {
-    padding: 70px 20px 72px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .sd-slide.active { overflow-y: auto; }
 
   /* ── Slide 1: Hero ── */
   #sd-s1 .s1-inner {
