@@ -886,6 +886,15 @@ textarea.sd-input { min-height: 80px; resize: none; margin-bottom: 14px; }
   font-size: 13px;
   color: var(--sd-g);
 }
+.sd-form-err {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255,80,80,0.1);
+  border: 1px solid rgba(255,80,80,0.3);
+  font-size: 13px;
+  color: #ff6b6b;
+}
 
 /* ══════════════════════════════════════════════
    MOBILE RESPONSIVE  ≤ 768px

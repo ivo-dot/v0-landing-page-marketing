@@ -9,9 +9,11 @@ export default function SlideDeck() {
   const [cur, setCur] = useState(0)
   const [sending, setSending] = useState(false)
   const [showOk, setShowOk] = useState(false)
+  const [formError, setFormError] = useState("")
   const touchX = useRef(0)
   const touchY = useRef(0)
   const curRef = useRef(0)
+  const formLoadTime = useRef(0)
   const [utms, setUtms] = useState({
     utm_source: "", utm_medium: "", utm_campaign: "",
     utm_term: "", utm_content: "", url: "", referrer: "",
@@ -45,6 +47,7 @@ export default function SlideDeck() {
     const next = Math.max(0, Math.min(TOTAL - 1, i))
     curRef.current = next
     setCur(next)
+    if (next === 11) formLoadTime.current = Date.now()
   }
 
   // Keyboard nav
@@ -95,11 +98,19 @@ export default function SlideDeck() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (sending) return
+    setFormError("")
+    const fd = new FormData(e.currentTarget)
+    // Honeypot check — bots fill this field, humans don't
+    if (fd.get("_hp") as string) return
+    // Timing check — reject if submitted in under 3 seconds
+    if (formLoadTime.current && Date.now() - formLoadTime.current < 3000) {
+      setFormError("Por favor, completa el formulario con calma.")
+      return
+    }
     setSending(true)
     setShowOk(false)
-    const fd = new FormData(e.currentTarget)
     const payload: Record<string, string> = {}
-    fd.forEach((v, k) => (payload[k] = String(v)))
+    fd.forEach((v, k) => { if (k !== "_hp") payload[k] = String(v) })
     Object.assign(payload, utms, { site: "didaktomarketing.com", submitted_at: new Date().toISOString() })
     try {
       await fetch("/api/contact", {
@@ -549,14 +560,16 @@ export default function SlideDeck() {
             <div className="sd-form-title">Consulta Gratuita</div>
             <div className="sd-form-sub">Cuéntanos sobre tu negocio y te mostramos cómo podemos ayudarte</div>
             <form onSubmit={handleSubmit}>
+              {/* Honeypot — must stay empty; bots fill it */}
+              <input name="_hp" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }} />
               <div className="sd-form-row">
-                <input name="nombre" className="sd-input" style={{ marginBottom: 0 }} placeholder="Nombre" required />
-                <input name="apellido" className="sd-input" style={{ marginBottom: 0 }} placeholder="Apellido" />
+                <input name="nombre" className="sd-input" style={{ marginBottom: 0 }} placeholder="Nombre *" required />
+                <input name="apellido" className="sd-input" style={{ marginBottom: 0 }} placeholder="Apellido *" required />
               </div>
-              <input name="email" type="email" className="sd-input" style={{ marginTop: 10 }} placeholder="Correo electrónico" required />
-              <input name="empresa" className="sd-input" placeholder="Empresa" />
-              <input name="asunto" className="sd-input" placeholder="¿Cuál es tu principal desafío de crecimiento?" />
-              <textarea name="mensaje" className="sd-input" placeholder="Cuéntanos sobre tu negocio, modelo de ventas y objetivos..." />
+              <input name="email" type="email" className="sd-input" style={{ marginTop: 10 }} placeholder="Correo electrónico *" required />
+              <input name="empresa" className="sd-input" placeholder="Empresa *" required />
+              <input name="asunto" className="sd-input" placeholder="¿Cuál es tu principal desafío de crecimiento? *" required />
+              <textarea name="mensaje" className="sd-input" placeholder="Cuéntanos sobre tu negocio, modelo de ventas y objetivos... *" required />
               {/* UTMs */}
               <input type="hidden" name="utm_source"   value={utms.utm_source} />
               <input type="hidden" name="utm_medium"   value={utms.utm_medium} />
@@ -568,6 +581,9 @@ export default function SlideDeck() {
               <button type="submit" className="sd-submit" disabled={sending}>
                 {sending ? "Enviando..." : "Solicitar Consulta Gratuita →"}
               </button>
+              {formError && (
+                <div className="sd-form-err">{formError}</div>
+              )}
               {showOk && (
                 <div className="sd-form-ok">
                   ¡Gracias! Tu consulta fue enviada correctamente. Te contactamos pronto.
