@@ -53,6 +53,8 @@ export default function SlideDeck() {
   // Keyboard nav
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement).tagName
+      if (tag === "INPUT" || tag === "TEXTAREA") return
       if (["ArrowRight", "ArrowDown", " "].includes(e.key)) { e.preventDefault(); goTo(curRef.current + 1) }
       if (["ArrowLeft", "ArrowUp"].includes(e.key)) { e.preventDefault(); goTo(curRef.current - 1) }
     }
