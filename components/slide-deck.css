@@ -394,7 +394,7 @@
 .sd-f-track { flex: 1; background: rgba(255,255,255,0.06); border-radius: 99px; height: 4px; }
 .sd-f-fill { height: 4px; border-radius: 99px; background: var(--sd-g); }
 .sd-ns-b { background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.18); border-radius: 10px; padding: 10px 12px; }
-.sd-ns-b .nt { font-size: 9px; font-weight: 700; color: var(--sd-g); margin-bottom: 4px; }
+.sd-ns-b .nt { font-size: 9px; font-weight: 700; color: var(--sd-g); margin-bottom: 4px; display: inline-flex; align-items: center; gap: 4px; }
 .sd-ns-b .nd { font-size: 9px; color: rgba(255,255,255,0.4); line-height: 1.5; }
 
 /* ════════════════════════════════
@@ -731,6 +731,9 @@
 .sd-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sd-g); margin-bottom: 18px; }
 .sd-client-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .sd-cc {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: var(--sd-d3);
   border: 1px solid var(--sd-border);
   border-radius: 10px;
@@ -742,6 +745,7 @@
 }
 .sd-cc:hover { color: var(--sd-w); border-color: var(--sd-border-g); background: rgba(0,229,160,0.05); }
 .sd-cc.hl { border-color: rgba(0,229,160,0.2); color: rgba(255,255,255,0.85); }
+.sd-cc.hl svg { color: var(--sd-g); }
 .sd-tools-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 .sd-tool {
   background: var(--sd-d3);
@@ -822,7 +826,7 @@
   transition: border-color 0.2s, background 0.2s;
 }
 .sd-c-link:hover { border-color: var(--sd-border-g); background: rgba(0,229,160,0.05); }
-.sd-c-icon { color: var(--sd-g); font-size: 16px; width: 22px; text-align: center; }
+.sd-c-icon { color: var(--sd-g); font-size: 16px; width: 22px; display: inline-flex; align-items: center; justify-content: center; }
 .sd-guarantee {
   padding: 16px 18px;
   border-radius: 12px;

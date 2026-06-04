@@ -2,6 +2,18 @@
 
 import "./slide-deck.css"
 import { useState, useEffect, useRef, type FormEvent } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useGSAP } from "@gsap/react"
+import {
+  TrendingDown, BarChart3, Target, Repeat,
+  Megaphone, LineChart, Compass, Rocket,
+  Clapperboard, Smartphone, Image as ImageIcon,
+  Microscope, TrendingUp, Handshake, Brain, ClipboardList, Zap,
+  Mail, Clock, Globe, Play, NotebookPen,
+} from "lucide-react"
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 const TOTAL = 12
 
@@ -14,6 +26,7 @@ export default function SlideDeck() {
   const touchY = useRef(0)
   const curRef = useRef(0)
   const formLoadTime = useRef(0)
+  const deckRef = useRef<HTMLDivElement>(null)
   const [utms, setUtms] = useState({
     utm_source: "", utm_medium: "", utm_campaign: "",
     utm_term: "", utm_content: "", url: "", referrer: "",
@@ -79,6 +92,74 @@ export default function SlideDeck() {
     return () => el?.removeEventListener("wheel", onWheel)
   }, [])
 
+  // ── Animaciones GSAP ──────────────────────────────────────────────
+  // Hijos a animar de un slide: sus bloques de primer nivel (sin el blob
+  // decorativo). Si todo el contenido está envuelto en un único contenedor
+  // .*-inner, animamos sus hijos para lograr una cascada más rica.
+  const animTargets = (slide: Element): Element[] => {
+    let targets = Array.from(slide.children).filter(
+      (el) => !el.classList.contains("sd-blob"),
+    )
+    if (
+      targets.length === 1 &&
+      Array.from(targets[0].classList).some((c) => c.endsWith("-inner"))
+    ) {
+      targets = Array.from(targets[0].children)
+    }
+    return targets
+  }
+
+  // Desktop: cada vez que cambia el slide activo, su contenido entra en cascada.
+  useGSAP(
+    () => {
+      const deck = deckRef.current
+      if (!deck || window.innerWidth <= 768) return
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+      const slide = deck.querySelector(".sd-slide.active")
+      if (!slide) return
+      gsap.fromTo(
+        animTargets(slide),
+        { y: 42, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.75, ease: "power3.out", stagger: 0.11, clearProps: "all" },
+      )
+    },
+    { scope: deckRef, dependencies: [cur], revertOnUpdate: true },
+  )
+
+  // Mobile: scroll normal → revelar el contenido de cada slide al entrar en viewport.
+  useGSAP(
+    () => {
+      const deck = deckRef.current
+      if (!deck) return
+      const mm = gsap.matchMedia()
+      mm.add("(max-width: 768px)", () => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+        deck.querySelectorAll(".sd-slide").forEach((slide) => {
+          gsap.from(animTargets(slide), {
+            y: 30, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.08,
+            scrollTrigger: { trigger: slide, start: "top 82%", once: true },
+          })
+        })
+      })
+    },
+    { scope: deckRef },
+  )
+
+  // Desktop: float muy sutil del dashboard del hero (sensación de producto vivo).
+  useGSAP(
+    () => {
+      const deck = deckRef.current
+      if (!deck) return
+      const mm = gsap.matchMedia()
+      mm.add("(min-width: 769px) and (prefers-reduced-motion: no-preference)", () => {
+        const dash = deck.querySelector(".sd-dash-win")
+        if (!dash) return
+        gsap.to(dash, { y: -10, duration: 3.2, ease: "sine.inOut", repeat: -1, yoyo: true })
+      })
+    },
+    { scope: deckRef },
+  )
+
   // Touch / swipe — desktop only (mobile scrolls naturally)
   const onTouchStart = (e: React.TouchEvent) => {
     if (isMobile()) return
@@ -137,7 +218,7 @@ export default function SlideDeck() {
   const s = (n: number) => `sd-slide${cur === n ? " active" : ""}`
 
   return (
-    <div id="sd-deck" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <div id="sd-deck" ref={deckRef} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 
       {/* Progress bar */}
       <div id="sd-pbar" style={{ width: `${progress}%` }} />
@@ -244,7 +325,7 @@ export default function SlideDeck() {
                   ))}
                 </div>
                 <div className="sd-ns-b">
-                  <div className="nt">📝 Próximos pasos · Semana 17</div>
+                  <div className="nt"><NotebookPen size={10} />Próximos pasos · Semana 17</div>
                   <div className="nd">Aumentar budget Search +20% · Nueva creative video · Excluir Junior en LinkedIn</div>
                 </div>
               </div>
@@ -272,13 +353,13 @@ export default function SlideDeck() {
           </div>
           <div className="s2-right">
             {[
-              { icon: "📉", title: "Leads que no cierran", desc: "Volumen sin calidad. Nadie audita la segmentación ni la intención de compra real." },
-              { icon: "📊", title: "Reportes que no ayudan a decidir", desc: "Dashboards llenos de métricas que no conectan con ninguna decisión de negocio." },
-              { icon: "🎯", title: "Optimización sin dirección", desc: "Cambios de campaña basados en intuición, no en datos validados del pipeline." },
-              { icon: "🔁", title: "Agencias que ejecutan sin entender", desc: "Empiezan por la pauta, no por el diagnóstico. Cada mes es empezar de nuevo." },
+              { icon: TrendingDown, title: "Leads que no cierran", desc: "Volumen sin calidad. Nadie audita la segmentación ni la intención de compra real." },
+              { icon: BarChart3, title: "Reportes que no ayudan a decidir", desc: "Dashboards llenos de métricas que no conectan con ninguna decisión de negocio." },
+              { icon: Target, title: "Optimización sin dirección", desc: "Cambios de campaña basados en intuición, no en datos validados del pipeline." },
+              { icon: Repeat, title: "Agencias que ejecutan sin entender", desc: "Empiezan por la pauta, no por el diagnóstico. Cada mes es empezar de nuevo." },
             ].map((p) => (
               <div key={p.title} className="sd-pain">
-                <div className="sd-pain-icon">{p.icon}</div>
+                <div className="sd-pain-icon"><p.icon size={18} color="#ff7a7a" strokeWidth={2} /></div>
                 <div><h4>{p.title}</h4><p>{p.desc}</p></div>
               </div>
             ))}
@@ -401,13 +482,13 @@ export default function SlideDeck() {
         <h2 className="sd-h2">Nuestros <span className="sd-g">servicios</span></h2>
         <div className="s6-grid">
           {[
-            { icon: "📣", title: "Paid Media", desc: "Diseñamos y optimizamos campañas con foco en crecimiento rentable. Escalamos lo que funciona, cortamos lo que no.", tags: ["Google Ads","Meta Ads","LinkedIn Ads","Full Funnel"] },
-            { icon: "📐", title: "Medición & Analytics", desc: "Configuramos la base de datos desde cero. Sin medición correcta, no hay optimización posible. Cada conversión validada.", tags: ["GA4","GTM","Conversiones","Dashboards"] },
-            { icon: "🧭", title: "Consultoría Estratégica", desc: "Diagnóstico profundo del negocio, funnel y competencia. Plan de acción priorizado por impacto real.", tags: ["Diagnóstico","Plan de Acción","KPIs","Auditoría"] },
-            { icon: "🚀", title: "Sistemas de Demanda", desc: "Integramos medición, pauta y negocio en un sistema escalable. No dependemos de un solo canal ni de una sola campaña.", tags: ["Lead Gen","Automatización","CRM","Escala"] },
+            { icon: Megaphone, title: "Paid Media", desc: "Diseñamos y optimizamos campañas con foco en crecimiento rentable. Escalamos lo que funciona, cortamos lo que no.", tags: ["Google Ads","Meta Ads","LinkedIn Ads","Full Funnel"] },
+            { icon: LineChart, title: "Medición & Analytics", desc: "Configuramos la base de datos desde cero. Sin medición correcta, no hay optimización posible. Cada conversión validada.", tags: ["GA4","GTM","Conversiones","Dashboards"] },
+            { icon: Compass, title: "Consultoría Estratégica", desc: "Diagnóstico profundo del negocio, funnel y competencia. Plan de acción priorizado por impacto real.", tags: ["Diagnóstico","Plan de Acción","KPIs","Auditoría"] },
+            { icon: Rocket, title: "Sistemas de Demanda", desc: "Integramos medición, pauta y negocio en un sistema escalable. No dependemos de un solo canal ni de una sola campaña.", tags: ["Lead Gen","Automatización","CRM","Escala"] },
           ].map((svc) => (
             <div key={svc.title} className="sd-svc">
-              <div className="sd-svc-icon">{svc.icon}</div>
+              <div className="sd-svc-icon"><svc.icon size={22} color="#00E5A0" strokeWidth={2} /></div>
               <h3>{svc.title}</h3>
               <p>{svc.desc}</p>
               <div className="sd-tags">{svc.tags.map((t) => <span key={t} className="sd-tag">{t}</span>)}</div>
@@ -429,12 +510,12 @@ export default function SlideDeck() {
         </p>
         <div className="sai-grid">
           {[
-            { ico: "🎬", title: "Concepto Creativo", desc: "Personaje de marca, slogan e identidad visual generados con IA para campañas digitales con impacto real.", fmt: "NUESTROS CLIENTES" },
-            { ico: "📱", title: "Video Ads con IA", desc: "Producción de videos publicitarios optimizados para Meta, Google y TikTok con generación IA a escala.", fmt: "REELS · STORIES · PRE-ROLL" },
-            { ico: "🖼️", title: "Piezas Visuales", desc: "Banners, creatividades y assets de campaña generados y optimizados con herramientas de IA.", fmt: "META · GOOGLE DISPLAY" },
+            { ico: Clapperboard, title: "Concepto Creativo", desc: "Personaje de marca, slogan e identidad visual generados con IA para campañas digitales con impacto real.", fmt: "NUESTROS CLIENTES" },
+            { ico: Smartphone, title: "Video Ads con IA", desc: "Producción de videos publicitarios optimizados para Meta, Google y TikTok con generación IA a escala.", fmt: "REELS · STORIES · PRE-ROLL" },
+            { ico: ImageIcon, title: "Piezas Visuales", desc: "Banners, creatividades y assets de campaña generados y optimizados con herramientas de IA.", fmt: "META · GOOGLE DISPLAY" },
           ].map((c) => (
             <div key={c.title} className="sd-ai-card">
-              <div className="ico">{c.ico}</div>
+              <div className="ico"><c.ico size={26} color="#00E5A0" strokeWidth={2} /></div>
               <h4>{c.title}</h4>
               <p>{c.desc}</p>
               <div className="format">{c.fmt}</div>
@@ -444,7 +525,7 @@ export default function SlideDeck() {
         <div className="sai-btns">
           <a href="https://drive.google.com/drive/folders/1fz0oClLursoK4NxGVWQWtCdtTjJdoh8r?usp=drive_link"
             target="_blank" rel="noopener noreferrer" className="sd-btn-ghost" style={{ fontSize: 13, padding: "11px 22px" }}>
-            ▶ &nbsp;Ver ejemplo de contenido
+            <Play size={14} fill="currentColor" />Ver ejemplo de contenido
           </a>
           <span className="sd-btn-ghost" style={{ fontSize: 13, padding: "11px 22px", cursor: "default" }}>
             + Ejemplos disponibles a pedido
@@ -493,8 +574,8 @@ export default function SlideDeck() {
             <div className="sd-col-title">Con quiénes trabajamos</div>
             <h2 className="sd-h2" style={{ marginBottom: 24 }}>Algunos de nuestros<br /><span className="sd-g">clientes</span></h2>
             <div className="sd-client-chips">
-              {["🌎 Sika Bolivia","🌎 Sika Perú","🌎 Sika Uruguay","🌎 Sika USA","🌎 Sika México","🌎 Sika Panamá","🌎 Sika Rep. Dom."].map((c) => (
-                <div key={c} className="sd-cc hl">{c}</div>
+              {["Sika Bolivia","Sika Perú","Sika Uruguay","Sika USA","Sika México","Sika Panamá","Sika Rep. Dom."].map((c) => (
+                <div key={c} className="sd-cc hl"><Globe size={12} />{c}</div>
               ))}
               {["MSH Group","MSH Custom","Silat SA","RP Urbano","Sahiora","Chocon Medio","Rio Neuquén"].map((c) => (
                 <div key={c} className="sd-cc">{c}</div>
@@ -520,15 +601,15 @@ export default function SlideDeck() {
         <h2 className="sd-h2">¿Por qué <span className="sd-g">Didakto</span>?</h2>
         <div className="s9-grid">
           {[
-            { ico: "🔬", title: "Diagnóstico antes de ejecución", desc: "No lanzamos campañas sin entender el negocio. Cada relación empieza con una consultoría real." },
-            { ico: "📈", title: "Medición como base, no como extra", desc: "Configuramos GA4, GTM y conversiones correctamente antes de invertir un peso en pauta." },
-            { ico: "🤝", title: "Incentivos alineados a resultados", desc: "Crecemos si vos crecés. No vendemos campañas por volumen, sino sistemas que escalan." },
-            { ico: "🧠", title: "Experiencia con marcas reales", desc: "Marcas globales y regionales. Sabemos lo que funciona a escala y lo que no." },
-            { ico: "📋", title: "Reportes que ayudan a decidir", desc: "No entregamos dashboards decorativos. Entregamos interpretación y próximos pasos concretos." },
-            { ico: "⚡", title: "Equipo pequeño, foco total", desc: "Cartera limitada. Cada cliente importa. Sin account executives intermedios ni procesos vacíos." },
+            { ico: Microscope, title: "Diagnóstico antes de ejecución", desc: "No lanzamos campañas sin entender el negocio. Cada relación empieza con una consultoría real." },
+            { ico: TrendingUp, title: "Medición como base, no como extra", desc: "Configuramos GA4, GTM y conversiones correctamente antes de invertir un peso en pauta." },
+            { ico: Handshake, title: "Incentivos alineados a resultados", desc: "Crecemos si vos crecés. No vendemos campañas por volumen, sino sistemas que escalan." },
+            { ico: Brain, title: "Experiencia con marcas reales", desc: "Marcas globales y regionales. Sabemos lo que funciona a escala y lo que no." },
+            { ico: ClipboardList, title: "Reportes que ayudan a decidir", desc: "No entregamos dashboards decorativos. Entregamos interpretación y próximos pasos concretos." },
+            { ico: Zap, title: "Equipo pequeño, foco total", desc: "Cartera limitada. Cada cliente importa. Sin account executives intermedios ni procesos vacíos." },
           ].map((c) => (
             <div key={c.title} className="sd-card2">
-              <div className="ico">{c.ico}</div>
+              <div className="ico"><c.ico size={26} color="#00E5A0" strokeWidth={2} /></div>
               <h4>{c.title}</h4>
               <p>{c.desc}</p>
             </div>
@@ -546,10 +627,10 @@ export default function SlideDeck() {
             <p className="sd-tagline">"Hacerlo bien desde el principio."</p>
             <div className="sd-contact-links">
               <a href="mailto:ivo@didaktomarketing.com" className="sd-c-link">
-                <span className="sd-c-icon">✉</span>ivo@didaktomarketing.com
+                <span className="sd-c-icon"><Mail size={16} /></span>ivo@didaktomarketing.com
               </a>
-              <div className="sd-c-link"><span className="sd-c-icon">⏰</span>Lunes a Viernes · 9:00–18:00</div>
-              <div className="sd-c-link"><span className="sd-c-icon">🌎</span>100% online · LATAM &amp; USA</div>
+              <div className="sd-c-link"><span className="sd-c-icon"><Clock size={16} /></span>Lunes a Viernes · 9:00–18:00</div>
+              <div className="sd-c-link"><span className="sd-c-icon"><Globe size={16} /></span>100% online · LATAM &amp; USA</div>
             </div>
             <div className="sd-guarantee">
               <strong>Sin compromisos, sin contratos largos</strong>
