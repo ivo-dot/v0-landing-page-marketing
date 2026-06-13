@@ -13,6 +13,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://didaktomarketing.com"),
   title: "Didakto Marketing | Genera leads calificados",
   description: "En Didakto combinamos estrategia, analítica y diseño para crear campañas publicitarias que convierten.",
   keywords: ["marketing digital", "leads calificados", "publicidad digital", "Google Ads", "Meta Ads", "LinkedIn Ads"],

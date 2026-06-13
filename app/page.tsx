@@ -1,5 +1,6 @@
-import SlideDeck from "@/components/slide-deck"
+import DidaktoLanding from "@/components/didakto-landing"
+import "./didakto-landing.css"
 
 export default function HomePage() {
-  return <SlideDeck />
+  return <DidaktoLanding />
 }
