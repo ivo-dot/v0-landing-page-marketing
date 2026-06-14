@@ -362,7 +362,7 @@ export const MARKUP = String.raw`
 
 <!-- FOOTER -->
 <footer>
-  <span class="foot-logo">didakto</span>
+  <span class="foot-logo-iso" role="img" aria-label="Didakto"></span>
   <span class="foot-copy">© 2026 Didakto Marketing</span>
   <div class="foot-links"><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#contacto">Contacto</a></div>
 </footer>

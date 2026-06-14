@@ -64,10 +64,10 @@ function Calculator() {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "48px", marginTop: "48px", alignItems: "start" }} className="calc-grid">
       <div>
-        <CalcSlider label="Presupuesto mensual" value={budget} min={1000} max={50000} step={500} fmt={(v) => "$" + v.toLocaleString()} onChange={setBudget} />
-        <CalcSlider label="CPA objetivo" value={cpa} min={10} max={500} step={5} fmt={(v) => "$" + v} onChange={setCpa} />
+        <CalcSlider label="Presupuesto mensual (USD)" value={budget} min={1000} max={50000} step={500} fmt={(v) => "$" + v.toLocaleString()} onChange={setBudget} />
+        <CalcSlider label="CPA objetivo (USD)" value={cpa} min={10} max={500} step={5} fmt={(v) => "$" + v} onChange={setCpa} />
         <CalcSlider label="Tasa de calificación" value={qual} min={5} max={70} step={5} fmt={(v) => v + "%"} onChange={setQual} />
-        <CalcSlider label="Ticket promedio" value={deal} min={500} max={50000} step={500} fmt={(v) => "$" + v.toLocaleString()} onChange={setDeal} />
+        <CalcSlider label="Ticket promedio (USD)" value={deal} min={500} max={50000} step={500} fmt={(v) => "$" + v.toLocaleString()} onChange={setDeal} />
       </div>
       <div style={{ background: "#0a0a08", border: "1px solid rgba(200,255,0,0.18)", borderRadius: "10px", padding: "28px" }}>
         {rows.map((o, i) => (
@@ -127,20 +127,20 @@ export default function DidaktoLanding() {
         ctx.clearRect(0, 0, W, H)
         ;[175, 289].forEach((r) => {
           ctx.beginPath(); ctx.arc(CX, CY, r, 0, Math.PI * 2)
-          ctx.setLineDash([3, 9]); ctx.strokeStyle = "rgba(200,255,0,0.18)"; ctx.lineWidth = 1; ctx.stroke()
+          ctx.setLineDash([3, 9]); ctx.strokeStyle = "rgba(26,232,106,0.22)"; ctx.lineWidth = 1; ctx.stroke()
           ctx.setLineDash([])
         })
         platforms.forEach((p) => {
           const a = p.a + ts * p.sp
           const x = CX + p.r * Math.cos(a), y = CY + p.r * Math.sin(a)
           ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(x, y)
-          ctx.strokeStyle = "rgba(200,255,0,0.07)"; ctx.lineWidth = 1; ctx.stroke()
+          ctx.strokeStyle = "rgba(26,232,106,0.07)"; ctx.lineWidth = 1; ctx.stroke()
           ctx.font = "600 10.5px Inter,sans-serif"
           const tw = ctx.measureText(p.name).width
           const bw = tw + 30, bh = 28
           rr(x - bw / 2, y - bh / 2, bw, bh, bh / 2)
           ctx.fillStyle = "rgba(18,18,14,0.95)"; ctx.fill()
-          ctx.strokeStyle = "rgba(200,255,0,0.28)"; ctx.lineWidth = 0.8; ctx.stroke()
+          ctx.strokeStyle = "rgba(26,232,106,0.28)"; ctx.lineWidth = 0.8; ctx.stroke()
           ctx.beginPath(); ctx.arc(x - bw / 2 + 11, y, 4, 0, Math.PI * 2)
           ctx.fillStyle = p.col; ctx.fill()
           ctx.fillStyle = "rgba(240,237,230,0.9)"; ctx.textAlign = "left"; ctx.textBaseline = "middle"
@@ -148,14 +148,14 @@ export default function DidaktoLanding() {
         })
         const pulse = (Math.sin(ts * 0.0018) + 1) / 2
         ctx.beginPath(); ctx.arc(CX, CY, 83 + pulse * 18, 0, Math.PI * 2)
-        ctx.strokeStyle = `rgba(200,255,0,${0.25 - pulse * 0.18})`; ctx.lineWidth = 1.5; ctx.stroke()
+        ctx.strokeStyle = `rgba(26,232,106,${0.28 - pulse * 0.2})`; ctx.lineWidth = 1.5; ctx.stroke()
         ctx.beginPath(); ctx.arc(CX, CY, 83, 0, Math.PI * 2)
         const cGrad = ctx.createRadialGradient(CX - 26, CY - 26, 4, CX, CY, 83)
         cGrad.addColorStop(0, "#1a1a14"); cGrad.addColorStop(0.5, "#0e0e0a"); cGrad.addColorStop(1, "#080808")
         ctx.fillStyle = cGrad; ctx.fill()
         ctx.save()
         ctx.beginPath(); ctx.arc(CX, CY, 83, 0, Math.PI * 2); ctx.clip()
-        ctx.strokeStyle = "rgba(200,255,0,0.10)"; ctx.lineWidth = 0.7
+        ctx.strokeStyle = "rgba(26,232,106,0.10)"; ctx.lineWidth = 0.7
         for (let gi = -90; gi <= 90; gi += 16) {
           ctx.beginPath(); ctx.moveTo(CX + gi, CY - 90); ctx.lineTo(CX + gi, CY + 90); ctx.stroke()
           ctx.beginPath(); ctx.moveTo(CX - 90, CY + gi); ctx.lineTo(CX + 90, CY + gi); ctx.stroke()
@@ -163,11 +163,11 @@ export default function DidaktoLanding() {
         ctx.restore()
         ;[0.38, 0.62, 0.82].forEach((r) => {
           ctx.beginPath(); ctx.arc(CX, CY, 83 * r, 0, Math.PI * 2)
-          ctx.strokeStyle = "rgba(200,255,0,0.14)"; ctx.lineWidth = 0.8; ctx.stroke()
+          ctx.strokeStyle = "rgba(26,232,106,0.16)"; ctx.lineWidth = 0.8; ctx.stroke()
         })
         ctx.beginPath(); ctx.arc(CX, CY, 83, 0, Math.PI * 2)
-        ctx.strokeStyle = "rgba(200,255,0,0.50)"; ctx.lineWidth = 1.5; ctx.stroke()
-        ctx.fillStyle = "#C8FF00"; ctx.textAlign = "center"; ctx.textBaseline = "middle"
+        ctx.strokeStyle = "rgba(26,232,106,0.54)"; ctx.lineWidth = 1.5; ctx.stroke()
+        ctx.fillStyle = "#1AE86A"; ctx.textAlign = "center"; ctx.textBaseline = "middle"
         ctx.font = '800 18px "Bricolage Grotesque",sans-serif'
         ctx.fillText("CRM /", CX, CY - 13); ctx.fillText("Leads", CX, CY + 14)
         raf = requestAnimationFrame(draw)
