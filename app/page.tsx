@@ -1,6 +1,6 @@
-import DidaktoLanding from "@/components/didakto-landing"
-import "./didakto-landing.css"
+import DidaktoRedesign from "@/components/didakto-redesign"
+import "./didakto-redesign.css"
 
 export default function HomePage() {
-  return <DidaktoLanding />
+  return <DidaktoRedesign />
 }
