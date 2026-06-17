@@ -14,12 +14,29 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://didaktomarketing.com"),
-  title: "Didakto Marketing | Genera leads calificados",
-  description: "En Didakto combinamos estrategia, analítica y diseño para crear campañas publicitarias que convierten.",
-  keywords: ["marketing digital", "leads calificados", "publicidad digital", "Google Ads", "Meta Ads", "LinkedIn Ads"],
-  authors: [{ name: "Didakto Marketing" }],
+  title: {
+    default: "Didakto Marketing | Agencia de Publicidad Digital B2B · Google Partner",
+    template: "%s | Didakto Marketing",
+  },
+  description:
+    "Agencia de publicidad digital B2B y Google Partner. Paid Media experto (Google, Meta y LinkedIn), Data Intelligence y automatización con IA para generar leads calificados en LATAM y USA.",
+  keywords: [
+    "agencia de publicidad digital",
+    "agencia google partner",
+    "agencia google ads",
+    "agencia meta ads",
+    "publicidad digital B2B",
+    "generación de leads B2B",
+    "Paid Media",
+    "LinkedIn Ads",
+    "marketing digital LATAM",
+    "agencia de marketing digital",
+  ],
+  authors: [{ name: "Ivo Crisman" }, { name: "Didakto Marketing" }],
   creator: "Didakto Marketing",
   publisher: "Didakto Marketing",
+  category: "Marketing",
+  alternates: { canonical: "https://didaktomarketing.com" },
   icons: {
     icon: "/logo-didakto-iso.png",
     shortcut: "/logo-didakto-iso.png",
@@ -27,26 +44,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "es_AR",
     url: "https://didaktomarketing.com",
     siteName: "Didakto Marketing",
-    title: "Didakto Marketing | Genera leads calificados",
+    title: "Didakto Marketing | Agencia de Publicidad Digital B2B · Google Partner",
     description:
-      "En Didakto combinamos estrategia, analítica y diseño para crear campañas publicitarias que convierten.",
+      "Paid Media experto, Data Intelligence y automatización con IA. Generamos demanda B2B que tu equipo comercial sí cierra. LATAM & USA.",
     images: [
       {
         url: "/fondo-verde.png",
         width: 1200,
         height: 630,
-        alt: "Didakto Marketing - Agencia de Marketing Digital",
+        alt: "Didakto Marketing — Agencia de Publicidad Digital B2B y Google Partner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Didakto Marketing | Genera leads calificados",
+    title: "Didakto Marketing | Agencia de Publicidad Digital B2B · Google Partner",
     description:
-      "En Didakto combinamos estrategia, analítica y diseño para crear campañas publicitarias que convierten.",
+      "Paid Media experto, Data Intelligence y automatización con IA para generar leads calificados B2B. LATAM & USA.",
     images: ["/fondo-verde.png"],
   },
   robots: {
@@ -60,26 +77,71 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "v0.app",
 }
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "Organization"],
+  "@id": "https://didaktomarketing.com/#organization",
   name: "Didakto Marketing",
+  alternateName: "Didakto",
   url: "https://didaktomarketing.com",
   logo: "https://didaktomarketing.com/logo-didakto-iso.png",
+  image: "https://didaktomarketing.com/fondo-verde.png",
   description:
-    "Agencia especializada en publicidad digital B2B. Generamos leads calificados con Google Ads, LinkedIn Ads y estrategia de datos.",
+    "Agencia de publicidad digital B2B y Google Partner. Paid Media (Google, Meta y LinkedIn), Data Intelligence y automatización con IA para generar leads calificados en LATAM y USA.",
+  slogan: "Hacerlo bien desde el principio.",
+  email: "ivo@didaktomarketing.com",
+  founder: {
+    "@type": "Person",
+    name: "Ivo Crisman",
+    jobTitle: "Fundador",
+    sameAs: "https://www.linkedin.com/in/ivo-roman-crisman/",
+  },
+  knowsAbout: [
+    "Google Ads",
+    "Meta Ads",
+    "LinkedIn Ads",
+    "Paid Media B2B",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "Generación de leads B2B",
+    "Automatización con IA",
+  ],
   serviceType: [
     "Agencia de publicidad digital",
-    "Agencia de publicidad B2B",
+    "Agencia Google Partner",
+    "Paid Media B2B",
     "Google Ads",
-    "LinkedIn Ads",
     "Meta Ads",
+    "LinkedIn Ads",
+    "Medición y Analytics",
+    "Automatización con IA",
   ],
-  areaServed: "Latinoamérica",
-  sameAs: ["https://www.google.com/partners/agency?id=2992564471"],
+  areaServed: [
+    { "@type": "Place", name: "América Latina" },
+    { "@type": "Country", name: "Estados Unidos" },
+    { "@type": "Country", name: "Argentina" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Paid Media B2B", description: "Campañas full-funnel en Google, Meta y LinkedIn con foco en costo por lead calificado." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Data Intelligence", description: "Medición con GA4, GTM, conversiones y dashboards orientados a decisiones de negocio." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Automatización con IA", description: "Calificación de leads, nurturing y flujos hacia el CRM automatizados con IA." } },
+    ],
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "ivo@didaktomarketing.com",
+    contactType: "sales",
+    availableLanguage: ["es", "en"],
+  },
+  sameAs: [
+    "https://www.google.com/partners/agency?id=2992564471",
+    "https://www.linkedin.com/in/ivo-roman-crisman/",
+  ],
 }
 
 export default function RootLayout({

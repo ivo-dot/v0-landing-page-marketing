@@ -71,7 +71,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(01)</span> Servicios</span>
-      <div class="h">Tres capacidades, un solo sistema.</div>
+      <h2 class="h">Tres capacidades, un solo sistema.</h2>
     </div>
     <div class="svc-list">
       <div class="svc r" data-cursor>
@@ -101,7 +101,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(02)</span> Formatos</span>
-      <div class="h">Así se ven tus anuncios.</div>
+      <h2 class="h">Así se ven tus anuncios.</h2>
       <p class="lede r">Creatividades optimizadas para cada plataforma y formato publicitario.</p>
     </div>
   </div>
@@ -154,7 +154,7 @@ export const MARKUP = String.raw`
   <div class="wrap cases-head">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(03)</span> Casos &amp; resultados</span>
-      <div class="h">Resultados reales, clientes reales.</div>
+      <h2 class="h">Resultados reales, clientes reales.</h2>
     </div>
     <div class="drag-hint r">Scrolleá →</div>
   </div>
@@ -162,7 +162,7 @@ export const MARKUP = String.raw`
     <article class="case feat">
       <div>
         <div class="ctag">Construcción · USA</div>
-        <div class="cname display">Sika USA</div>
+        <h3 class="cname display">Sika USA</h3>
         <p class="cdesc">Auditamos lo existente, validamos conversiones en GA4/GTM y rediseñamos el plan de medios en Meta y Google Ads.</p>
       </div>
       <div>
@@ -178,7 +178,7 @@ export const MARKUP = String.raw`
     <article class="case">
       <div>
         <div class="ctag">Construcción · USA</div>
-        <div class="cname display">Sika Pro Select</div>
+        <h3 class="cname display">Sika Pro Select</h3>
         <p class="cdesc">Reestructuramos campañas y segmentación con foco agresivo en el costo por lead: bajamos el CPA diez veces.</p>
       </div>
       <div class="ckpis">
@@ -189,7 +189,7 @@ export const MARKUP = String.raw`
     <article class="case feat">
       <div>
         <div class="ctag">Construcción · Bolivia</div>
-        <div class="cname display">Sika Bolivia</div>
+        <h3 class="cname display">Sika Bolivia</h3>
         <p class="cdesc">Partimos desde cero con una estrategia always-on de captación de leads para productos que venden todo el año, y lanzamos el canal de TikTok (pauta + contenido orgánico).</p>
       </div>
       <div>
@@ -204,7 +204,7 @@ export const MARKUP = String.raw`
     <article class="case">
       <div>
         <div class="ctag">Recursos Humanos · LATAM</div>
-        <div class="cname display">MSH</div>
+        <h3 class="cname display">MSH</h3>
         <p class="cdesc">Estrategia especializada de generación de leads con LinkedIn y Google Ads, con campañas enfocadas en segmentos técnicos y profesionales.</p>
       </div>
       <div class="ckpis">
@@ -217,7 +217,7 @@ export const MARKUP = String.raw`
     <article class="case ghost">
       <div>
         <div class="ctag">Tu empresa</div>
-        <div class="cname display">¿La próxima?</div>
+        <h3 class="cname display">¿La próxima?</h3>
         <p class="cdesc">Quedan lugares para este trimestre. Empezamos siempre con una consultoría sin costo.</p>
       </div>
       <a class="btn mag" href="#contacto" data-form data-cursor>Hablemos <span class="a">→</span></a>
@@ -230,7 +230,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(04)</span> Proceso</span>
-      <div class="h">Un proceso, sin atajos.</div>
+      <h2 class="h">Un proceso, sin atajos.</h2>
       <p class="lede r">Sin importar cómo llegues a nosotros, todo empieza con una consultoría.</p>
     </div>
     <div class="steps" id="steps">
@@ -248,7 +248,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(05)</span> Por qué Didakto</span>
-      <div class="h">Especialistas, no generalistas.</div>
+      <h2 class="h">Especialistas, no generalistas.</h2>
     </div>
     <div class="auth-grid">
       <div class="auth r" data-cursor><div class="num">G</div><h3>Google Partner</h3><p>Acreditación oficial en Google Ads y medición.</p></div>
@@ -264,7 +264,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(06)</span> Lo que resolvemos</span>
-      <div class="h">Problemas que escuchamos todas las semanas.</div>
+      <h2 class="h">Problemas que escuchamos todas las semanas.</h2>
     </div>
     <div class="probs">
       <div class="prob r"><div class="pn">01</div><div><h3>Leads que no cierran</h3><p>Volumen sin calidad. Nadie audita la segmentación ni la intención de compra real del prospecto.</p></div></div>
@@ -279,7 +279,7 @@ export const MARKUP = String.raw`
 <section class="section drag-sec">
   <div class="wrap">
     <div class="drag-head">
-      <div class="shead"><span class="eyebrow r">Lo que dicen</span><div class="h">En sus palabras.</div></div>
+      <div class="shead"><span class="eyebrow r">Lo que dicen</span><h2 class="h">En sus palabras.</h2></div>
       <div class="drag-hint r">← arrastrá →</div>
     </div>
   </div>
@@ -299,7 +299,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(07)</span> Preguntas frecuentes</span>
-      <div class="h">Antes de hablar.</div>
+      <h2 class="h">Antes de hablar.</h2>
     </div>
     <div class="faq" id="faqList">
       <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Trabajan por proyecto o por retainer mensual?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Ambos. La mayoría de las relaciones son mensuales porque el crecimiento sostenido requiere continuidad, pero arrancamos siempre con una consultoría puntual para validar el encaje antes de cualquier compromiso largo.</div></div></div>
