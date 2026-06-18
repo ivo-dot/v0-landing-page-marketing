@@ -199,6 +199,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
           <a href="/#servicios"><span data-t="Servicios">Servicios</span></a>
           <a href="/#casos"><span data-t="Casos">Casos</span></a>
           <a href="/#proceso"><span data-t="Proceso">Proceso</span></a>
+          <a href="/blog"><span data-t="Blog">Blog</span></a>
           <a href="/#faq"><span data-t="FAQ">FAQ</span></a>
         </nav>
         <button className="btn mag" data-form data-cursor type="button">Agendar <span className="a">→</span></button>

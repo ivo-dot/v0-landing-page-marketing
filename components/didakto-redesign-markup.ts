@@ -12,6 +12,7 @@ export const MARKUP = String.raw`
     <a href="#servicios"><span data-t="Servicios">Servicios</span></a>
     <a href="#casos"><span data-t="Casos">Casos</span></a>
     <a href="#proceso"><span data-t="Proceso">Proceso</span></a>
+    <a href="/blog"><span data-t="Blog">Blog</span></a>
     <a href="#faq"><span data-t="FAQ">FAQ</span></a>
   </nav>
   <a class="btn mag" href="#contacto" data-form data-cursor>Agendar <span class="a">→</span></a>
@@ -292,6 +293,40 @@ export const MARKUP = String.raw`
       <div class="tcard">“Por fin reportes que se entienden y dicen qué hacer después.”<div class="who"><span class="av"></span><div><b>Dirección</b><span>Cliente B2B</span></div></div></div>
       <div class="tcard">“Empezaron por entender el negocio, no por gastar en pauta.”<div class="who"><span class="av"></span><div><b>Marketing</b><span>Industria</span></div></div></div>
     </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section inv" id="blog">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r">Blog · Recursos</span>
+      <h2 class="h">Ideas para generar demanda B2B.</h2>
+    </div>
+    <div class="blog-grid">
+      <a class="bcard r" href="/blog/como-generar-leads-b2b-en-2026" data-cursor>
+        <span class="btag">Generación de leads</span>
+        <h3>Cómo generar leads B2B en 2026</h3>
+        <p>Tu producto ya está validado. Lo que falta es alcance e impacto sobre los públicos correctos.</p>
+        <span class="bmeta">18 de junio, 2026 · 9 min</span>
+        <span class="bmore">Leer artículo <span class="a">→</span></span>
+      </a>
+      <a class="bcard r" href="/blog/google-ads-vs-meta-ads-b2b" data-cursor>
+        <span class="btag">Paid Media</span>
+        <h3>Google Ads vs Meta Ads para B2B</h3>
+        <p>No son rivales: son momentos distintos del funnel. Cuándo usar cada uno y cómo combinarlos.</p>
+        <span class="bmeta">17 de junio, 2026 · 8 min</span>
+        <span class="bmore">Leer artículo <span class="a">→</span></span>
+      </a>
+      <a class="bcard r" href="/blog/linkedin-ads-para-generacion-de-leads-b2b" data-cursor>
+        <span class="btag">LinkedIn Ads</span>
+        <h3>LinkedIn Ads para leads B2B, ¿funciona?</h3>
+        <p>Sí, con condiciones. Para qué negocios sirve y cómo logramos un CPA de USD 5.</p>
+        <span class="bmeta">16 de junio, 2026 · 8 min</span>
+        <span class="bmore">Leer artículo <span class="a">→</span></span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a class="btn btn-ghost mag" href="/blog" data-cursor>Ver todos los artículos <span class="a">→</span></a></div>
   </div>
 </section>
 

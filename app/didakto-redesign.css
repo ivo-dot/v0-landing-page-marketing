@@ -365,3 +365,54 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .offer h2{font-family:'Archivo';font-weight:900;letter-spacing:-.03em;line-height:1;font-size:clamp(28px,4vw,46px)}
 .offer p{color:var(--ink2);margin-top:14px;line-height:1.6}
 .offer .offer-cta{margin-top:22px}
+
+/* ── BLOG ── */
+.blog-grid{display:grid;gap:18px;margin-top:50px}
+@media(min-width:760px){ .blog-grid{grid-template-columns:repeat(3,1fr)} }
+.bcard{display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:18px;padding:26px 24px;background:linear-gradient(180deg,rgba(244,241,234,.02),transparent);transition:transform .4s var(--ease),border-color .4s;height:100%}
+.bcard:hover{transform:translateY(-6px);border-color:rgba(26,232,106,.4)}
+.bcard .btag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.bcard h3{font-family:'Archivo';font-weight:800;letter-spacing:-.025em;font-size:clamp(20px,2.4vw,25px);line-height:1.05;margin:14px 0 10px}
+.bcard p{color:var(--ink2);font-size:14px;line-height:1.6;flex:1}
+.bcard .bmeta{margin-top:18px;font-size:12px;color:var(--ink3);display:flex;gap:10px;align-items:center}
+.bcard .bmore{margin-top:14px;font-size:13px;font-weight:600;color:var(--ink);display:inline-flex;gap:7px;align-items:center}
+.bcard:hover .bmore{color:var(--green)}
+
+/* ── ARTÍCULO ── */
+.artwrap{max-width:760px;margin-inline:auto;padding-inline:var(--pad)}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:22px;font-size:13.5px;color:var(--ink3)}
+.meta-line .au{display:flex;align-items:center;gap:9px;color:var(--ink2);font-weight:600}
+.meta-line .au i{width:26px;height:26px;border-radius:50%;background:var(--green);display:block}
+.dkprose{font-size:clamp(16px,1.9vw,18px);line-height:1.75;color:var(--ink2);padding:8px 0 8px}
+.dkprose > *:first-child{margin-top:0}
+.dkprose p{margin:0 0 22px}
+.dkprose h2{font-family:'Archivo';font-weight:800;letter-spacing:-.02em;line-height:1.1;font-size:clamp(24px,3.2vw,34px);color:var(--ink);margin:48px 0 18px}
+.dkprose h3{font-family:'Archivo';font-weight:700;letter-spacing:-.01em;font-size:clamp(19px,2.2vw,23px);color:var(--ink);margin:34px 0 12px}
+.dkprose strong{color:var(--ink);font-weight:600}
+.dkprose a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px;text-decoration-thickness:2px}
+.dkprose a:hover{color:var(--green)}
+.dkprose ul,.dkprose ol{margin:0 0 22px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.dkprose ul li{position:relative;padding-left:26px}
+.dkprose ul li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.dkprose ol{counter-reset:li}
+.dkprose ol li{position:relative;padding-left:34px;counter-increment:li}
+.dkprose ol li::before{content:counter(li);position:absolute;left:0;top:0;font-family:'Instrument Serif';font-style:italic;color:var(--green);font-size:20px;line-height:1.2}
+.dkprose blockquote{margin:30px 0;padding:4px 0 4px 22px;border-left:2px solid var(--green);font-family:'Instrument Serif';font-style:italic;font-size:clamp(19px,2.4vw,24px);line-height:1.45;color:var(--ink)}
+.dkprose .keytakeaway{background:var(--paper2);border:1px solid var(--line2);border-radius:16px;padding:24px 26px;margin:0 0 36px}
+.dkprose .keytakeaway p{margin:0;font-size:16px}
+.dkprose .keytakeaway b{font-family:'Inter';font-weight:600;color:var(--ink);display:block;margin-bottom:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+/* tabla comparativa */
+.dktable{overflow-x:auto;margin:0 0 30px;border:1px solid var(--line2);border-radius:14px}
+.dktable table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:420px}
+.dktable th,.dktable td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.dktable thead th{font-family:'Archivo';font-weight:700;color:var(--ink);font-size:13px}
+.dktable td{color:var(--ink2)}
+.dktable tr:last-child td{border-bottom:none}
+.dktable td:first-child,.dktable th:first-child{font-weight:600;color:var(--ink)}
+/* caja de autor */
+.author{display:flex;gap:16px;align-items:flex-start;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+.author .av{width:54px;height:54px;border-radius:50%;background:var(--green);flex:none;background-image:url(/ivo-imagen.jpeg);background-size:cover;background-position:top}
+.author b{font-size:15px;font-weight:600;display:block}
+.author span{font-size:13px;color:var(--ink2)}
+.author p{font-size:13.5px;color:var(--ink2);line-height:1.6;margin-top:8px;max-width:60ch}
+.arth1{font-size:clamp(30px,4.6vw,56px)!important;line-height:1.04;max-width:20ch}
