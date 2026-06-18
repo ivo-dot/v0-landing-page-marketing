@@ -1,4 +1,5 @@
-// AUTO-GENERADO desde didakto-redesign-preview-v2.html — no editar a mano.
+// Base generada desde didakto-redesign-preview-v2.html + ediciones manuales
+// (headings semánticos h2/h3, enlaces internos a páginas de servicio).
 export const MARKUP = String.raw`
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="curRing"></div>
@@ -78,7 +79,7 @@ export const MARKUP = String.raw`
         <div class="sidx">01</div>
         <h3>Paid Media B2B</h3>
         <div class="sdesc">Campañas full-funnel en Google, Meta y LinkedIn con foco en costo por lead calificado y crecimiento rentable, no en métricas de vanidad.</div>
-        <div class="stags"><span>Google Ads</span><span>Meta Ads</span><span>LinkedIn Ads</span></div>
+        <div class="stags"><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a></div>
       </div>
       <div class="svc r" data-cursor>
         <div class="sidx">02</div>
@@ -341,6 +342,7 @@ export const MARKUP = String.raw`
         <p style="margin-top:16px;color:var(--ink2);font-size:14px;max-width:30ch">Generación de demanda B2B con criterio. Paid Media, datos e IA.</p>
       </div>
       <div class="foot-cols">
+        <div><h4>Servicios</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a></div>
         <div><h4>Mapa</h4><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#proceso">Proceso</a><a href="#faq">FAQ</a></div>
         <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#contacto">Agendar</a></div>
       </div>
