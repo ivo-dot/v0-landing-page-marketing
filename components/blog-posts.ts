@@ -11,6 +11,36 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "publicidad-en-chatgpt",
+    title: "Publicidad en ChatGPT: la novedad que cambia el paid media",
+    excerpt:
+      "OpenAI ya muestra anuncios dentro de ChatGPT. Qué es, cómo funcionan las respuestas patrocinadas, qué riesgos trae para las marcas y cómo preparar tu estrategia.",
+    date: "2026-06-20",
+    dateLabel: "20 de junio, 2026",
+    reading: "8 min",
+    tag: "IA & Medios",
+  },
+  {
+    slug: "google-ads-hubspot-conversiones-offline",
+    title: "Google Ads + HubSpot: medir las conversiones offline que sí importan",
+    excerpt:
+      "Optimizar por formularios enviados es optimizar por ruido. Cómo integrar Google Ads con HubSpot para subir conversiones offline (MQL, SQL, venta) y enseñarle a Google a traer clientes, no leads.",
+    date: "2026-06-19",
+    dateLabel: "19 de junio, 2026",
+    reading: "9 min",
+    tag: "Data & Medición",
+  },
+  {
+    slug: "ga4-para-b2b-como-usarlo",
+    title: "GA4 para el sector B2B: cómo usarlo de verdad",
+    excerpt:
+      "GA4 viene pensado para e-commerce, pero es una mina de oro para B2B si lo configurás bien. Eventos, conversiones, audiencias y los reportes que de verdad mueven la aguja.",
+    date: "2026-06-19",
+    dateLabel: "19 de junio, 2026",
+    reading: "9 min",
+    tag: "Data & Analytics",
+  },
+  {
     slug: "como-generar-leads-b2b-en-2026",
     title: "Cómo generar leads B2B en 2026",
     excerpt:

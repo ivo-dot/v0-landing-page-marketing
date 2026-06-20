@@ -304,25 +304,25 @@ export const MARKUP = String.raw`
       <h2 class="h">Ideas para generar demanda B2B.</h2>
     </div>
     <div class="blog-grid">
-      <a class="bcard r" href="/blog/como-generar-leads-b2b-en-2026" data-cursor>
-        <span class="btag">Generación de leads</span>
-        <h3>Cómo generar leads B2B en 2026</h3>
-        <p>Tu producto ya está validado. Lo que falta es alcance e impacto sobre los públicos correctos.</p>
-        <span class="bmeta">18 de junio, 2026 · 9 min</span>
+      <a class="bcard r" href="/blog/publicidad-en-chatgpt" data-cursor>
+        <span class="btag">IA & Medios</span>
+        <h3>Publicidad en ChatGPT: la novedad</h3>
+        <p>OpenAI ya muestra anuncios dentro de ChatGPT. Qué es, qué riesgos trae y cómo preparar tu marca.</p>
+        <span class="bmeta">20 de junio, 2026 · 8 min</span>
         <span class="bmore">Leer artículo <span class="a">→</span></span>
       </a>
-      <a class="bcard r" href="/blog/google-ads-vs-meta-ads-b2b" data-cursor>
-        <span class="btag">Paid Media</span>
-        <h3>Google Ads vs Meta Ads para B2B</h3>
-        <p>No son rivales: son momentos distintos del funnel. Cuándo usar cada uno y cómo combinarlos.</p>
-        <span class="bmeta">17 de junio, 2026 · 8 min</span>
+      <a class="bcard r" href="/blog/google-ads-hubspot-conversiones-offline" data-cursor>
+        <span class="btag">Data & Medición</span>
+        <h3>Google Ads + HubSpot: conversiones offline</h3>
+        <p>Optimizar por formularios es optimizar por ruido. Cómo medir lo que sí factura: MQL, SQL, venta.</p>
+        <span class="bmeta">19 de junio, 2026 · 9 min</span>
         <span class="bmore">Leer artículo <span class="a">→</span></span>
       </a>
-      <a class="bcard r" href="/blog/linkedin-ads-para-generacion-de-leads-b2b" data-cursor>
-        <span class="btag">LinkedIn Ads</span>
-        <h3>LinkedIn Ads para leads B2B, ¿funciona?</h3>
-        <p>Sí, con condiciones. Para qué negocios sirve y cómo logramos un CPA de USD 5.</p>
-        <span class="bmeta">16 de junio, 2026 · 8 min</span>
+      <a class="bcard r" href="/blog/ga4-para-b2b-como-usarlo" data-cursor>
+        <span class="btag">Data & Analytics</span>
+        <h3>GA4 para el sector B2B: cómo usarlo</h3>
+        <p>Viene pensado para e-commerce, pero es una mina de oro para B2B si lo configurás bien.</p>
+        <span class="bmeta">19 de junio, 2026 · 9 min</span>
         <span class="bmore">Leer artículo <span class="a">→</span></span>
       </a>
     </div>
