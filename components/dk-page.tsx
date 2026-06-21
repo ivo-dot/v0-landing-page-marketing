@@ -211,7 +211,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
         <div className="wrap">
           <div className="foot-top">
             <div>
-              <a className="brand" href="/"><span className="iso" /><b style={{ fontFamily: "'Archivo'", fontWeight: 800, letterSpacing: "-.04em", fontSize: 22 }}>Didakto</b></a>
+              <a className="brand" href="/"><span className="iso" /><b style={{ fontFamily: "var(--font-archivo)", fontWeight: 800, letterSpacing: "-.04em", fontSize: 22 }}>Didakto</b></a>
               <p style={{ marginTop: 16, color: "var(--ink2)", fontSize: 14, maxWidth: "30ch" }}>Generación de demanda B2B con criterio. Paid Media, datos e IA.</p>
             </div>
             <div className="foot-cols">

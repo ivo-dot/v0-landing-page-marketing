@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const c: ServiceContent = {
   crumb: "Agencia de publicidad digital",
   eyebrow: "Agencia de publicidad digital · B2B",
-  h1: <>Publicidad digital que genera <em>demanda B2B</em>.</>,
+  h1: <>Agencia de publicidad digital que genera <em>demanda B2B</em>.</>,
   lede:
     "Somos una agencia de publicidad digital especializada en B2B y Google Partner. Convertimos tu inversión en Google, Meta y LinkedIn en leads calificados que tu equipo comercial sí cierra. LATAM & USA.",
   ghostCta: { label: "Ver qué incluye", href: "#incluye" },
