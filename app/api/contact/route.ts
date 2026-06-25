@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 const ZAPIER_URL = "https://hooks.zapier.com/hooks/catch/22126987/u1edvyw/";
 
-const REQUIRED = ["nombre", "apellido", "email", "empresa", "asunto", "mensaje"]
+const REQUIRED = ["nombre", "apellido", "email", "empresa", "telefono", "asunto", "mensaje"]
 
 export async function POST(request: Request) {
   try {

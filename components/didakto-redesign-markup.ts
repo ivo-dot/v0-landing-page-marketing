@@ -403,6 +403,7 @@ export const MARKUP = String.raw`
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Empresa<input name="empresa" autocomplete="organization" required></label>
       </div>
+      <label>Teléfono / WhatsApp<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="Cód. país + número" required></label>
       <label>Asunto<select name="asunto" required><option value="">Seleccioná un tema</option><option>Consultoría inicial</option><option>Paid Media</option><option>Medición &amp; Analytics</option><option>Automatización con IA</option><option>Otro</option></select></label>
       <label>Mensaje<textarea name="mensaje" rows="3" required></textarea></label>
       <button type="submit" class="btn btn-dark" id="leadSubmit">Enviar consulta <span class="a">→</span></button>

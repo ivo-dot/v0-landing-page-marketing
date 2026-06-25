@@ -107,6 +107,7 @@ export default function ContactSection() {
                 </div>
 
                 <Input name="email" type="email" placeholder="Correo" required className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+                <Input name="telefono" type="tel" inputMode="tel" autoComplete="tel" placeholder="Teléfono / WhatsApp (cód. país + número)" required className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
                 <Input name="empresa" placeholder="Empresa" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
                 <Input name="asunto" placeholder="Asunto" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
                 <Textarea name="mensaje" placeholder="Cuéntanos sobre tu negocio" className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-white/50" />

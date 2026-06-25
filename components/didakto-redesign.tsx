@@ -248,8 +248,8 @@ export default function DidaktoRedesign() {
         e.preventDefault()
         const f = form as any
         if (f._hp.value) { closeModal(); return }
-        const data = { nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(), empresa: f.empresa.value.trim(), asunto: f.asunto.value, mensaje: f.mensaje.value.trim(), _hp: "" }
-        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.asunto || !data.mensaje) { form.reportValidity?.(); return }
+        const data = { nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(), empresa: f.empresa.value.trim(), telefono: f.telefono.value.trim(), asunto: f.asunto.value, mensaje: f.mensaje.value.trim(), _hp: "" }
+        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.telefono || !data.asunto || !data.mensaje) { form.reportValidity?.(); return }
         const btn = root.querySelector<HTMLButtonElement>("#leadSubmit")!
         const okEl = root.querySelector<HTMLElement>("#formOk")!
         btn.textContent = "Enviando..."; btn.disabled = true
