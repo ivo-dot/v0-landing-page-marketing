@@ -11,6 +11,36 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "costo-por-lead-vs-costo-por-cliente",
+    title: "Costo por lead vs costo por cliente: la métrica que cambia todo",
+    excerpt:
+      "El costo por lead es la métrica más mirada del B2B y casi siempre la equivocada. Por qué dos campañas con el mismo CPL pueden costar 3x distinto en clientes, y cómo medir lo que de verdad factura.",
+    date: "2026-06-25",
+    dateLabel: "25 de junio, 2026",
+    reading: "8 min",
+    tag: "Data & Medición",
+  },
+  {
+    slug: "presupuesto-google-ads-leads-que-no-convierten",
+    title: "Presupuesto en Google Ads: dejá de pagar por leads que ventas descarta",
+    excerpt:
+      "Si tu equipo comercial descarta la mitad de los leads, estás financiando esa basura dos veces: en la pauta y en el tiempo de ventas. Dónde se fuga el presupuesto en B2B y cómo cerrar la canilla.",
+    date: "2026-06-24",
+    dateLabel: "24 de junio, 2026",
+    reading: "8 min",
+    tag: "Paid Media",
+  },
+  {
+    slug: "smart-bidding-con-datos-del-crm-b2b",
+    title: "Smart Bidding con datos del CRM: que el algoritmo puje por tus clientes",
+    excerpt:
+      "Las pujas automáticas de Google son tan buenas como los datos que les das. Cómo alimentar Smart Bidding con las etapas y los valores reales de tu CRM para que optimice por ingresos, no por formularios.",
+    date: "2026-06-23",
+    dateLabel: "23 de junio, 2026",
+    reading: "9 min",
+    tag: "Paid Media",
+  },
+  {
     slug: "publicidad-en-chatgpt",
     title: "Publicidad en ChatGPT: la novedad que cambia el paid media",
     excerpt:
