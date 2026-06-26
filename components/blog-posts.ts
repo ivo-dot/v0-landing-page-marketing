@@ -11,6 +11,16 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "google-ads-vs-linkedin-ads-b2b",
+    title: "Google Ads vs LinkedIn Ads para B2B: cuál te conviene",
+    excerpt:
+      "No es una pelea de canales, es una pregunta sobre tu cliente: ¿ya está buscando lo que vendés o todavía no sabe que existís? Google captura intención; LinkedIn apunta a la identidad. Cuándo usar cada uno y cómo combinarlos.",
+    date: "2026-06-26",
+    dateLabel: "26 de junio, 2026",
+    reading: "9 min",
+    tag: "Paid Media",
+  },
+  {
     slug: "costo-por-lead-vs-costo-por-cliente",
     title: "Costo por lead vs costo por cliente: la métrica que cambia todo",
     excerpt:
