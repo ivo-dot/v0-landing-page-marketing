@@ -11,6 +11,16 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "como-elegir-agencia-de-publicidad-digital-b2b",
+    title: "Cómo elegir una agencia de Paid Media B2B (sin arrepentirte en 3 meses)",
+    excerpt:
+      "Portfolios lindos y case studies de e-commerce no te dicen si te van a hacer crecer. Las 6 preguntas que sí lo predicen: de la medición al reporte, pasando por con quién vas a hablar cada semana.",
+    date: "2026-07-14",
+    dateLabel: "14 de julio, 2026",
+    reading: "9 min",
+    tag: "Agencia & Estrategia",
+  },
+  {
     slug: "google-ads-vs-linkedin-ads-b2b",
     title: "Google Ads vs LinkedIn Ads para B2B: cuál te conviene",
     excerpt:
