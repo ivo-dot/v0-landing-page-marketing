@@ -235,7 +235,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
 
       <div className="modal" id="modal" aria-hidden="true">
         <div className="modal-bg" data-close />
-        <div className="modal-panel" role="dialog" aria-modal="true" aria-label="Agendar consultoría">
+        <div className="modal-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Agendar consultoría">
           <button className="modal-x" data-close aria-label="Cerrar" type="button">✕</button>
           <span className="eyebrow">Agendá tu consultoría</span>
           <h3 className="modal-title">Hablemos de tu proyecto.</h3>
