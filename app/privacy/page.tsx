@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+const URL = "https://didaktomarketing.com/privacy"
+
 export const metadata = {
-  title: "Política de Privacidad | Didakto Marketing",
+  title: "Política de Privacidad",
   description:
     "Política de privacidad de Didakto Marketing. Conoce cómo protegemos y manejamos tu información personal.",
+  alternates: { canonical: URL },
 }
 
 export default function PrivacyPage() {
