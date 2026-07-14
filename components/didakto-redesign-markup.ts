@@ -389,7 +389,7 @@ export const MARKUP = String.raw`
 <!-- MODAL FORMULARIO -->
 <div class="modal" id="modal" aria-hidden="true">
   <div class="modal-bg" data-close></div>
-  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Agendar consultoría">
+  <div class="modal-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Agendar consultoría">
     <button class="modal-x" data-close aria-label="Cerrar">✕</button>
     <span class="eyebrow">Agendá tu consultoría</span>
     <h3 class="modal-title">Hablemos de tu proyecto.</h3>
