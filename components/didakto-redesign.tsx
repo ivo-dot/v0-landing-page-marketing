@@ -198,7 +198,8 @@ export default function DidaktoRedesign() {
         mm.add("(min-width:860px)", () => {
           const track = root.querySelector<HTMLElement>("#casesTrack")!
           const pin = root.querySelector<HTMLElement>(".cases-pin")!
-          gsap.to(track, { x: () => -(track.scrollWidth - window.innerWidth), ease: "none", scrollTrigger: { trigger: pin, start: "top top", end: () => "+=" + (track.scrollWidth - window.innerWidth), pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1 } })
+          const viewportW = () => document.documentElement.clientWidth
+          gsap.to(track, { x: () => -(track.scrollWidth - viewportW()), ease: "none", scrollTrigger: { trigger: pin, start: "top top", end: () => "+=" + (track.scrollWidth - viewportW()), pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1 } })
         })
       }
 
