@@ -49,7 +49,6 @@ export const MARKUP = String.raw`
   <div class="clients-marq" aria-hidden="true">
     <div class="clients-track" id="marq">
       <div class="client-logo"><img src="/logos/sika.png" alt="Sika" loading="lazy" /></div>
-      <div class="client-logo"><img src="/logos/msh.png" alt="MSH Group" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/silat.png" alt="Silat" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/sahiora.png" alt="Sahiora" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/chocon-medio-suites.png" alt="Chocón Medio Suites" loading="lazy" /></div>
@@ -57,7 +56,6 @@ export const MARKUP = String.raw`
       <div class="client-logo"><img src="/logos/confluencia.png" alt="Confluencia" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/deposito-fiscal.png" alt="Depósito Fiscal y Aduanero del Neuquén" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/sika.png" alt="Sika" loading="lazy" /></div>
-      <div class="client-logo"><img src="/logos/msh.png" alt="MSH Group" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/silat.png" alt="Silat" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/sahiora.png" alt="Sahiora" loading="lazy" /></div>
       <div class="client-logo"><img src="/logos/chocon-medio-suites.png" alt="Chocón Medio Suites" loading="lazy" /></div>
