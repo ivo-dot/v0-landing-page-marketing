@@ -95,15 +95,12 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
 /* ── CLIENTES ── */
-.clients{border-block:1px solid var(--line);padding:56px 0}
-.clients .eyebrow{justify-content:center;margin-inline:auto;margin-bottom:36px}
-.clients-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-@media(min-width:620px){ .clients-grid{grid-template-columns:repeat(3,1fr)} }
-@media(min-width:980px){ .clients-grid{grid-template-columns:repeat(5,1fr)} }
-.client-logo{border:1px solid var(--line);border-radius:16px;background:var(--paper2);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:22px;transition:border-color .3s,background .3s}
-.client-logo:hover{border-color:var(--line2);background:var(--paper3)}
-.client-logo img{width:100%;height:100%;object-fit:contain;filter:grayscale(1);opacity:.7;transition:filter .3s,opacity .3s}
-.client-logo:hover img{filter:grayscale(0);opacity:1}
+.clients{border-block:1px solid var(--line);padding:44px 0}
+.clients-eyebrow{justify-content:center;margin-inline:auto;margin-bottom:30px}
+.clients-marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.clients-track{display:flex;align-items:center;width:max-content;will-change:transform}
+.client-logo{flex:none;height:52px;padding:0 40px;display:flex;align-items:center}
+.client-logo img{height:100%;width:auto;max-width:150px;object-fit:contain}
 
 /* ── REVEAL ── */
 .r{will-change:transform,opacity}
