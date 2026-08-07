@@ -43,13 +43,30 @@ export const MARKUP = String.raw`
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marq" aria-hidden="true">
-  <div class="marq-track" id="marq">
-    <div class="it">Sika</div><div class="it">MSH Group</div><div class="it">Silat</div><div class="it">RP Urbano</div><div class="it">Sahiora</div><div class="it">Chocon Medio</div><div class="it">Río Neuquén</div>
-    <div class="it">Sika</div><div class="it">MSH Group</div><div class="it">Silat</div><div class="it">RP Urbano</div><div class="it">Sahiora</div><div class="it">Chocon Medio</div><div class="it">Río Neuquén</div>
+<!-- CLIENTES -->
+<section class="clients" id="clientes">
+  <p class="eyebrow clients-eyebrow">Empresas que confían</p>
+  <div class="clients-marq" aria-hidden="true">
+    <div class="clients-track" id="marq">
+      <div class="client-logo"><img src="/logos/sika.png" alt="Sika" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/msh.png" alt="MSH Group" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/silat.png" alt="Silat" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/sahiora.png" alt="Sahiora" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/chocon-medio-suites.png" alt="Chocón Medio Suites" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/rio-neuquen.png" alt="Río Neuquén Distrito Industrial" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/confluencia.png" alt="Confluencia" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/deposito-fiscal.png" alt="Depósito Fiscal y Aduanero del Neuquén" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/sika.png" alt="Sika" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/msh.png" alt="MSH Group" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/silat.png" alt="Silat" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/sahiora.png" alt="Sahiora" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/chocon-medio-suites.png" alt="Chocón Medio Suites" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/rio-neuquen.png" alt="Río Neuquén Distrito Industrial" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/confluencia.png" alt="Confluencia" loading="lazy" /></div>
+      <div class="client-logo"><img src="/logos/deposito-fiscal.png" alt="Depósito Fiscal y Aduanero del Neuquén" loading="lazy" /></div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- SOMOS / WE ARE -->
 <section class="inv somos" id="somos">

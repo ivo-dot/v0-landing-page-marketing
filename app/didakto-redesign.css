@@ -94,11 +94,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .scrollcue i{width:30px;height:30px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;font-style:normal;animation:bob 1.8s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
-/* ── MARQUEE ── */
-.marq{border-block:1px solid var(--ink);padding:20px 0;overflow:hidden;background:var(--green)}
-.marq-track{display:flex;width:max-content;will-change:transform}
-.marq-track .it{font-family:var(--font-archivo);font-weight:800;font-size:clamp(22px,3.4vw,40px);color:var(--green-on);letter-spacing:-.02em;padding:0 30px;display:flex;align-items:center;gap:30px;white-space:nowrap}
-.marq-track .it::after{content:"✦";font-size:.55em}
+/* ── CLIENTES ── */
+.clients{border-block:1px solid var(--line);padding:44px 0}
+.clients-eyebrow{justify-content:center;margin-inline:auto;margin-bottom:30px}
+.clients-marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.clients-track{display:flex;align-items:center;width:max-content;will-change:transform}
+.client-logo{flex:none;height:52px;padding:0 40px;display:flex;align-items:center}
+.client-logo img{height:100%;width:auto;max-width:150px;object-fit:contain}
 
 /* ── REVEAL ── */
 .r{will-change:transform,opacity}
