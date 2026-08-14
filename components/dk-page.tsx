@@ -172,6 +172,21 @@ export default function DkPage({ children }: { children: ReactNode }) {
       }, { signal })
     }
 
+    // WhatsApp FAB (mobile)
+    const waFab = root.querySelector<HTMLButtonElement>("#waFab")
+    const waPanel = root.querySelector<HTMLElement>("#waPanel")
+    if (waFab && waPanel) {
+      waFab.addEventListener("click", () => waPanel.classList.toggle("on"), { signal })
+      waPanel.querySelectorAll("[data-wa-close]").forEach((el) => el.addEventListener("click", () => waPanel.classList.remove("on"), { signal }))
+      waPanel.querySelector<HTMLButtonElement>("#waSend")!.addEventListener("click", () => {
+        const topic = (waPanel.querySelector<HTMLSelectElement>("#waTopic")!).value || "una consulta"
+        const text = encodeURIComponent(`Hola! Vengo desde la web de Didakto. Quiero hablar sobre: ${topic}.`)
+        ;(window as any).dataLayer?.push({ event: "whatsapp_click" })
+        window.open(`https://wa.me/5493573456577?text=${text}`, "_blank")
+        waPanel.classList.remove("on")
+      }, { signal })
+    }
+
     if (document.fonts?.ready) document.fonts.ready.then(() => ScrollTrigger.refresh())
     window.addEventListener("load", () => ScrollTrigger.refresh(), { signal })
     ScrollTrigger.refresh()
@@ -266,6 +281,24 @@ export default function DkPage({ children }: { children: ReactNode }) {
             <p className="form-note">Te respondemos en menos de 24 h hábiles.</p>
           </form>
         </div>
+      </div>
+
+      {/* WhatsApp — solo mobile */}
+      <button className="wa-fab" id="waFab" aria-label="Escribinos por WhatsApp" type="button">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.42a9.9 9.9 0 0 0 4.62 1.14h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.34-.5.05-1 .25-3.38-.7-2.86-1.14-4.7-4.03-4.84-4.22-.14-.19-1.16-1.54-1.16-2.94s.72-2.09.98-2.38c.24-.26.53-.33.7-.33h.5c.16 0 .38-.03.58.44.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.9.91.29.14.48.21.55.33.07.13.07.72-.17 1.4Z" /></svg>
+      </button>
+      <div className="wa-panel" id="waPanel">
+        <button className="wa-panel-x" data-wa-close aria-label="Cerrar" type="button">✕</button>
+        <h4>Escribinos por WhatsApp</h4>
+        <p>Para consultas rápidas. Para una auditoría completa, mejor usá el formulario.</p>
+        <select id="waTopic" defaultValue="">
+          <option value="">¿En qué te ayudamos?</option>
+          <option>Consultoría inicial</option>
+          <option>Paid Media (Google/Meta/LinkedIn Ads)</option>
+          <option>Medición &amp; Analytics</option>
+          <option>Otro</option>
+        </select>
+        <button className="btn" id="waSend" type="button">Escribir por WhatsApp <span className="a">→</span></button>
       </div>
     </div>
   )

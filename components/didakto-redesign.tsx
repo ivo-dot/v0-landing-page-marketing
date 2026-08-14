@@ -250,7 +250,7 @@ export default function DidaktoRedesign() {
         const f = form as any
         if (f._hp.value) { closeModal(); return }
         const data = { nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(), empresa: f.empresa.value.trim(), telefono: f.telefono.value.trim(), asunto: f.asunto.value, mensaje: f.mensaje.value.trim(), _hp: "" }
-        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.telefono || !data.asunto || !data.mensaje) { form.reportValidity?.(); return }
+        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.asunto) { form.reportValidity?.(); return }
         const btn = root.querySelector<HTMLButtonElement>("#leadSubmit")!
         const okEl = root.querySelector<HTMLElement>("#formOk")!
         btn.textContent = "Enviando..."; btn.disabled = true
@@ -266,6 +266,21 @@ export default function DidaktoRedesign() {
           btn.textContent = "Enviar consulta →"; btn.disabled = false
           okEl.textContent = "No se pudo enviar. Escribinos a ivo@didaktomarketing.com"; okEl.style.color = "#c0392b"; okEl.style.display = "block"
         }
+      }, { signal })
+    }
+
+    // WhatsApp FAB (mobile)
+    const waFab = root.querySelector<HTMLButtonElement>("#waFab")
+    const waPanel = root.querySelector<HTMLElement>("#waPanel")
+    if (waFab && waPanel) {
+      waFab.addEventListener("click", () => waPanel.classList.toggle("on"), { signal })
+      waPanel.querySelectorAll("[data-wa-close]").forEach((el) => el.addEventListener("click", () => waPanel.classList.remove("on"), { signal }))
+      waPanel.querySelector<HTMLButtonElement>("#waSend")!.addEventListener("click", () => {
+        const topic = (waPanel.querySelector<HTMLSelectElement>("#waTopic")!).value || "una consulta"
+        const text = encodeURIComponent(`Hola! Vengo desde la web de Didakto. Quiero hablar sobre: ${topic}.`)
+        ;(window as any).dataLayer?.push({ event: "whatsapp_click" })
+        window.open(`https://wa.me/5493573456577?text=${text}`, "_blank")
+        waPanel.classList.remove("on")
       }, { signal })
     }
 
