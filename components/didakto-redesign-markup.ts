@@ -190,6 +190,7 @@ export const MARKUP = String.raw`
           <div class="ckpi"><div class="v">GA4/GTM</div><div class="l">Medición validada</div></div>
         </div>
         <blockquote class="cquote">“El diagnóstico inicial nos mostró dónde se perdía el presupuesto. En tres meses los números cambiaron radicalmente.”<cite>— Equipo Sika USA</cite></blockquote>
+        <a class="bmore" href="/blog/caso-sika-agencia-publicidad-digital-b2b" data-cursor style="display:inline-block;margin-top:12px">Leer el caso completo <span class="a">→</span></a>
       </div>
     </article>
     <article class="case">
@@ -333,11 +334,11 @@ export const MARKUP = String.raw`
         <span class="bmeta">19 de junio, 2026 · 9 min</span>
         <span class="bmore">Leer artículo <span class="a">→</span></span>
       </a>
-      <a class="bcard r" href="/blog/ga4-para-b2b-como-usarlo" data-cursor>
-        <span class="btag">Data & Analytics</span>
-        <h3>GA4 para el sector B2B: cómo usarlo</h3>
-        <p>Viene pensado para e-commerce, pero es una mina de oro para B2B si lo configurás bien.</p>
-        <span class="bmeta">19 de junio, 2026 · 9 min</span>
+      <a class="bcard r" href="/blog/caso-sika-agencia-publicidad-digital-b2b" data-cursor>
+        <span class="btag">Caso de éxito</span>
+        <h3>Caso Sika: −72% de CPA con una agencia de publicidad digital B2B</h3>
+        <p>Auditoría, medición en GA4/GTM y rediseño del plan de medios. El proceso completo y los números.</p>
+        <span class="bmeta">14 de agosto, 2026 · 8 min</span>
         <span class="bmore">Leer artículo <span class="a">→</span></span>
       </a>
     </div>

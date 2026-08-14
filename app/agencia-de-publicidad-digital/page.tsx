@@ -28,8 +28,9 @@ const c: ServiceContent = {
     eyebrow: "Por qué nosotros",
     h2: <>No vendemos campañas. Diseñamos <em>sistemas de demanda</em>.</>,
     paragraphs: [
-      <>La mayoría de las empresas B2B no tiene un problema de inversión, sino de <strong>criterio</strong>. Empezamos por el diagnóstico y la medición, no por la pauta.</>,
+      <>Somos una <strong>agencia de publicidad digital especializada en B2B</strong>: no repartimos la atención entre e-commerce, retail y B2B. La mayoría de las empresas B2B no tiene un problema de inversión, sino de <strong>criterio</strong>. Empezamos por el diagnóstico y la medición, no por la pauta.</>,
       <>Optimizamos sobre datos reales del pipeline y le enseñamos a las plataformas a traerte <strong>leads que cierran</strong>, no formularios vacíos. Crecemos cuando vos crecés.</>,
+      <>Así trabajamos, por ejemplo, con Sika: auditoría, medición validada y rediseño del plan de medios. <a href="/blog/caso-sika-agencia-publicidad-digital-b2b">Leé el caso completo</a>.</>,
     ],
   },
   includes: {

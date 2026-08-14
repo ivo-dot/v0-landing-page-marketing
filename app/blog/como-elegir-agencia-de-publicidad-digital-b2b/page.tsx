@@ -17,9 +17,9 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Cómo Elegir Agencia de Paid Media B2B",
+  title: "Cómo Elegir una Agencia de Publicidad Digital B2B (6 Preguntas)",
   description:
-    "Portfolios lindos no predicen resultados. Las 6 preguntas que sí lo hacen para elegir agencia de publicidad digital B2B: medición, especialización, reporting, contrato y con quién vas a hablar.",
+    "Portfolios lindos no predicen resultados. Las 6 preguntas que sí lo hacen para elegir una agencia de publicidad digital especializada en B2B: medición, especialización, reporting y contrato.",
   alternates: { canonical: URL },
 }
 
@@ -36,10 +36,10 @@ export default function Page() {
         </div>
 
         <p>Cada tanto nos llega la misma historia: una empresa B2B que ya pasó por una o dos agencias, invirtió en pauta durante meses, y no puede decir con claridad qué resultado obtuvo. No porque la agencia haya sido negligente —a veces gestionaron bien la plataforma—, sino porque nunca se alinearon en <em>qué</em> significaba "funcionar" para ese negocio en particular.</p>
-        <p>Ese desalineamiento casi siempre se puede evitar antes de firmar nada. Elegir agencia de Paid Media B2B no es buscar la más linda ni la más barata: es hacer las preguntas correctas para predecir si van a entender tu negocio antes de gastar tu presupuesto aprendiendo a las apuradas.</p>
+        <p>Ese desalineamiento casi siempre se puede evitar antes de firmar nada. Elegir una <strong>agencia de publicidad digital especializada en B2B</strong> no es buscar la más linda ni la más barata: es hacer las preguntas correctas para predecir si van a entender tu negocio antes de gastar tu presupuesto aprendiendo a las apuradas.</p>
 
         <h2>1. ¿Entienden que B2B no es e-commerce?</h2>
-        <p>La mayoría de las agencias de publicidad digital nacieron optimizando para e-commerce: compra impulsiva, ciclo de decisión de minutos, un solo decisor. B2B es otro juego — ciclos de semanas o meses, varios decisores, y una conversión que muchas veces no pasa por la web sino por una llamada de ventas semanas después del primer clic.</p>
+        <p>La mayoría de las agencias de publicidad digital nacieron optimizando para e-commerce: compra impulsiva, ciclo de decisión de minutos, un solo decisor. B2B es otro juego — ciclos de semanas o meses, varios decisores, y una conversión que muchas veces no pasa por la web sino por una llamada de ventas semanas después del primer clic. Una <strong>agencia de publicidad digital</strong> genérica puede gestionar bien la plataforma y aun así fallar acá, porque el problema no es técnico: es de especialización.</p>
         <p>Preguntá directamente: <em>"¿cuántas cuentas B2B manejan hoy, y de qué tipo?"</em>. Si la respuesta es vaga o todos los ejemplos son de retail y consumo masivo, esa agencia va a tener que aprender tu negocio con tu presupuesto. No es descalificante per se, pero cambia el marco de tiempo que deberías esperar antes de ver resultados.</p>
 
         <h2>2. ¿Cómo miden más allá del formulario enviado?</h2>
@@ -85,7 +85,7 @@ export default function Page() {
         </ul>
 
         <h2>En resumen</h2>
-        <p>Elegir agencia de Paid Media B2B no es una decisión de gusto ni de precio: es una decisión que se valida con seis preguntas concretas — especialización en B2B, medición más allá del formulario, quién opera tu cuenta, qué reportan, cómo empieza el contrato y cómo reaccionan frente a lo que no funcionó antes. Cualquier agencia te puede mostrar un portfolio prolijo; muy pocas responden bien las seis. Si querés ver cómo pensamos nosotros esas mismas preguntas aplicadas a tu negocio, arrancá por una <a href="/agencia-de-publicidad-digital">consultoría gratuita</a> — sin compromiso de continuidad hasta que ambos veamos que el encaje es real.</p>
+        <p>Elegir una agencia de publicidad digital especializada en B2B no es una decisión de gusto ni de precio: es una decisión que se valida con seis preguntas concretas — especialización en B2B, medición más allá del formulario, quién opera tu cuenta, qué reportan, cómo empieza el contrato y cómo reaccionan frente a lo que no funcionó antes. Cualquier agencia te puede mostrar un portfolio prolijo; muy pocas responden bien las seis. Si querés ver cómo pensamos nosotros esas mismas preguntas aplicadas a tu negocio, arrancá por una consultoría gratuita en nuestra <a href="/agencia-de-publicidad-digital">agencia de publicidad digital especializada en B2B</a> — sin compromiso de continuidad hasta que ambos veamos que el encaje es real.</p>
       </ArticlePage>
     </>
   )

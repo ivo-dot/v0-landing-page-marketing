@@ -11,6 +11,16 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "caso-sika-agencia-publicidad-digital-b2b",
+    title: "Caso Sika: −72% de CPA con una agencia de publicidad digital B2B",
+    excerpt:
+      "Cómo auditamos la cuenta, validamos la medición en GA4/GTM y rediseñamos el plan de medios de Sika en Meta y Google Ads. El proceso completo, los números y qué replicamos en cada mercado.",
+    date: "2026-08-14",
+    dateLabel: "14 de agosto, 2026",
+    reading: "8 min",
+    tag: "Caso de éxito",
+  },
+  {
     slug: "como-elegir-agencia-de-publicidad-digital-b2b",
     title: "Cómo elegir una agencia de Paid Media B2B (sin arrepentirte en 3 meses)",
     excerpt:
