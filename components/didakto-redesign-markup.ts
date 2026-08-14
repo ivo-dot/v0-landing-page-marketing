@@ -231,6 +231,7 @@ export const MARKUP = String.raw`
         <div class="ckpi"><div class="v">2</div><div class="l">Canales: LinkedIn + Google</div></div>
         <div class="ckpi"><div class="v">↑</div><div class="l">Calidad sobre volumen</div></div>
       </div>
+      <a class="bmore" href="/blog/caso-msh-linkedin-ads-cpa-5-dolares" data-cursor style="display:inline-block;margin-top:12px">Leer el caso completo <span class="a">→</span></a>
     </article>
     <article class="case ghost">
       <div>

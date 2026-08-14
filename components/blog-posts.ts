@@ -11,6 +11,16 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "caso-msh-linkedin-ads-cpa-5-dolares",
+    title: "Caso MSH: cómo bajamos el CPA en LinkedIn Ads a USD 5",
+    excerpt:
+      "MSH Group necesitaba leads calificados en segmentos técnicos y profesionales de RRHH. Cómo la segmentación por cargo e industria y una oferta bien pensada llevaron el costo por lead a USD 5.",
+    date: "2026-08-14",
+    dateLabel: "14 de agosto, 2026",
+    reading: "7 min",
+    tag: "Caso de éxito",
+  },
+  {
     slug: "caso-sika-agencia-publicidad-digital-b2b",
     title: "Caso Sika: −72% de CPA con una agencia de publicidad digital B2B",
     excerpt:

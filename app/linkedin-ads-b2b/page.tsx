@@ -24,7 +24,7 @@ const c: ServiceContent = {
     h2: <>Precisión de segmentación, <em>obsesión por el costo</em>.</>,
     paragraphs: [
       <>LinkedIn permite llegar exactamente al <strong>decisor</strong> que te importa: cargo, seniority, industria y hasta empresa. El desafío es hacerlo sin que el costo por lead se dispare.</>,
-      <>Trabajamos la oferta, el formato y la segmentación para bajar el CPA. En MSH Group llevamos el <strong>costo por lead a USD 5</strong> con campañas enfocadas en segmentos técnicos y profesionales.</>,
+      <>Trabajamos la oferta, el formato y la segmentación para bajar el CPA. En MSH Group llevamos el <strong>costo por lead a USD 5</strong> con campañas enfocadas en segmentos técnicos y profesionales. <a href="/blog/caso-msh-linkedin-ads-cpa-5-dolares">Leé el caso completo</a>.</>,
     ],
   },
   includes: {
