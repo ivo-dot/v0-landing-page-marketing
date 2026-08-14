@@ -153,7 +153,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
         const f = form as any
         if (f._hp.value) { closeModal(); return }
         const data = { nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(), empresa: f.empresa.value.trim(), telefono: f.telefono.value.trim(), asunto: f.asunto.value, mensaje: f.mensaje.value.trim(), _hp: "" }
-        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.telefono || !data.asunto || !data.mensaje) { form.reportValidity?.(); return }
+        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.asunto) { form.reportValidity?.(); return }
         const btn = root.querySelector<HTMLButtonElement>("#leadSubmit")!
         const okEl = root.querySelector<HTMLElement>("#formOk")!
         btn.textContent = "Enviando..."; btn.disabled = true
@@ -249,7 +249,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
               <label>Email<input type="email" name="email" autoComplete="email" required /></label>
               <label>Empresa<input name="empresa" autoComplete="organization" required /></label>
             </div>
-            <label>Teléfono / WhatsApp<input type="tel" name="telefono" autoComplete="tel" inputMode="tel" placeholder="Cód. país + número" required /></label>
+            <label>Teléfono / WhatsApp (opcional)<input type="tel" name="telefono" autoComplete="tel" inputMode="tel" placeholder="Cód. país + número" /></label>
             <label>Asunto
               <select name="asunto" required defaultValue="">
                 <option value="">Seleccioná un tema</option>
@@ -260,7 +260,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
                 <option>Otro</option>
               </select>
             </label>
-            <label>Mensaje<textarea name="mensaje" rows={3} required /></label>
+            <label>Mensaje (opcional)<textarea name="mensaje" rows={3} placeholder="Contanos brevemente tu situación (opcional)" /></label>
             <button type="submit" className="btn btn-dark" id="leadSubmit">Enviar consulta <span className="a">→</span></button>
             <p className="form-ok" id="formOk">✓ ¡Gracias! Te vamos a contactar pronto.</p>
             <p className="form-note">Te respondemos en menos de 24 h hábiles.</p>
