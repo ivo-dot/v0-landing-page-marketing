@@ -16,9 +16,9 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Costo por lead vs costo por cliente en B2B | Didakto",
+  title: "Costo por Lead vs Costo por Cliente en B2B (hasta 3x de diferencia)",
   description:
-    "Por qué el costo por lead engaña en B2B y cómo medir el costo por cliente real. Dos campañas con el mismo CPL pueden costar 3x distinto en ventas. Guía práctica.",
+    "Dos campañas con el mismo costo por lead pueden costarte 3 veces más en clientes reales. Te mostramos cómo medir el costo por cliente en B2B y dejar de optimizar por la métrica equivocada.",
   alternates: { canonical: URL },
 }
 

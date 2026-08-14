@@ -16,7 +16,7 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Presupuesto Google Ads: leads que no convierten | Didakto",
+  title: "Presupuesto Google Ads: leads que no convierten",
   description:
     "Dónde se fuga el presupuesto de Google Ads en B2B y cómo dejar de pagar por leads que tu equipo de ventas descarta. Palabras clave negativas, segmentación y medición real.",
   alternates: { canonical: URL },

@@ -6,9 +6,9 @@ import "../didakto-redesign.css"
 const URL = "https://didaktomarketing.com/linkedin-ads-b2b"
 
 export const metadata: Metadata = {
-  title: "Agencia LinkedIn Ads B2B",
+  title: "Agencia de LinkedIn Ads B2B · Leads a Decisores desde USD 5",
   description:
-    "Agencia LinkedIn Ads especializada en B2B. Llegamos a decisores y segmentos técnicos y profesionales con leads calificados a bajo costo. Caso: CPA de USD 5. LATAM y España.",
+    "Especialistas en LinkedIn Ads B2B: segmentamos por cargo, industria y empresa para llegar al decisor correcto. En MSH Group bajamos el costo por lead a USD 5. LATAM y España.",
   alternates: { canonical: URL },
 }
 

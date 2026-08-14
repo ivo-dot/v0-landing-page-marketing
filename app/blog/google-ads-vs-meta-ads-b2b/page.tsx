@@ -16,9 +16,9 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Google Ads vs Meta Ads para B2B: cuál conviene",
+  title: "Google Ads vs Meta Ads en B2B: ¿Cuál Elegir en 2026?",
   description:
-    "Google Ads vs Meta Ads para B2B: diferencias, cuándo usar cada uno, tabla comparativa y cómo combinarlos en una estrategia full-funnel para bajar tu costo por lead.",
+    "No es cuál sino cuándo usar cada uno. Comparamos Google Ads y Meta Ads para B2B: costo por lead, tasa de cierre y la estrategia que combina ambos para bajar tu costo por lead calificado.",
   alternates: { canonical: URL },
 }
 

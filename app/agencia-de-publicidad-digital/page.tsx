@@ -6,9 +6,9 @@ import "../didakto-redesign.css"
 const URL = "https://didaktomarketing.com/agencia-de-publicidad-digital"
 
 export const metadata: Metadata = {
-  title: "Agencia de Publicidad Digital B2B · Google Partner",
+  title: "Agencia de Publicidad Digital B2B · Google Partner (−72% CPA)",
   description:
-    "Agencia de publicidad digital B2B y Google Partner. Gestionamos Google, Meta y LinkedIn Ads para generar leads calificados en Argentina, Chile, Uruguay, Colombia y España. Pedí tu auditoría gratuita.",
+    "Gestionamos Google, Meta y LinkedIn Ads para B2B en LATAM y USA. Bajamos el CPA de Sika un 72% frente a su agencia anterior. Pedí tu auditoría gratuita, sin compromiso.",
   alternates: { canonical: URL },
 }
 

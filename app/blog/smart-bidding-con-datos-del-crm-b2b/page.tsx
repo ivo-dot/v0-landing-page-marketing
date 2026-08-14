@@ -16,7 +16,7 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Smart Bidding con datos del CRM en B2B | Didakto",
+  title: "Smart Bidding con datos del CRM en B2B",
   description:
     "Cómo alimentar el Smart Bidding de Google Ads con etapas y valores reales de tu CRM para optimizar por ingresos, no por formularios. Estrategias de puja para B2B.",
   alternates: { canonical: URL },

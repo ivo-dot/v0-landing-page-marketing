@@ -16,9 +16,9 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Cómo generar leads B2B en 2026: guía práctica",
+  title: "Cómo Generar Leads B2B en 2026: la Guía que sí Funciona",
   description:
-    "Tu producto ya está validado; lo que falta es alcance. Cómo generar leads B2B en 2026 con presencia digital y canales pagados segmentados a tus públicos objetivo.",
+    "Tu producto ya está validado, lo que falta es alcance. Guía paso a paso para generar leads B2B calificados en 2026 con canales pagados y una medición que premia lo que cierra, no lo que se completa.",
   alternates: { canonical: URL },
 }
 

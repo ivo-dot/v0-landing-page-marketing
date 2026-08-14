@@ -16,7 +16,7 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Google Ads vs LinkedIn Ads para B2B | Didakto",
+  title: "Google Ads vs LinkedIn Ads para B2B",
   description:
     "¿Google Ads o LinkedIn Ads para generar leads B2B? Intención de búsqueda vs segmentación por cargo e industria. Cuándo usar cada uno, qué esperar y cómo combinarlos.",
   alternates: { canonical: URL },
@@ -63,7 +63,7 @@ export default function Page() {
           <li>Tu ticket es alto, así que un puñado de clientes correctos justifica un clic caro.</li>
           <li>Querés construir reconocimiento en un mercado acotado antes de que llegue el momento de compra.</li>
         </ul>
-        <p>El famoso "CPC alto de LinkedIn" asusta, pero rara vez es el verdadero problema. Lo desarrollamos en <a href="/blog/linkedin-ads-para-generacion-de-leads-b2b">LinkedIn Ads para generación de leads B2B</a>: con el ticket y la segmentación correctos, ese clic caro puede ser el más rentable de tu mix. El error no es pagar caro; es pagar caro por el público o la oferta equivocados.</p>
+        <p>El famoso "CPC alto de LinkedIn" asusta, pero rara vez es el verdadero problema. Lo desarrollamos en <a href="/blog/linkedin-ads-para-generacion-de-leads-b2b">LinkedIn Ads para generación de leads B2B</a>: con el ticket y la segmentación correctos, ese clic caro puede ser el más rentable de tu mix. El error no es pagar caro; es pagar caro por el público o la oferta equivocados. Si ya sabés que este es tu canal, así trabajamos la <a href="/linkedin-ads-b2b">gestión de LinkedIn Ads B2B</a>.</p>
 
         <h2>Google vs LinkedIn, lado a lado</h2>
         <div className="dktable">

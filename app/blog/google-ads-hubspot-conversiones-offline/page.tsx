@@ -16,9 +16,9 @@ const faqs = [
 ]
 
 export const metadata: Metadata = {
-  title: "Google Ads + HubSpot: medir conversiones offline en B2B",
+  title: "Google Ads + HubSpot: Cómo Medir Conversiones Offline (Guía 2026)",
   description:
-    "Cómo integrar Google Ads con HubSpot para importar conversiones offline (MQL, SQL, venta) vía GCLID y Smart Bidding. Guía B2B para optimizar por clientes, no por leads.",
+    "El formulario no es la venta. Te mostramos paso a paso cómo conectar Google Ads con HubSpot vía GCLID para que Smart Bidding optimice por clientes reales, no por leads baratos.",
   alternates: { canonical: URL },
 }
 
