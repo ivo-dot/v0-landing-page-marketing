@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/google-ads",
     "/meta-ads",
     "/linkedin-ads-b2b",
+    "/medicion-analytics-b2b",
+    "/automatizacion-ia-b2b",
   ]
   return [
     { url: BASE, lastModified: now, changeFrequency: "monthly", priority: 1 },

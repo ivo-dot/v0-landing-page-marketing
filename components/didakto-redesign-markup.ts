@@ -93,21 +93,21 @@ export const MARKUP = String.raw`
     <div class="svc-list">
       <div class="svc r" data-cursor>
         <div class="sidx">01</div>
-        <h3>Paid Media B2B</h3>
+        <h3><a href="/agencia-de-publicidad-digital" style="color:inherit;text-decoration:none">Paid Media B2B</a></h3>
         <div class="sdesc">Campañas full-funnel en Google, Meta y LinkedIn con foco en costo por lead calificado y crecimiento rentable, no en métricas de vanidad.</div>
         <div class="stags"><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a></div>
       </div>
       <div class="svc r" data-cursor>
         <div class="sidx">02</div>
-        <h3>Data Intelligence</h3>
+        <h3><a href="/medicion-analytics-b2b" style="color:inherit;text-decoration:none">Data Intelligence</a></h3>
         <div class="sdesc">Medición correcta antes de escalar: GA4, GTM, conversiones y dashboards que conectan cada métrica con una decisión de negocio.</div>
-        <div class="stags"><span>GA4</span><span>GTM</span><span>Atribución</span></div>
+        <div class="stags"><a href="/medicion-analytics-b2b">GA4</a><a href="/medicion-analytics-b2b">GTM</a><a href="/medicion-analytics-b2b">Atribución</a></div>
       </div>
       <div class="svc r" data-cursor>
         <div class="sidx">03</div>
-        <h3>Automatización con IA</h3>
+        <h3><a href="/automatizacion-ia-b2b" style="color:inherit;text-decoration:none">Automatización con IA</a></h3>
         <div class="sdesc">Calificación de leads, nurturing y flujos hacia el CRM automatizados con IA, para que tu equipo hable solo con prospectos listos.</div>
-        <div class="stags"><span>Lead Scoring</span><span>CRM</span><span>Workflows</span></div>
+        <div class="stags"><a href="/automatizacion-ia-b2b">Lead Scoring</a><a href="/automatizacion-ia-b2b">CRM</a><a href="/automatizacion-ia-b2b">Workflows</a></div>
       </div>
     </div>
   </div>
@@ -394,7 +394,7 @@ export const MARKUP = String.raw`
         <p style="margin-top:16px;color:var(--ink2);font-size:14px;max-width:30ch">Generación de demanda B2B con criterio. Paid Media, datos e IA.</p>
       </div>
       <div class="foot-cols">
-        <div><h4>Servicios</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a></div>
+        <div><h4>Servicios</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a><a href="/medicion-analytics-b2b">Medición &amp; Analytics</a><a href="/automatizacion-ia-b2b">Automatización con IA</a></div>
         <div><h4>Mapa</h4><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#proceso">Proceso</a><a href="#faq">FAQ</a></div>
         <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#contacto">Agendar</a></div>
       </div>

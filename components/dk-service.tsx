@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { ClientsSection, AdsSection, CasesSection } from "./dk-shared-sections"
 
 export type ServiceContent = {
   crumb: string
@@ -16,7 +17,20 @@ export type ServiceContent = {
   offer?: { h2: ReactNode; p: string; ctaLabel: string }
 }
 
-export default function ServicePage({ c }: { c: ServiceContent }) {
+export default function ServicePage({
+  c,
+  showClients,
+  showAds,
+  showCases,
+}: {
+  c: ServiceContent
+  /** Módulo de logos de clientes (igual al de la home). */
+  showClients?: boolean
+  /** Carrusel de mockups de anuncios por plataforma (igual al de la home). */
+  showAds?: boolean
+  /** Cards de casos de éxito con KPIs (igual al de la home). */
+  showCases?: boolean
+}) {
   return (
     <>
       {/* HERO */}
@@ -62,6 +76,9 @@ export default function ServicePage({ c }: { c: ServiceContent }) {
         </section>
       )}
 
+      {/* CLIENTES */}
+      {showClients && <ClientsSection />}
+
       {/* INCLUYE */}
       <section className="section" id="incluye">
         <div className="wrap">
@@ -80,6 +97,12 @@ export default function ServicePage({ c }: { c: ServiceContent }) {
           </div>
         </div>
       </section>
+
+      {/* ANUNCIOS */}
+      {showAds && <AdsSection />}
+
+      {/* CASOS DE ÉXITO */}
+      {showCases && <CasesSection />}
 
       {/* STATS */}
       {c.stats && (

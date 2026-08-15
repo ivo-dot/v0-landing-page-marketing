@@ -22,6 +22,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
     const { signal } = ac
     const splits: SplitText[] = []
     const tickerFns: Array<(t: number) => void> = []
+    const matchMedias: ReturnType<typeof gsap.matchMedia>[] = []
     let lenis: Lenis | null = null
 
     const ctx = gsap.context(() => {
@@ -116,6 +117,46 @@ export default function DkPage({ children }: { children: ReactNode }) {
           gsap.to(o, { v: abs, duration: 1.6, ease: "power2.out", onUpdate: () => { el.textContent = (neg ? "−" : "") + pre + Math.round(o.v).toLocaleString("es-AR") + suf } })
         } })
       })
+
+      // marquee de clientes (opcional, si la página incluye <ClientsSection/>)
+      const marqEl = root.querySelector("#marq")
+      if (marqEl) {
+        const loop = gsap.to(marqEl, { xPercent: -50, repeat: -1, duration: 24, ease: "none" })
+        if (reduce) loop.pause()
+        else {
+          let targetTS = 1
+          ScrollTrigger.create({ onUpdate: (self) => { targetTS = gsap.utils.clamp(-6, 6, 1 + self.getVelocity() / 240) } })
+          const tick = () => { const c = loop.timeScale(); loop.timeScale(c + (targetTS - c) * 0.08); targetTS += (1 - targetTS) * 0.04 }
+          gsap.ticker.add(tick)
+          tickerFns.push(tick)
+        }
+      }
+
+      // carrusel de ads (opcional, si la página incluye <AdsSection/>)
+      const adsTrack = root.querySelector<HTMLElement>("#adsTrack")
+      if (adsTrack) {
+        if (!adsTrack.dataset.cloned) { adsTrack.innerHTML += adsTrack.innerHTML; adsTrack.dataset.cloned = "1" }
+        const loop = gsap.to(adsTrack, { xPercent: -50, repeat: -1, duration: 64, ease: "none" })
+        if (reduce) loop.pause()
+        else {
+          adsTrack.addEventListener("pointerenter", () => gsap.to(loop, { timeScale: 0, duration: 0.4 }), { signal })
+          adsTrack.addEventListener("pointerleave", () => gsap.to(loop, { timeScale: 1, duration: 0.4 }), { signal })
+        }
+      }
+
+      // casos: scroll horizontal pineado en desktop (opcional, si la página incluye <CasesSection/>)
+      if (!reduce) {
+        const casesTrack = root.querySelector<HTMLElement>("#casesTrack")
+        const casesPin = root.querySelector<HTMLElement>(".cases-pin")
+        if (casesTrack && casesPin) {
+          const mm = gsap.matchMedia()
+          matchMedias.push(mm)
+          mm.add("(min-width:860px)", () => {
+            const viewportW = () => document.documentElement.clientWidth
+            gsap.to(casesTrack, { x: () => -(casesTrack.scrollWidth - viewportW()), ease: "none", scrollTrigger: { trigger: casesPin, start: "top top", end: () => "+=" + (casesTrack.scrollWidth - viewportW()), pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1 } })
+          })
+        }
+      }
     }, root)
 
     // FAQ
@@ -194,6 +235,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
     return () => {
       ac.abort()
       tickerFns.forEach((fn) => gsap.ticker.remove(fn))
+      matchMedias.forEach((mm) => mm.revert())
       splits.forEach((s) => s.revert())
       if (lenis) lenis.destroy()
       ctx.revert()
@@ -236,6 +278,8 @@ export default function DkPage({ children }: { children: ReactNode }) {
                 <a href="/google-ads">Google Ads</a>
                 <a href="/meta-ads">Meta Ads</a>
                 <a href="/linkedin-ads-b2b">LinkedIn Ads</a>
+                <a href="/medicion-analytics-b2b">Medición &amp; Analytics</a>
+                <a href="/automatizacion-ia-b2b">Automatización con IA</a>
               </div>
               <div><h4>Contacto</h4>
                 <a href="mailto:ivo@didaktomarketing.com">Email</a>

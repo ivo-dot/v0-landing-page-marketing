@@ -60,7 +60,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({ name: "Gestión de Meta Ads B2B", description: metadata.description as string, url: URL })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(c.faqs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd("Meta Ads", URL)) }} />
-      <DkPage><ServicePage c={c} /></DkPage>
+      <DkPage><ServicePage c={c} showClients showAds showCases /></DkPage>
     </>
   )
 }
