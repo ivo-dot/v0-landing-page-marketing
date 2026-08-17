@@ -11,6 +11,26 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "geo-aeo-como-aparecer-en-chatgpt",
+    title: "GEO/AEO: cómo lograr que ChatGPT recomiende tu marca B2B",
+    excerpt:
+      "Cada vez más compradores B2B le preguntan a ChatGPT o Perplexity antes de buscar en Google. Qué es la optimización para motores de respuesta (GEO/AEO), en qué se diferencia del SEO clásico y los 6 pasos para que la IA te mencione.",
+    date: "2026-08-17",
+    dateLabel: "17 de agosto, 2026",
+    reading: "9 min",
+    tag: "IA & Medios",
+  },
+  {
+    slug: "seo-tecnico-para-b2b-por-donde-empezar",
+    title: "SEO técnico para B2B: por dónde empezar (sin perderte en la lista)",
+    excerpt:
+      "Antes de escribir un solo artículo, tu sitio necesita una base técnica sólida. Las 7 prioridades reales de SEO técnico para un sitio B2B, en el orden en que hay que atacarlas.",
+    date: "2026-08-17",
+    dateLabel: "17 de agosto, 2026",
+    reading: "9 min",
+    tag: "SEO & Contenido",
+  },
+  {
     slug: "caso-msh-linkedin-ads-cpa-5-dolares",
     title: "Caso MSH: cómo bajamos el CPA en LinkedIn Ads a USD 5",
     excerpt:
