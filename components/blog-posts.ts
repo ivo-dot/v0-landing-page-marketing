@@ -11,6 +11,16 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "5-errores-publicidad-digital-b2b",
+    title: "5 errores que no debés cometer en publicidad digital B2B",
+    excerpt:
+      "De copiar el playbook de B2C a apagar campañas por impaciencia. Los 5 errores más comunes que vemos al auditar cuentas de Google y Meta Ads B2B, y cómo evitarlos.",
+    date: "2026-08-17",
+    dateLabel: "17 de agosto, 2026",
+    reading: "8 min",
+    tag: "Paid Media",
+  },
+  {
     slug: "geo-aeo-como-aparecer-en-chatgpt",
     title: "GEO/AEO: cómo lograr que ChatGPT recomiende tu marca B2B",
     excerpt:
