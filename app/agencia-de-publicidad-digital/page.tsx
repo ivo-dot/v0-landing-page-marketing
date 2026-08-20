@@ -8,7 +8,7 @@ const URL = "https://didaktomarketing.com/agencia-de-publicidad-digital"
 export const metadata: Metadata = {
   title: "Agencia de Publicidad Digital B2B · Google Partner (−72% CPA)",
   description:
-    "Gestionamos Google, Meta y LinkedIn Ads para B2B en LATAM y USA. Bajamos el CPA de Sika un 72% frente a su agencia anterior. Pedí tu auditoría gratuita, sin compromiso.",
+    "Gestionamos Google, Meta y LinkedIn Ads para B2B en LATAM y USA. Bajamos el CPA de Sika un 72% frente a su agencia anterior. Pedí un análisis de tu cuenta, sin compromiso.",
   alternates: { canonical: URL },
 }
 
@@ -20,9 +20,9 @@ const c: ServiceContent = {
     "Somos una agencia de publicidad digital especializada en B2B y Google Partner. Convertimos tu inversión en Google, Meta y LinkedIn en leads calificados que tu equipo comercial sí cierra. LATAM & USA.",
   ghostCta: { label: "Ver qué incluye", href: "#incluye" },
   offer: {
-    h2: <>Auditoría gratuita de tus campañas.</>,
-    p: "Revisamos tu cuenta de Google y Meta y te mostramos, con datos, dónde estás perdiendo presupuesto y qué oportunidades concretas hay. Sin compromiso y sin permanencia.",
-    ctaLabel: "Pedir auditoría gratis",
+    h2: <>Análisis de tu cuenta de Google y Meta.</>,
+    p: "Revisamos tu cuenta y te mostramos, con datos, dónde estás perdiendo presupuesto y qué oportunidades concretas hay. Sin compromiso y sin permanencia.",
+    ctaLabel: "Pedir análisis de mi cuenta",
   },
   intro: {
     eyebrow: "Por qué nosotros",

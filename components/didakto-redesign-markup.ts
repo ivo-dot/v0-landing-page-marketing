@@ -27,6 +27,7 @@ export const MARKUP = String.raw`
     <div class="hero-top">
       <span class="eyebrow">Agencia especializada · Demanda B2B</span>
       <p class="hero-meta">Paid Media experto, Data Intelligence y automatización con IA. LATAM &amp; USA · est. 2019.</p>
+      <p class="hero-meta" style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:6px 14px;border:1px solid var(--line2);border-radius:100px;width:fit-content"><strong style="color:var(--green)">−72% CPA</strong> en campañas de Sika, vs. su agencia anterior</p>
     </div>
     <h1 class="hero-title display">
       <span class="ln"><span>Generamos demanda</span></span>
@@ -80,6 +81,7 @@ export const MARKUP = String.raw`
   <div class="wrap manif-cols somos-cols">
     <p class="r">La mayoría de las empresas B2B no tiene un problema de inversión, sino de <strong>criterio</strong>. Se invierte en pauta, llegan leads, y el equipo comercial no cierra.</p>
     <p class="r">Empezamos por el diagnóstico, no por la campaña. Medimos antes de invertir, optimizamos sobre datos validados del pipeline real y automatizamos lo repetitivo con IA. Crecemos cuando <strong>vos crecés</strong>.</p>
+    <p class="r">No trabajamos e-commerce ni retail: todo nuestro foco es <strong>B2B</strong>. Eso nos permite ser especialistas en un solo tipo de negocio, no generalistas de todos.</p>
   </div>
 </section>
 
@@ -237,7 +239,7 @@ export const MARKUP = String.raw`
       <div>
         <div class="ctag">Tu empresa</div>
         <h3 class="cname display">¿La próxima?</h3>
-        <p class="cdesc">Quedan lugares para este trimestre. Empezamos siempre con una consultoría sin costo.</p>
+        <p class="cdesc">Trabajamos con una cartera limitada de cuentas por trimestre para sostener el estándar Google Partner en cada una. Si hay lugar, arrancamos con un análisis de tu cuenta.</p>
       </div>
       <a class="btn mag" href="#contacto" data-form data-cursor>Hablemos <span class="a">→</span></a>
     </article>
@@ -250,7 +252,7 @@ export const MARKUP = String.raw`
     <div class="shead">
       <span class="eyebrow r"><span class="lbl-idx">(04)</span> Proceso</span>
       <h2 class="h">Un proceso, sin atajos.</h2>
-      <p class="lede r">Sin importar cómo llegues a nosotros, todo empieza con una consultoría.</p>
+      <p class="lede r">El mismo proceso que aplicamos con Sika: diagnóstico, medición validada y rediseño del plan de medios. Sin importar cómo llegues a nosotros, todo empieza acá.</p>
     </div>
     <div class="steps" id="steps">
       <div class="step r"><div class="dot"></div><div><div class="snum">Paso 01</div><h3>Consultoría y diagnóstico</h3><p>Analizamos el funnel, el negocio y la competencia para encontrar las oportunidades reales de crecimiento.</p></div></div>
@@ -270,8 +272,8 @@ export const MARKUP = String.raw`
       <h2 class="h">Especialistas, no generalistas.</h2>
     </div>
     <div class="auth-grid">
-      <div class="auth r" data-cursor><div class="num">G</div><h3>Google Partner</h3><p>Acreditación oficial en Google Ads y medición.</p></div>
-      <div class="auth r" data-cursor><div class="num">M</div><h3>Meta Certified</h3><p>Certificación en compra de medios en Meta.</p></div>
+      <div class="auth r" data-cursor><div class="num">G</div><h3>Google Partner</h3><p>Acreditación oficial en Google Ads y medición.</p><a class="bmore" href="https://www.google.com/partners/agency?id=2992564471" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Ver credencial <span class="a">→</span></a></div>
+      <div class="auth r" data-cursor><div class="num">M</div><h3>Meta Certified</h3><p>Certificación en compra de medios en Meta.</p><a class="bmore" href="https://www.credly.com/badges/37bb50d2-e601-480a-b36c-eca1769e2d50" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Ver credencial <span class="a">→</span></a></div>
       <div class="auth r" data-cursor><div class="num">7</div><h3>LATAM &amp; USA</h3><p>Operación multi-mercado en español e inglés.</p></div>
       <div class="auth r" data-cursor><div class="num">B2B</div><h3>Foco B2B</h3><p>Cartera limitada y especializada. Cada cliente importa.</p></div>
     </div>
@@ -370,7 +372,7 @@ export const MARKUP = String.raw`
   <div class="wrap">
     <span class="eyebrow r">Hablemos</span>
     <h2>Hacerlo bien <em>desde el principio.</em></h2>
-    <p class="lede r" style="color:var(--ink2);margin-left:auto;margin-right:auto">Empezamos con una consultoría gratuita para entender tu negocio. Sin compromisos, sin contratos largos.</p>
+    <p class="lede r" style="color:var(--ink2);margin-left:auto;margin-right:auto">Empezamos con un análisis de tu cuenta para entender tu negocio. Sin compromisos, sin contratos largos.</p>
     <div class="hero-cta r">
       <a class="btn btn-dark mag" href="mailto:ivo@didaktomarketing.com" data-form data-cursor>Agendar consultoría <span class="a">→</span></a>
       <a class="btn btn-ghost mag" href="#servicios" data-cursor>Ver servicios <span class="a">→</span></a>
@@ -423,6 +425,7 @@ export const MARKUP = String.raw`
       <label>Teléfono / WhatsApp (opcional)<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="Cód. país + número"></label>
       <label>Asunto<select name="asunto" required><option value="">Seleccioná un tema</option><option>Consultoría inicial</option><option>Paid Media</option><option>Medición &amp; Analytics</option><option>Automatización con IA</option><option>Otro</option></select></label>
       <label>Mensaje (opcional)<textarea name="mensaje" rows="3" placeholder="Contanos brevemente tu situación (opcional)"></textarea></label>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13px;flex-direction:row"><input type="checkbox" name="pauta_activa" value="si" style="width:16px;height:16px;flex:none;margin:0"> Ya tenemos pauta activa (Google, Meta o LinkedIn Ads)</label>
       <button type="submit" class="btn btn-dark" id="leadSubmit">Enviar consulta <span class="a">→</span></button>
       <p class="form-ok" id="formOk">✓ ¡Gracias! Te vamos a contactar pronto.</p>
       <p class="form-note">Te respondemos en menos de 24 h hábiles.</p>

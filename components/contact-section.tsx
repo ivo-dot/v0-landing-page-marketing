@@ -96,8 +96,8 @@ export default function ContactSection() {
           {/* IZQUIERDA: FORM */}
           <Card className="border-white/10 bg-white/5">
             <CardHeader className="pb-4">
-              <CardTitle className="text-2xl text-white">Consulta Gratuita</CardTitle>
-              <CardDescription className="text-white/60">Cuéntanos sobre tu negocio y te mostraremos cómo podemos ayudarte</CardDescription>
+              <CardTitle className="text-2xl text-white">Análisis de tu cuenta</CardTitle>
+              <CardDescription className="text-white/60">Cuéntanos sobre tu negocio y te mostraremos con datos dónde estás perdiendo oportunidades</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -111,6 +111,16 @@ export default function ContactSection() {
                 <Input name="empresa" placeholder="Empresa" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
                 <Input name="asunto" placeholder="Asunto" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
                 <Textarea name="mensaje" placeholder="Cuéntanos sobre tu negocio" className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+
+                <label className="flex items-center gap-3 p-3 rounded-md border border-white/10 text-sm text-white/80 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    name="pauta_activa"
+                    value="si"
+                    className="h-4 w-4 rounded border-white/30 bg-white/10 accent-emerald-500"
+                  />
+                  Ya tenemos pauta activa (Google, Meta o LinkedIn Ads)
+                </label>
 
                 {/* UTMs ocultas */}
                 <input type="hidden" name="utm_source" value={utms.utm_source} />
@@ -126,7 +136,7 @@ export default function ContactSection() {
                   disabled={sending}
                   className="w-full h-11 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold"
                 >
-                  {sending ? "Enviando..." : "Solicitar Consulta Gratuita"}
+                  {sending ? "Enviando..." : "Solicitar análisis de tu cuenta"}
                 </Button>
 
                 {showOk && (
