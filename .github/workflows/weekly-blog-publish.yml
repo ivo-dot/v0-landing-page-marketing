@@ -1,0 +1,61 @@
+name: Weekly blog draft PR
+
+# Every Monday at 11:00 UTC (08:00 hora Argentina), take the next unpublished
+# post from drafts-blog/manifest.json, generate the real blog page, and open a
+# PR for Ivo to review. Nothing goes to production without that review — Vercel
+# only deploys once the PR is merged to main.
+on:
+  schedule:
+    - cron: "0 11 * * 1"
+  workflow_dispatch: {} # allows a manual "Run workflow" trigger from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  publish-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Publish next draft
+        id: publish
+        run: node scripts/publish-next-draft.mjs
+
+      - name: Create branch, commit and open PR
+        if: steps.publish.outputs.has_draft == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLUG: ${{ steps.publish.outputs.slug }}
+          TITLE: ${{ steps.publish.outputs.title }}
+        run: |
+          git config user.name "didakto-blog-bot"
+          git config user.email "actions@github.com"
+
+          BRANCH="blog/publish-$SLUG"
+          git checkout -b "$BRANCH"
+          git add drafts-blog/manifest.json "app/blog/$SLUG" components/blog-posts.ts
+          git commit -m "blog: publicar \"$TITLE\""
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "Blog: $TITLE" \
+            --body "Post generado automáticamente desde la cola semanal de \`drafts-blog/manifest.json\`.
+
+          Slug: \`$SLUG\`
+
+          Revisá el contenido y el formato antes de mergear — al mergear a \`main\`, Vercel lo publica solo." \
+            --base main \
+            --head "$BRANCH" \
+            --reviewer ivo-dot
+
+      - name: No drafts left
+        if: steps.publish.outputs.has_draft != 'true'
+        run: echo "No hay más borradores en la cola. Agregar nuevos posts a drafts-blog/ y sumarlos al manifest."
