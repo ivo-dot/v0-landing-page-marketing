@@ -308,8 +308,9 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .gpt-spon{display:block;margin-top:12px;font-size:11px;color:#10a37f;font-weight:600}
 
 /* ── CARD VIDEO (testimonio) ── */
-.tcard-video{background:var(--ink);color:var(--paper);justify-content:center;align-items:flex-start;gap:10px;cursor:pointer;transition:transform .3s ease}
+.tcard-video{position:relative;background:var(--ink);color:var(--paper);justify-content:center;align-items:flex-start;gap:10px;cursor:pointer;transition:transform .3s ease}
 .tcard-video:hover,.tcard-video:focus-visible{transform:translateY(-4px)}
+.tcard-video .sika-badge{position:absolute;top:24px;right:24px;width:46px;height:auto;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45))}
 .tcard-video .tplay{width:50px;height:50px;border-radius:50%;background:var(--green);color:var(--green-on);display:grid;place-items:center;font-size:15px;transition:transform .3s ease}
 .tcard-video:hover .tplay{transform:scale(1.08)}
 .tcard-video p{color:var(--paper);font-family:var(--font-inter);font-style:normal;font-weight:600;font-size:18px}

@@ -306,7 +306,7 @@ export const MARKUP = String.raw`
   </div>
   <div class="wrap drag-vp" id="dragVp">
     <div class="drag-track" id="dragTrack">
-      <div class="tcard tcard-video" data-video-open tabindex="0" role="button" aria-label="Reproducir testimonio en video de Rodrigo Silva, Sika Americas"><div class="tplay">▶</div><p>Ver testimonio en video</p><div class="who"><span class="av"></span><div><b>Rodrigo Silva</b><span>Sika Americas</span></div></div></div>
+      <div class="tcard tcard-video" data-video-open tabindex="0" role="button" aria-label="Reproducir testimonio en video de Rodrigo Silva, Sika Americas"><img class="sika-badge" src="/logos/sika.png" alt="Sika" loading="lazy"><div class="tplay">▶</div><p>Ver testimonio en video</p><div class="who"><span class="av"></span><div><b>Rodrigo Silva</b><span>Sika Americas</span></div></div></div>
       <div class="tcard">“El diagnóstico inicial nos mostró dónde se perdía el presupuesto.”<div class="who"><span class="av"></span><div><b>Equipo Sika</b><span>LATAM &amp; USA</span></div></div></div>
       <div class="tcard">“Bajamos el CPA en LinkedIn a $5 con leads realmente calificados.”<div class="who"><span class="av"></span><div><b>MSH Group</b><span>Recursos Humanos</span></div></div></div>
       <div class="tcard">“Por fin reportes que se entienden y dicen qué hacer después.”<div class="who"><span class="av"></span><div><b>Dirección</b><span>Cliente B2B</span></div></div></div>
