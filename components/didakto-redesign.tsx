@@ -269,6 +269,31 @@ export default function DidaktoRedesign() {
       }, { signal })
     }
 
+    /* ── Modal de video testimonio ── */
+    const videoModal = root.querySelector<HTMLElement>("#videoModal")
+    if (videoModal) {
+      const vPanel = videoModal.querySelector<HTMLElement>(".modal-panel")!
+      const video = videoModal.querySelector<HTMLVideoElement>("#testimonialVideo")!
+      const openVideoModal = () => {
+        videoModal.classList.add("on"); videoModal.setAttribute("aria-hidden", "false")
+        if (lenis) lenis.stop(); document.body.style.overflow = "hidden"
+        if (!reduce) { gsap.fromTo(".modal-bg", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }); gsap.fromTo(vPanel, { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, ease: "power3.out" }) }
+        video.currentTime = 0
+        video.play().catch(() => {})
+      }
+      const closeVideoModal = () => {
+        videoModal.classList.remove("on"); videoModal.setAttribute("aria-hidden", "true")
+        if (lenis) lenis.start(); document.body.style.overflow = ""
+        video.pause()
+      }
+      root.querySelectorAll("[data-video-open]").forEach((el) => {
+        el.addEventListener("click", openVideoModal, { signal })
+        el.addEventListener("keydown", (e) => { if ((e as KeyboardEvent).key === "Enter" || (e as KeyboardEvent).key === " ") { e.preventDefault(); openVideoModal() } }, { signal })
+      })
+      videoModal.querySelectorAll("[data-video-close]").forEach((el) => el.addEventListener("click", closeVideoModal, { signal }))
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && videoModal.classList.contains("on")) closeVideoModal() }, { signal })
+    }
+
     // WhatsApp FAB (mobile)
     const waFab = root.querySelector<HTMLButtonElement>("#waFab")
     const waPanel = root.querySelector<HTMLElement>("#waPanel")

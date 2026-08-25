@@ -308,11 +308,19 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .gpt-spon{display:block;margin-top:12px;font-size:11px;color:#10a37f;font-weight:600}
 
 /* ── CARD VIDEO (testimonio) ── */
-.tcard-video{background:var(--ink);color:var(--paper);justify-content:center;align-items:flex-start;gap:10px}
-.tcard-video .tplay{width:50px;height:50px;border-radius:50%;background:var(--green);color:var(--green-on);display:grid;place-items:center;font-size:15px}
+.tcard-video{background:var(--ink);color:var(--paper);justify-content:center;align-items:flex-start;gap:10px;cursor:pointer;transition:transform .3s ease}
+.tcard-video:hover,.tcard-video:focus-visible{transform:translateY(-4px)}
+.tcard-video .tplay{width:50px;height:50px;border-radius:50%;background:var(--green);color:var(--green-on);display:grid;place-items:center;font-size:15px;transition:transform .3s ease}
+.tcard-video:hover .tplay{transform:scale(1.08)}
 .tcard-video p{color:var(--paper);font-family:var(--font-inter);font-style:normal;font-weight:600;font-size:18px}
 .tcard-video .who b{color:var(--paper)}
 .tcard-video .who span{color:rgba(244,241,234,.6)}
+
+/* ── MODAL VIDEO ── */
+.modal-panel.video-panel{max-width:380px;padding:0;background:transparent;border:none;box-shadow:none;overflow:visible}
+.video-panel .modal-x{top:-46px;right:0;background:var(--paper);color:var(--ink)}
+.video-panel video{display:block;width:100%;aspect-ratio:9/16;border-radius:20px;background:#000;object-fit:cover}
+@media(max-width:480px){ .modal-panel.video-panel{max-width:92vw;margin:8vh auto} .video-panel .modal-x{top:-44px} }
 
 /* ── MODAL FORM ── */
 .modal{position:fixed;inset:0;z-index:1000;display:none}

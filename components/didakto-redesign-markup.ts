@@ -306,7 +306,7 @@ export const MARKUP = String.raw`
   </div>
   <div class="wrap drag-vp" id="dragVp">
     <div class="drag-track" id="dragTrack">
-      <div class="tcard tcard-video"><div class="tplay">▶</div><p>Testimonio en video</p><div class="who"><span class="av"></span><div><b>Próximamente</b><span>Cliente Didakto</span></div></div></div>
+      <div class="tcard tcard-video" data-video-open tabindex="0" role="button" aria-label="Reproducir testimonio en video de Rodrigo Silva, Sika Americas"><div class="tplay">▶</div><p>Ver testimonio en video</p><div class="who"><span class="av"></span><div><b>Rodrigo Silva</b><span>Sika Americas</span></div></div></div>
       <div class="tcard">“El diagnóstico inicial nos mostró dónde se perdía el presupuesto.”<div class="who"><span class="av"></span><div><b>Equipo Sika</b><span>LATAM &amp; USA</span></div></div></div>
       <div class="tcard">“Bajamos el CPA en LinkedIn a $5 con leads realmente calificados.”<div class="who"><span class="av"></span><div><b>MSH Group</b><span>Recursos Humanos</span></div></div></div>
       <div class="tcard">“Por fin reportes que se entienden y dicen qué hacer después.”<div class="who"><span class="av"></span><div><b>Dirección</b><span>Cliente B2B</span></div></div></div>
@@ -430,6 +430,17 @@ export const MARKUP = String.raw`
       <p class="form-ok" id="formOk">✓ ¡Gracias! Te vamos a contactar pronto.</p>
       <p class="form-note">Te respondemos en menos de 24 h hábiles.</p>
     </form>
+  </div>
+</div>
+
+<!-- MODAL VIDEO TESTIMONIO -->
+<div class="modal" id="videoModal" aria-hidden="true">
+  <div class="modal-bg" data-video-close></div>
+  <div class="modal-panel video-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Testimonio en video de Rodrigo Silva, Sika Americas">
+    <button class="modal-x" data-video-close aria-label="Cerrar">✕</button>
+    <video id="testimonialVideo" controls playsinline preload="none" poster="/testimonios/testimonio-sika-rodrigo-poster.png">
+      <source src="/testimonios/testimonio-sika-rodrigo.mp4" type="video/mp4">
+    </video>
   </div>
 </div>
 
