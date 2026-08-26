@@ -274,7 +274,17 @@ export default function DidaktoRedesign() {
     if (videoModal) {
       const vPanel = videoModal.querySelector<HTMLElement>(".modal-panel")!
       const video = videoModal.querySelector<HTMLVideoElement>("#testimonialVideo")!
-      const openVideoModal = () => {
+      const videoSource = video.querySelector<HTMLSourceElement>("source")!
+      const openVideoModal = (el: Element) => {
+        const src = el.getAttribute("data-video-src")
+        const poster = el.getAttribute("data-video-poster")
+        const label = el.getAttribute("data-video-label")
+        if (src && videoSource.src !== new URL(src, location.href).href) {
+          videoSource.src = src
+          video.load()
+        }
+        if (poster) video.poster = poster
+        if (label) vPanel.setAttribute("aria-label", label)
         videoModal.classList.add("on"); videoModal.setAttribute("aria-hidden", "false")
         if (lenis) lenis.stop(); document.body.style.overflow = "hidden"
         if (!reduce) { gsap.fromTo(".modal-bg", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }); gsap.fromTo(vPanel, { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, ease: "power3.out" }) }
@@ -287,8 +297,8 @@ export default function DidaktoRedesign() {
         video.pause()
       }
       root.querySelectorAll("[data-video-open]").forEach((el) => {
-        el.addEventListener("click", openVideoModal, { signal })
-        el.addEventListener("keydown", (e) => { if ((e as KeyboardEvent).key === "Enter" || (e as KeyboardEvent).key === " ") { e.preventDefault(); openVideoModal() } }, { signal })
+        el.addEventListener("click", () => openVideoModal(el), { signal })
+        el.addEventListener("keydown", (e) => { if ((e as KeyboardEvent).key === "Enter" || (e as KeyboardEvent).key === " ") { e.preventDefault(); openVideoModal(el) } }, { signal })
       })
       videoModal.querySelectorAll("[data-video-close]").forEach((el) => el.addEventListener("click", closeVideoModal, { signal }))
       document.addEventListener("keydown", (e) => { if (e.key === "Escape" && videoModal.classList.contains("on")) closeVideoModal() }, { signal })

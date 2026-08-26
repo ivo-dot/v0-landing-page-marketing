@@ -306,7 +306,8 @@ export const MARKUP = String.raw`
   </div>
   <div class="wrap drag-vp" id="dragVp">
     <div class="drag-track" id="dragTrack">
-      <div class="tcard tcard-video" data-video-open tabindex="0" role="button" aria-label="Reproducir testimonio en video de Rodrigo Silva, Sika Americas"><img class="sika-badge" src="/logos/sika.png" alt="Sika" loading="lazy"><div class="tplay">▶</div><p>Ver testimonio en video</p><div class="who"><span class="av"></span><div><b>Rodrigo Silva</b><span>Sika Americas</span></div></div></div>
+      <div class="tcard tcard-video" data-video-open data-video-src="/testimonios/testimonio-sika-rodrigo.mp4" data-video-poster="/testimonios/testimonio-sika-rodrigo-poster.png" data-video-label="Testimonio en video de Rodrigo Silva, Sika Americas" tabindex="0" role="button" aria-label="Reproducir testimonio en video de Rodrigo Silva, Sika Americas"><img class="sika-badge" src="/logos/sika.png" alt="Sika" loading="lazy"><div class="tplay">▶</div><p>Ver testimonio en video</p><div class="who"><span class="av"></span><div><b>Rodrigo Silva</b><span>Sika Americas</span></div></div></div>
+      <div class="tcard tcard-video" data-video-open data-video-src="/testimonios/testimonio-sika-albeiro.mp4" data-video-poster="/testimonios/testimonio-sika-albeiro-poster.png" data-video-label="Testimonio en video de Albeiro Ortiz, Sika Bolivia" tabindex="0" role="button" aria-label="Reproducir testimonio en video de Albeiro Ortiz, Sika Bolivia"><img class="sika-badge" src="/logos/sika.png" alt="Sika" loading="lazy"><div class="tplay">▶</div><p>Ver testimonio en video</p><div class="who"><span class="av"></span><div><b>Albeiro Ortiz</b><span>Sika Bolivia</span></div></div></div>
       <div class="tcard">“El diagnóstico inicial nos mostró dónde se perdía el presupuesto.”<div class="who"><span class="av"></span><div><b>Equipo Sika</b><span>LATAM &amp; USA</span></div></div></div>
       <div class="tcard">“Bajamos el CPA en LinkedIn a $5 con leads realmente calificados.”<div class="who"><span class="av"></span><div><b>MSH Group</b><span>Recursos Humanos</span></div></div></div>
       <div class="tcard">“Por fin reportes que se entienden y dicen qué hacer después.”<div class="who"><span class="av"></span><div><b>Dirección</b><span>Cliente B2B</span></div></div></div>
@@ -436,10 +437,10 @@ export const MARKUP = String.raw`
 <!-- MODAL VIDEO TESTIMONIO -->
 <div class="modal" id="videoModal" aria-hidden="true">
   <div class="modal-bg" data-video-close></div>
-  <div class="modal-panel video-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Testimonio en video de Rodrigo Silva, Sika Americas">
+  <div class="modal-panel video-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Testimonio en video">
     <button class="modal-x" data-video-close aria-label="Cerrar">✕</button>
-    <video id="testimonialVideo" controls playsinline preload="none" poster="/testimonios/testimonio-sika-rodrigo-poster.png">
-      <source src="/testimonios/testimonio-sika-rodrigo.mp4" type="video/mp4">
+    <video id="testimonialVideo" controls playsinline preload="none">
+      <source src="" type="video/mp4">
     </video>
   </div>
 </div>
