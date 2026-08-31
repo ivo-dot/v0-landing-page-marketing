@@ -249,10 +249,21 @@ export default function DidaktoRedesign() {
         e.preventDefault()
         const f = form as any
         if (f._hp.value) { closeModal(); return }
-        const data = { nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(), empresa: f.empresa.value.trim(), telefono: f.telefono.value.trim(), asunto: f.asunto.value, mensaje: f.mensaje.value.trim(), pauta_activa: f.pauta_activa.checked ? "si" : "no", _hp: "" }
-        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.asunto) { form.reportValidity?.(); return }
+        const data = {
+          nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), cargo: f.cargo.value.trim(),
+          email: f.email.value.trim(), telefono: f.telefono.value.trim(), empresa: f.empresa.value.trim(),
+          sitio_web: f.sitio_web.value.trim(), pais: f.pais.value.trim(), industria: f.industria.value.trim(),
+          empleados: f.empleados.value, desafio: f.desafio.value.trim(),
+          publicidad_activa: f.publicidad_activa.value, inversion_actual: f.inversion_actual.value,
+          usa_crm: f.usa_crm.value, crm_cual: f.crm_cual.value.trim(), objetivo: f.objetivo.value.trim(),
+          proceso_leads: f.proceso_leads.value.trim(), atribucion: f.atribucion.value,
+          inversion_lista: (f.inversion_lista as RadioNodeList | HTMLInputElement)?.value || "",
+          _hp: "",
+        }
+        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.cargo || !data.desafio || !data.inversion_lista) { form.reportValidity?.(); return }
         const btn = root.querySelector<HTMLButtonElement>("#leadSubmit")!
         const okEl = root.querySelector<HTMLElement>("#formOk")!
+        const okHtml = okEl.innerHTML
         btn.textContent = "Enviando..."; btn.disabled = true
         try {
           const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
@@ -260,10 +271,11 @@ export default function DidaktoRedesign() {
           if (res.ok && j.success) {
             okEl.style.display = "block"
             form.querySelectorAll("input,select,textarea,button").forEach((x) => ((x as HTMLInputElement).disabled = true))
-            ;(window as any).dataLayer?.push({ event: "form_submit_contacto" })
+            ;(window as any).dataLayer?.push({ event: "form_submit_evaluacion" })
           } else throw new Error(j.message || "fail")
         } catch {
-          btn.textContent = "Enviar consulta →"; btn.disabled = false
+          btn.textContent = "Enviar solicitud →"; btn.disabled = false
+          okEl.innerHTML = okHtml
           okEl.textContent = "No se pudo enviar. Escribinos a ivo@didaktomarketing.com"; okEl.style.color = "#c0392b"; okEl.style.display = "block"
         }
       }, { signal })

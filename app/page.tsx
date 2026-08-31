@@ -7,34 +7,34 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "¿Trabajan por proyecto o por retainer mensual?",
+      name: "¿Por qué el programa dura 6 meses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ambos. La mayoría de las relaciones son mensuales porque el crecimiento sostenido requiere continuidad, pero arrancamos siempre con una consultoría puntual para validar el encaje antes de cualquier compromiso largo.",
+        text: "La adquisición B2B necesita tiempo para diagnosticar, implementar, generar datos reales y optimizar sobre el pipeline. Es el mismo criterio que aplicamos con Sika: los resultados serios llegan con continuidad, no con un sprint de campaña.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Con qué presupuesto de pauta conviene empezar?",
+      name: "¿Por qué el precio es fijo y visible desde el sitio?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Trabajamos con distintos rangos según el mercado y el objetivo. En la consultoría inicial definimos un piso realista para que la inversión genere aprendizaje y resultados medibles, sin quemar presupuesto en pruebas sin dirección.",
+        text: "Porque no buscamos la mayor cantidad de reuniones posibles, sino empresas con capacidad y voluntad real de invertir. El precio funciona también como un filtro.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Qué incluye la consultoría inicial?",
+      name: "¿Qué pasa después de enviar la solicitud de evaluación?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Un diagnóstico del funnel, una revisión del estado de la medición (GA4/GTM y conversiones) y un plan de acción con oportunidades concretas y KPIs. Salís con claridad sobre los próximos pasos, trabajes o no con nosotros.",
+        text: "Revisamos la información de tu empresa para evaluar si existe fit real entre tu necesidad y nuestro enfoque. Si lo hay, coordinamos una primera conversación. Si no, te lo decimos igual.",
       },
     },
     {
       "@type": "Question",
-      name: "¿En qué se diferencian de otras agencias?",
+      name: "¿En qué se diferencian de una agencia de publicidad tradicional?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Empezamos por el diagnóstico y la medición, no por la campaña. Somos un equipo chico y especializado en B2B, con cartera limitada: sin account executives intermedios ni procesos vacíos. Crecemos si vos crecés.",
+        text: "Empezamos por el diagnóstico del sistema completo — ICP, oferta, tracking, CRM y proceso comercial — no por la campaña. La pauta es una parte del trabajo, no el producto.",
       },
     },
     {
@@ -42,7 +42,7 @@ const faqJsonLd = {
       name: "¿Trabajan con empresas fuera de LATAM?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Gestionamos campañas en múltiples mercados de LATAM y USA, en español e inglés. Lideramos la publicidad digital de Sika para LATAM + USA en varios mercados simultáneos.",
+        text: "Sí. Operamos en múltiples mercados de LATAM y USA, en español e inglés. Lideramos la publicidad digital de Sika para LATAM + USA en simultáneo.",
       },
     },
     {
@@ -50,7 +50,15 @@ const faqJsonLd = {
       name: "¿Cuánto tardan en verse resultados?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende del punto de partida y del ciclo de venta, pero las primeras semanas se enfocan en medición y estructura. A partir de ahí optimizamos sobre datos reales; en casos como Sika los números cambiaron de forma marcada en torno a los tres meses.",
+        text: "Los primeros meses se enfocan en diagnóstico, medición y estructura. A partir de ahí optimizamos sobre datos reales del pipeline; en casos como Sika, los números cambiaron de forma marcada en torno a los tres meses.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué pasa si mi empresa no tiene CRM o su tracking está incompleto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Es habitual, y forma parte de lo que evaluamos e implementamos dentro del programa. No hace falta que llegues con todo resuelto.",
       },
     },
   ],

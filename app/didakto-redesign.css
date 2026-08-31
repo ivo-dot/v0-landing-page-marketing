@@ -428,6 +428,55 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .author p{font-size:13.5px;color:var(--ink2);line-height:1.6;margin-top:8px;max-width:60ch}
 .arth1{font-size:clamp(30px,4.6vw,56px)!important;line-height:1.04;max-width:20ch}
 
+/* ── FUNNEL (enfoque) ── */
+.funnel{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:56px;grid-column:1/-1}
+.funnel-step{display:inline-flex;align-items:center;font-family:var(--font-archivo);font-weight:700;font-size:13px;letter-spacing:-.01em;border:1px solid var(--line2);border-radius:100px;padding:10px 18px;white-space:nowrap;transition:background .3s,color .3s,border-color .3s}
+.funnel-step.on{background:var(--green);color:var(--green-on);border-color:var(--green)}
+.funnel-arrow{color:var(--ink3);font-size:15px;flex:none}
+@media(max-width:759px){ .funnel{gap:6px} .funnel-step{font-size:11.5px;padding:8px 12px} }
+
+/* ── 12 PUNTOS DEL SISTEMA ── */
+.pts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:50px}
+@media(min-width:640px){ .pts{grid-template-columns:1fr 1fr} }
+@media(min-width:1024px){ .pts{grid-template-columns:repeat(3,1fr)} }
+.pt{background:var(--paper);padding:30px 26px;transition:background .35s}
+.pt:hover{background:var(--green)}
+.pt:hover *{color:var(--green-on)}
+.pt .pt-n{font-family:var(--font-instrument);font-style:italic;color:var(--ink3);font-size:26px;line-height:1}
+.pt:hover .pt-n{color:var(--green-on);opacity:.7}
+.pt h3{font-size:15.5px;font-weight:700;margin:14px 0 6px;font-family:var(--font-archivo);letter-spacing:-.01em}
+.pt p{font-size:13px;color:var(--ink2);line-height:1.55}
+
+/* ── ÁREAS (auth-grid en 3 columnas) ── */
+@media(min-width:760px){ .auth-grid.areas{grid-template-columns:repeat(3,1fr)} }
+
+/* ── PARA QUIÉN (usa .inc existente) ── */
+
+/* ── PRECIO ── */
+.price-box{text-align:center;max-width:640px;margin-inline:auto}
+.price-tag{font-family:var(--font-instrument);font-style:italic;color:var(--ink2);font-size:clamp(16px,2vw,20px)}
+.price-num{font-family:var(--font-archivo);font-weight:900;letter-spacing:-.04em;line-height:.9;font-size:clamp(52px,10vw,128px);color:var(--green);margin-top:10px}
+.price-num span{font-family:var(--font-inter);font-weight:600;font-size:clamp(15px,2vw,20px);letter-spacing:0;color:var(--ink2);margin-left:8px}
+.price-sub{margin-top:18px;color:var(--ink2);font-size:15px;line-height:1.6;max-width:44ch;margin-inline:auto}
+.price-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:28px;list-style:none;padding:0}
+.price-list li{font-size:13px;color:var(--ink2);border:1px solid var(--line2);border-radius:100px;padding:8px 16px}
+.price-box .btn{margin-top:36px}
+
+/* ── RESULTADOS: mini-historia dentro de .cdesc ── */
+.cdesc p{margin-bottom:10px}
+.cdesc p:last-child{margin-bottom:0}
+.cdesc b{color:var(--ink);font-weight:600}
+.cs-row{margin-top:16px;font-size:13px;color:var(--ink2);line-height:1.6}
+.cs-row b{color:var(--ink);font-weight:600}
+
+/* ── FORM: subsecciones ── */
+#leadForm .fsec{font-family:var(--font-instrument);font-style:italic;color:var(--ink3);font-size:15px;margin:26px 0 12px;text-transform:none;letter-spacing:0}
+#leadForm .fsec:first-child{margin-top:0}
+#leadForm .radio-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:7px}
+#leadForm .radio-row label{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink);border:1px solid var(--line2);border-radius:100px;padding:9px 14px;margin:0;cursor:pointer;transition:border-color .25s}
+#leadForm .radio-row label:has(input:checked){border-color:var(--green);background:rgba(26,232,106,.08)}
+#leadForm .radio-row input{width:auto;margin:0}
+
 /* WhatsApp FAB — solo mobile */
 .wa-fab{position:fixed;right:18px;bottom:18px;z-index:60;height:46px;padding:0 18px 0 15px;border-radius:100px;background:var(--ink);color:var(--paper);display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.22);border:none;font-family:var(--font-archivo);font-weight:600;font-size:13px;cursor:pointer}
 .wa-fab svg{width:17px;height:17px;color:#25D366;flex:none}

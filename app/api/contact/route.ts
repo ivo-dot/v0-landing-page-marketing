@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 
 const ZAPIER_URL = "https://hooks.zapier.com/hooks/catch/22126987/u1edvyw/";
 
-const REQUIRED = ["nombre", "apellido", "email", "empresa", "asunto"]
+// Compartido por el formulario de evaluación de la home (didakto-redesign-markup.ts)
+// y el formulario de contacto de las páginas internas (dk-page.tsx) — solo se exige
+// lo que ambos envían siempre; los campos extra de la evaluación se validan en el cliente.
+const REQUIRED = ["nombre", "apellido", "email", "empresa"]
 
 export async function POST(request: Request) {
   try {

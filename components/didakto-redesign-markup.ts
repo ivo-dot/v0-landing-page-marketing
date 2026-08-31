@@ -1,5 +1,6 @@
-// Base generada desde didakto-redesign-preview-v2.html + ediciones manuales
-// (headings semánticos h2/h3, enlaces internos a páginas de servicio).
+// Reposicionamiento: de "agencia de Paid Media B2B" a "sistemas de adquisición B2B"
+// (publicidad + datos + CRM + ventas). Reutiliza los mismos hooks GSAP de didakto-redesign.tsx
+// (clases .r, .h, .steps/.step, .somos-stmt, #adsTrack, #casesTrack, #dragTrack, .faq-q, #modal).
 export const MARKUP = String.raw`
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="curRing"></div>
@@ -9,13 +10,13 @@ export const MARKUP = String.raw`
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Didakto — inicio"><span class="iso"></span></a>
   <nav class="nav-links" aria-label="Principal">
-    <a href="#servicios"><span data-t="Servicios">Servicios</span></a>
-    <a href="#casos"><span data-t="Casos">Casos</span></a>
-    <a href="#proceso"><span data-t="Proceso">Proceso</span></a>
-    <a href="/blog"><span data-t="Blog">Blog</span></a>
-    <a href="#faq"><span data-t="FAQ">FAQ</span></a>
+    <a href="#enfoque"><span data-t="Nuestro enfoque">Nuestro enfoque</span></a>
+    <a href="#como-trabajamos"><span data-t="Cómo trabajamos">Cómo trabajamos</span></a>
+    <a href="#resultados"><span data-t="Resultados">Resultados</span></a>
+    <a href="#nosotros"><span data-t="Nosotros">Nosotros</span></a>
+    <a href="/blog"><span data-t="Contenido">Contenido</span></a>
   </nav>
-  <a class="btn mag" href="#contacto" data-form data-cursor>Agendar <span class="a">→</span></a>
+  <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
 </header>
 
 <main id="top">
@@ -25,19 +26,19 @@ export const MARKUP = String.raw`
   <div class="hero-blob" id="blob"></div>
   <div class="wrap">
     <div class="hero-top">
-      <span class="eyebrow">Agencia especializada · Demanda B2B</span>
-      <p class="hero-meta">Paid Media experto, Data Intelligence y automatización con IA. LATAM &amp; USA · est. 2019.</p>
-      <p class="hero-meta" style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:6px 14px;border:1px solid var(--line2);border-radius:100px;width:fit-content"><strong style="color:var(--green)">−72% CPA</strong> en campañas de Sika, vs. su agencia anterior</p>
+      <span class="eyebrow">Sistemas de adquisición · B2B</span>
+      <p class="hero-meta">Publicidad, datos, CRM y ventas conectados en un mismo sistema. LATAM &amp; USA · est. 2019.</p>
+      <p class="hero-meta" style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:6px 14px;border:1px solid var(--line2);border-radius:100px;width:fit-content"><strong style="color:var(--green)">−72% CPA</strong> en Sika, rediseñando el sistema completo — no solo la pauta</p>
     </div>
     <h1 class="hero-title display">
-      <span class="ln"><span>Generamos demanda</span></span>
-      <span class="ln"><span>B2B que tu equipo</span></span>
-      <span class="ln"><span>comercial <em class="serif hl">sí cierra<i class="bar"></i></em>.</span></span>
+      <span class="ln"><span>El sistema completo</span></span>
+      <span class="ln"><span>para generar</span></span>
+      <span class="ln"><span><em class="serif hl">pipeline B2B<i class="bar"></i></em> medible.</span></span>
     </h1>
     <div class="hero-foot">
       <div class="hero-cta">
-        <a class="btn mag" href="#contacto" data-form data-cursor>Agendar consultoría <span class="a">→</span></a>
-        <a class="btn btn-ghost mag" href="#casos" data-cursor>Ver resultados <span class="a">→</span></a>
+        <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
+        <a class="btn btn-ghost mag" href="#resultados" data-cursor>Ver resultados <span class="a">→</span></a>
       </div>
       <div class="scrollcue">Scrolleá <i>↓</i></div>
     </div>
@@ -67,50 +68,114 @@ export const MARKUP = String.raw`
   </div>
 </section>
 
-<!-- SOMOS / WE ARE -->
-<section class="inv somos" id="somos">
+<!-- EL PROBLEMA -->
+<section class="section" id="problema">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(01)</span> El problema</span>
+      <h2 class="h">Más presupuesto no es la respuesta.</h2>
+      <p class="lede r">Podés invertir bien en Google, Meta o LinkedIn Ads y aun así no crecer. En B2B, el problema casi nunca está solo en la pauta.</p>
+    </div>
+    <div class="probs">
+      <div class="prob r"><div class="pn">01</div><div><h3>Cliente ideal mal definido</h3><p>Se le habla a todo el mercado en lugar de al segmento correcto, y la pauta paga esa falta de foco.</p></div></div>
+      <div class="prob r"><div class="pn">02</div><div><h3>Oferta y propuesta de valor débiles</h3><p>La campaña puede estar bien hecha y aun así no convertir, porque el problema está antes: en lo que se ofrece.</p></div></div>
+      <div class="prob r"><div class="pn">03</div><div><h3>Landing pages que no convierten</h3><p>Tráfico calificado que llega a páginas y formularios que no están pensados para convertir.</p></div></div>
+      <div class="prob r"><div class="pn">04</div><div><h3>Tracking incompleto</h3><p>GA4, GTM y conversiones a medias: nadie sabe con certeza qué campaña generó qué oportunidad.</p></div></div>
+      <div class="prob r"><div class="pn">05</div><div><h3>CRM desconectado</h3><p>Los leads llegan, pero la información no viaja completa hasta Ventas.</p></div></div>
+      <div class="prob r"><div class="pn">06</div><div><h3>Marketing y Ventas sin criterio común</h3><p>Cada equipo mide algo distinto: uno cuenta leads, el otro cuenta ventas. Nadie mide lo mismo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRO ENFOQUE -->
+<section class="inv somos" id="enfoque">
   <div class="somos-stage">
     <div class="somos-bg"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
     <div class="wrap">
-      <p class="somos-eyebrow">(Somos)</p>
+      <p class="somos-eyebrow">(Nuestro enfoque)</p>
       <h2 class="somos-stmt">
-        <span class="w">Somos</span> <span class="w">una</span> <span class="w serif">agencia</span> <span class="w">especializada</span> <span class="w">B2B</span> <span class="w">donde</span> <span class="w">la</span> <span class="w serif">estrategia</span> <span class="w">se</span> <span class="w">encuentra</span> <span class="w">con</span> <span class="w">la</span> <span class="w serif">ejecución</span>.
+        <span class="w">En</span> <span class="w">B2B,</span> <span class="w">muchas</span> <span class="w">veces</span> <span class="w">el</span> <span class="w">problema</span> <span class="w">no</span> <span class="w">está</span> <span class="w">en</span> <span class="w serif">la publicidad</span>.
       </h2>
     </div>
   </div>
   <div class="wrap manif-cols somos-cols">
-    <p class="r">La mayoría de las empresas B2B no tiene un problema de inversión, sino de <strong>criterio</strong>. Se invierte en pauta, llegan leads, y el equipo comercial no cierra.</p>
-    <p class="r">Empezamos por el diagnóstico, no por la campaña. Medimos antes de invertir, optimizamos sobre datos validados del pipeline real y automatizamos lo repetitivo con IA. Crecemos cuando <strong>vos crecés</strong>.</p>
-    <p class="r">No trabajamos e-commerce ni retail: todo nuestro foco es <strong>B2B</strong>. Eso nos permite ser especialistas en un solo tipo de negocio, no generalistas de todos.</p>
+    <p class="r">Podés invertir bien en Google, Meta o LinkedIn Ads y aun así no crecer. El problema puede estar en el ICP, la oferta, el tracking, o en que Marketing y Ventas miden cosas distintas.</p>
+    <p class="r">Por eso no optimizamos campañas sueltas: analizamos el sistema completo, desde la inversión en publicidad hasta la venta, y lo intervenimos donde realmente se rompe.</p>
+    <p class="r">Publicidad, datos, CRM y ventas trabajando como una sola máquina de generar pipeline medible — no como piezas sueltas que nadie termina de conectar.</p>
+    <div class="funnel r">
+      <span class="funnel-step on">Inversión</span><span class="funnel-arrow">→</span>
+      <span class="funnel-step">Demanda</span><span class="funnel-arrow">→</span>
+      <span class="funnel-step">Lead</span><span class="funnel-arrow">→</span>
+      <span class="funnel-step">MQL</span><span class="funnel-arrow">→</span>
+      <span class="funnel-step">SQL</span><span class="funnel-arrow">→</span>
+      <span class="funnel-step">Oportunidad</span><span class="funnel-arrow">→</span>
+      <span class="funnel-step on">Venta</span>
+    </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="servicios">
+<!-- LOS 12 PUNTOS DEL SISTEMA -->
+<section class="section" id="sistema">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(01)</span> Servicios</span>
-      <h2 class="h">Tres capacidades, un solo sistema.</h2>
+      <span class="eyebrow r"><span class="lbl-idx">(02)</span> El sistema</span>
+      <h2 class="h">Doce puntos, un solo sistema.</h2>
+      <p class="lede r">No vendemos servicios sueltos. Analizamos e intervenimos estos doce puntos, según dónde esté realmente el problema de tu empresa.</p>
     </div>
-    <div class="svc-list">
-      <div class="svc r" data-cursor>
-        <div class="sidx">01</div>
-        <h3><a href="/agencia-de-publicidad-digital" style="color:inherit;text-decoration:none">Paid Media B2B</a></h3>
-        <div class="sdesc">Campañas full-funnel en Google, Meta y LinkedIn con foco en costo por lead calificado y crecimiento rentable, no en métricas de vanidad.</div>
-        <div class="stags"><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a></div>
-      </div>
-      <div class="svc r" data-cursor>
-        <div class="sidx">02</div>
-        <h3><a href="/medicion-analytics-b2b" style="color:inherit;text-decoration:none">Data Intelligence</a></h3>
-        <div class="sdesc">Medición correcta antes de escalar: GA4, GTM, conversiones y dashboards que conectan cada métrica con una decisión de negocio.</div>
-        <div class="stags"><a href="/medicion-analytics-b2b">GA4</a><a href="/medicion-analytics-b2b">GTM</a><a href="/medicion-analytics-b2b">Atribución</a></div>
-      </div>
-      <div class="svc r" data-cursor>
-        <div class="sidx">03</div>
-        <h3><a href="/automatizacion-ia-b2b" style="color:inherit;text-decoration:none">Automatización con IA</a></h3>
-        <div class="sdesc">Calificación de leads, nurturing y flujos hacia el CRM automatizados con IA, para que tu equipo hable solo con prospectos listos.</div>
-        <div class="stags"><a href="/automatizacion-ia-b2b">Lead Scoring</a><a href="/automatizacion-ia-b2b">CRM</a><a href="/automatizacion-ia-b2b">Workflows</a></div>
-      </div>
+    <div class="pts">
+      <div class="pt r" data-cursor><div class="pt-n">01</div><h3>Cliente ideal (ICP)</h3><p>Definimos con precisión a quién le vendés, para dejar de gastar presupuesto hablándole a todo el mercado.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">02</div><h3>Segmentos prioritarios</h3><p>Ordenamos los segmentos por potencial real, para saber dónde conviene invertir primero.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">03</div><h3>Oferta y propuesta de valor</h3><p>Revisamos qué estás ofreciendo y cómo lo estás comunicando, antes de tocar una sola campaña.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">04</div><h3>Estrategia de adquisición</h3><p>Definimos el plan general: qué canales, en qué orden y con qué objetivo de negocio.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">05</div><h3>Publicidad digital</h3><p>Google Ads, LinkedIn Ads, Meta Ads y más, ejecutados dentro de una estrategia, no de forma aislada.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">06</div><h3>Arquitectura de campañas</h3><p>Estructura de cuentas y campañas pensada para medir y escalar, no para improvisar sobre la marcha.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">07</div><h3>Landing pages y formularios</h3><p>Páginas y formularios diseñados para convertir visitas en leads de calidad, no solo en clics.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">08</div><h3>Tracking y medición</h3><p>GA4, GTM, UTMs, GCLID y eventos configurados para saber qué campaña generó qué resultado.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">09</div><h3>Integración con CRM</h3><p>Conectamos la pauta con tu CRM para que la información llegue completa hasta Ventas.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">10</div><h3>Lead → MQL → SQL → Oportunidad</h3><p>Definimos en conjunto qué es cada etapa, para que Marketing y Ventas hablen el mismo idioma.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">11</div><h3>Dashboards y atribución</h3><p>Reportes que conectan cada peso invertido con una oportunidad o una venta real.</p></div>
+      <div class="pt r" data-cursor><div class="pt-n">12</div><h3>Optimización y escalamiento</h3><p>Una vez que el sistema funciona, escalamos presupuesto con criterio, no a ciegas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS · 6 MESES -->
+<section class="section" id="como-trabajamos">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(03)</span> Cómo trabajamos</span>
+      <h2 class="h">Seis meses, un sistema completo.</h2>
+      <p class="lede r">El mismo criterio que aplicamos con Sika: diagnóstico, implementación y optimización sobre datos reales. Sin importar cómo llegues, todo empieza acá.</p>
+    </div>
+    <div class="steps">
+      <div class="step r"><div class="dot"></div><div><div class="snum">Mes 01</div><h3>Diagnóstico</h3><p>Auditamos tu negocio, tu funnel y tu competencia. Encontramos dónde se está perdiendo pipeline.</p></div></div>
+      <div class="step r"><div class="dot"></div><div><div class="snum">Mes 02</div><h3>Estrategia</h3><p>Definimos ICP, propuesta de valor, canales y el plan de adquisición completo.</p></div></div>
+      <div class="step r"><div class="dot"></div><div><div class="snum">Mes 03</div><h3>Implementación</h3><p>Montamos campañas, tracking, landing pages e integraciones con tu CRM.</p></div></div>
+      <div class="step r"><div class="dot"></div><div><div class="snum">Mes 04</div><h3>Calidad</h3><p>Evaluamos la calidad real de los leads y ajustamos segmentación y mensajes.</p></div></div>
+      <div class="step r"><div class="dot"></div><div><div class="snum">Mes 05</div><h3>Optimización</h3><p>Optimizamos sobre datos del pipeline real, no sobre métricas de vanidad.</p></div></div>
+      <div class="step r"><div class="dot"></div><div><div class="snum">Mes 06</div><h3>Escalamiento</h3><p>Con el sistema validado, escalamos presupuesto e inversión con criterio.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS QUE PODEMOS INTERVENIR -->
+<section class="section" id="areas">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(04)</span> Áreas que podemos intervenir</span>
+      <h2 class="h">Herramientas dentro de un sistema mayor.</h2>
+      <p class="lede r">Google Ads, GA4, CRM, dashboards, IA. No vendemos plataformas: usamos las que hagan falta para que el sistema funcione.</p>
+    </div>
+    <div class="auth-grid areas">
+      <div class="auth r" data-cursor><div class="num">01</div><h3><a href="/agencia-de-publicidad-digital" style="color:inherit;text-decoration:none">Paid Media</a></h3><p>Google Ads, LinkedIn Ads, Meta Ads y más.</p></div>
+      <div class="auth r" data-cursor><div class="num">02</div><h3><a href="/medicion-analytics-b2b" style="color:inherit;text-decoration:none">Analytics</a></h3><p>GA4, GTM y medición de conversiones.</p></div>
+      <div class="auth r" data-cursor><div class="num">03</div><h3>CRM</h3><p>Integración y flujo de datos hacia Ventas.</p></div>
+      <div class="auth r" data-cursor><div class="num">04</div><h3><a href="/medicion-analytics-b2b" style="color:inherit;text-decoration:none">Tracking</a></h3><p>UTMs, GCLID, eventos y atribución.</p></div>
+      <div class="auth r" data-cursor><div class="num">05</div><h3>Landing pages</h3><p>Páginas y formularios que convierten.</p></div>
+      <div class="auth r" data-cursor><div class="num">06</div><h3><a href="/medicion-analytics-b2b" style="color:inherit;text-decoration:none">Dashboards</a></h3><p>Reportes conectados con el negocio.</p></div>
+      <div class="auth r" data-cursor><div class="num">07</div><h3><a href="/automatizacion-ia-b2b" style="color:inherit;text-decoration:none">Automatizaciones</a></h3><p>Flujos y nurturing sin fricción.</p></div>
+      <div class="auth r" data-cursor><div class="num">08</div><h3><a href="/automatizacion-ia-b2b" style="color:inherit;text-decoration:none">IA</a></h3><p>Calificación de leads y contenido asistido.</p></div>
+      <div class="auth r" data-cursor><div class="num">09</div><h3>Marketing + Ventas</h3><p>Definiciones y procesos alineados.</p></div>
     </div>
   </div>
 </section>
@@ -119,7 +184,7 @@ export const MARKUP = String.raw`
 <section class="section formats" id="formatos">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(02)</span> Formatos</span>
+      <span class="eyebrow r"><span class="lbl-idx">(05)</span> Formatos</span>
       <h2 class="h">Así se ven tus anuncios.</h2>
       <p class="lede r">Creatividades optimizadas para cada plataforma y formato publicitario.</p>
     </div>
@@ -143,8 +208,8 @@ export const MARKUP = String.raw`
       </div></div></article>
       <article class="ad ad-li">
         <span class="ad-plat blue">LinkedIn · Mensaje</span>
-        <div class="li-from"><span class="li-av">IC</span><div><b>Ivo Crisman</b><span>Paid Media · Didakto</span></div></div>
-        <p class="li-body">Hola, vi que tu empresa crece en LATAM. ¿Hablamos de reducir tu CPA en Google y Meta un 40%?</p>
+        <div class="li-from"><span class="li-av">IC</span><div><b>Ivo Crisman</b><span>Didakto</span></div></div>
+        <p class="li-body">Hola, vi que tu empresa crece en LATAM. ¿Hablamos de cómo está armado tu sistema de adquisición?</p>
         <div class="li-acts"><span class="li-p">Agendar</span><span class="li-s">Ver perfil</span></div>
       </article>
       <article class="ad ad-pin">
@@ -168,11 +233,51 @@ export const MARKUP = String.raw`
   </div>
 </section>
 
-<!-- CASES (inv · horizontal pin) -->
-<section class="section inv cases-pin" id="casos">
+<!-- PARA QUIÉN ES DIDAKTO -->
+<section class="section inv" id="para-quien">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(06)</span> Para quién es Didakto</span>
+      <h2 class="h">No trabajamos con cualquier empresa.</h2>
+      <p class="lede r">Buscamos un número limitado de empresas B2B con las que exista un fit real entre su necesidad y nuestro enfoque.</p>
+    </div>
+    <div class="inc">
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Empresas B2B</h3><p>No trabajamos e-commerce ni retail.</p></div></div>
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Con equipo comercial propio</h3><p>No solo un área de marketing aislada.</p></div></div>
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Ticket medio o alto</h3><p>Con procesos comerciales de cierta complejidad.</p></div></div>
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Necesidad real de pipeline</h3><p>No solo "más leads", sino más oportunidades reales.</p></div></div>
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Disposición a invertir</h3><p>Desde USD 1.800 mensuales en el programa.</p></div></div>
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Compromiso mínimo de 6 meses</h3><p>El tiempo necesario para ver el sistema funcionar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO -->
+<section class="section" id="precio">
+  <div class="wrap">
+    <div class="shead" style="margin-inline:auto;text-align:center;max-width:640px">
+      <span class="eyebrow r" style="justify-content:center"><span class="lbl-idx">(07)</span> Precio</span>
+      <h2 class="h" style="margin-inline:auto">Sin sorpresas, desde el principio.</h2>
+    </div>
+    <div class="price-box r" style="margin-top:56px">
+      <p class="price-tag">Programa de Adquisición B2B</p>
+      <div class="price-num">USD 1.800<span>/mes</span></div>
+      <p class="price-sub">Compromiso mínimo de 6 meses. Cartera limitada de cuentas por trimestre para sostener el estándar de trabajo en cada una.</p>
+      <ul class="price-list">
+        <li>Sin contratos ocultos</li>
+        <li>Diagnóstico incluido</li>
+        <li>Cartera limitada</li>
+      </ul>
+      <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS (inv · horizontal pin) -->
+<section class="section inv cases-pin" id="resultados">
   <div class="wrap cases-head">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(03)</span> Casos &amp; resultados</span>
+      <span class="eyebrow r"><span class="lbl-idx">(08)</span> Resultados</span>
       <h2 class="h">Resultados reales, clientes reales.</h2>
     </div>
     <div class="drag-hint r">Scrolleá →</div>
@@ -182,7 +287,11 @@ export const MARKUP = String.raw`
       <div>
         <div class="ctag">Construcción · USA</div>
         <h3 class="cname display">Sika USA</h3>
-        <p class="cdesc">Auditamos lo existente, validamos conversiones en GA4/GTM y rediseñamos el plan de medios en Meta y Google Ads.</p>
+        <div class="cdesc">
+          <p><b>Problema:</b> invertían en Meta y Google Ads con una agencia anterior, sin forma de saber qué campaña generaba oportunidades reales.</p>
+          <p><b>Detectamos:</b> conversiones mal configuradas en GA4/GTM y un plan de medios sin relación con el funnel comercial.</p>
+          <p><b>Cambiamos:</b> auditamos y corregimos la medición, y rediseñamos la arquitectura de campañas en Meta y Google Ads con foco en calidad de lead.</p>
+        </div>
       </div>
       <div>
         <div class="ckpis">
@@ -191,6 +300,7 @@ export const MARKUP = String.raw`
           <div class="ckpi"><div class="v">$5K+</div><div class="l">Inversión · 3 meses</div></div>
           <div class="ckpi"><div class="v">GA4/GTM</div><div class="l">Medición validada</div></div>
         </div>
+        <p class="cs-row"><b>Impacto comercial:</b> con la medición validada, el equipo pudo identificar por primera vez qué campañas generaban oportunidades reales — no solo leads.</p>
         <blockquote class="cquote">“El diagnóstico inicial nos mostró dónde se perdía el presupuesto. En tres meses los números cambiaron radicalmente.”<cite>— Equipo Sika USA</cite></blockquote>
         <a class="bmore" href="/blog/caso-sika-agencia-publicidad-digital-b2b" data-cursor style="display:inline-block;margin-top:12px">Leer el caso completo <span class="a">→</span></a>
       </div>
@@ -199,7 +309,7 @@ export const MARKUP = String.raw`
       <div>
         <div class="ctag">Construcción · USA</div>
         <h3 class="cname display">Sika Pro Select</h3>
-        <p class="cdesc">Reestructuramos campañas y segmentación con foco agresivo en el costo por lead: bajamos el CPA diez veces.</p>
+        <p class="cdesc">Reestructuramos campañas y segmentación con foco agresivo en el costo por lead calificado: bajamos el CPA diez veces sin resignar calidad.</p>
       </div>
       <div class="ckpis">
         <div class="ckpi"><div class="v g" data-count="-90" data-suffix="%">−90%</div><div class="l">CPA (de $1 a $0,10)</div></div>
@@ -210,7 +320,11 @@ export const MARKUP = String.raw`
       <div>
         <div class="ctag">Construcción · Bolivia</div>
         <h3 class="cname display">Sika Bolivia</h3>
-        <p class="cdesc">Partimos desde cero con una estrategia always-on de captación de leads para productos que venden todo el año, y lanzamos el canal de TikTok (pauta + contenido orgánico).</p>
+        <div class="cdesc">
+          <p><b>Problema:</b> productos que se venden todo el año, sin una estrategia always-on de captación ni presencia en canales nuevos.</p>
+          <p><b>Detectamos:</b> dependencia de campañas puntuales y ausencia total en TikTok, canal donde ya estaba su público.</p>
+          <p><b>Cambiamos:</b> montamos una estrategia always-on en Meta Ads y lanzamos TikTok con pauta y contenido orgánico en simultáneo.</p>
+        </div>
       </div>
       <div>
         <div class="ckpis">
@@ -219,13 +333,14 @@ export const MARKUP = String.raw`
           <div class="ckpi"><div class="v" data-count="1500" data-prefix="+">+1.500</div><div class="l">Seguidores en TikTok</div></div>
           <div class="ckpi"><div class="v" data-count="200" data-prefix="+">+200</div><div class="l">Registros a eventos</div></div>
         </div>
+        <p class="cs-row"><b>Impacto comercial:</b> el equipo comercial pasó a tener un flujo constante de leads durante todo el año, no solo en picos de campaña.</p>
       </div>
     </article>
     <article class="case">
       <div>
         <div class="ctag">Recursos Humanos · LATAM</div>
         <h3 class="cname display">MSH</h3>
-        <p class="cdesc">Estrategia especializada de generación de leads con LinkedIn y Google Ads, con campañas enfocadas en segmentos técnicos y profesionales.</p>
+        <p class="cdesc">Estrategia de generación de leads con LinkedIn y Google Ads, enfocada en segmentos técnicos y profesionales de Recursos Humanos.</p>
       </div>
       <div class="ckpis">
         <div class="ckpi"><div class="v g" data-count="5" data-prefix="$">$5</div><div class="l">CPA en LinkedIn Ads</div></div>
@@ -239,64 +354,14 @@ export const MARKUP = String.raw`
       <div>
         <div class="ctag">Tu empresa</div>
         <h3 class="cname display">¿La próxima?</h3>
-        <p class="cdesc">Trabajamos con una cartera limitada de cuentas por trimestre para sostener el estándar Google Partner en cada una. Si hay lugar, arrancamos con un análisis de tu cuenta.</p>
+        <p class="cdesc">Trabajamos con una cartera limitada de cuentas por trimestre. Si hay lugar, arrancamos con una evaluación de tu empresa.</p>
       </div>
-      <a class="btn mag" href="#contacto" data-form data-cursor>Hablemos <span class="a">→</span></a>
+      <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
     </article>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section" id="proceso">
-  <div class="wrap">
-    <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(04)</span> Proceso</span>
-      <h2 class="h">Un proceso, sin atajos.</h2>
-      <p class="lede r">El mismo proceso que aplicamos con Sika: diagnóstico, medición validada y rediseño del plan de medios. Sin importar cómo llegues a nosotros, todo empieza acá.</p>
-    </div>
-    <div class="steps" id="steps">
-      <div class="step r"><div class="dot"></div><div><div class="snum">Paso 01</div><h3>Consultoría y diagnóstico</h3><p>Analizamos el funnel, el negocio y la competencia para encontrar las oportunidades reales de crecimiento.</p></div></div>
-      <div class="step r"><div class="dot"></div><div><div class="snum">Paso 02</div><h3>Medición completa</h3><p>Auditoría e implementación de GA4 y GTM, validación de eventos y de las métricas clave del negocio.</p></div></div>
-      <div class="step r"><div class="dot"></div><div><div class="snum">Paso 03</div><h3>Construcción del sistema</h3><p>Setup de cuentas, estructura publicitaria, integraciones técnicas y automatizaciones con IA.</p></div></div>
-      <div class="step r"><div class="dot"></div><div><div class="snum">Paso 04</div><h3>Estrategia y crecimiento</h3><p>Full funnel, selección de canales y KPIs alineados con el pipeline y los objetivos comerciales.</p></div></div>
-      <div class="step r"><div class="dot"></div><div><div class="snum">Paso 05</div><h3>Reportería y mejora continua</h3><p>Reportes claros con interpretación y próximos pasos. Optimización constante sobre datos.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- AUTHORITY -->
-<section class="section" id="autoridad">
-  <div class="wrap">
-    <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(05)</span> Por qué Didakto</span>
-      <h2 class="h">Especialistas, no generalistas.</h2>
-    </div>
-    <div class="auth-grid">
-      <div class="auth r" data-cursor><div class="num">G</div><h3>Google Partner</h3><p>Acreditación oficial en Google Ads y medición.</p><a class="bmore" href="https://www.google.com/partners/agency?id=2992564471" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Ver credencial <span class="a">→</span></a></div>
-      <div class="auth r" data-cursor><div class="num">M</div><h3>Meta Certified</h3><p>Certificación en compra de medios en Meta.</p><a class="bmore" href="https://www.credly.com/badges/37bb50d2-e601-480a-b36c-eca1769e2d50" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Ver credencial <span class="a">→</span></a></div>
-      <div class="auth r" data-cursor><div class="num">7</div><h3>LATAM &amp; USA</h3><p>Operación multi-mercado en español e inglés.</p></div>
-      <div class="auth r" data-cursor><div class="num">B2B</div><h3>Foco B2B</h3><p>Cartera limitada y especializada. Cada cliente importa.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEMS (inv) -->
-<section class="section inv" id="problemas">
-  <div class="wrap">
-    <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(06)</span> Lo que resolvemos</span>
-      <h2 class="h">Problemas que escuchamos todas las semanas.</h2>
-    </div>
-    <div class="probs">
-      <div class="prob r"><div class="pn">01</div><div><h3>Leads que no cierran</h3><p>Volumen sin calidad. Nadie audita la segmentación ni la intención de compra real del prospecto.</p></div></div>
-      <div class="prob r"><div class="pn">02</div><div><h3>Reportes que no ayudan</h3><p>Dashboards llenos de métricas que no conectan con ninguna decisión de negocio.</p></div></div>
-      <div class="prob r"><div class="pn">03</div><div><h3>Optimización sin dirección</h3><p>Cambios de campaña basados en intuición, no en datos validados del pipeline real.</p></div></div>
-      <div class="prob r"><div class="pn">04</div><div><h3>Agencias que ejecutan sin entender</h3><p>Empiezan por la pauta, no por el diagnóstico. Cada mes es empezar de nuevo.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- DRAG (testimonios) -->
+<!-- TESTIMONIOS -->
 <section class="section drag-sec">
   <div class="wrap">
     <div class="drag-head">
@@ -316,12 +381,33 @@ export const MARKUP = String.raw`
   </div>
 </section>
 
-<!-- BLOG -->
+<!-- QUIÉNES SOMOS -->
+<section class="section" id="nosotros">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(09)</span> Quiénes somos</span>
+      <h2 class="h">Un equipo, no una cuenta más.</h2>
+    </div>
+    <div class="manif-cols" style="margin-top:40px">
+      <p class="r">Somos un equipo especializado en adquisición B2B: publicidad, datos, tecnología y procesos comerciales. No administramos plataformas, entendemos negocios.</p>
+      <p class="r">La mayoría de las empresas B2B no tiene un problema de inversión, sino de <strong>criterio</strong>. Empezamos por el diagnóstico, no por la campaña, y crecemos cuando <strong>vos crecés</strong>.</p>
+      <p class="r">No trabajamos e-commerce ni retail: todo nuestro foco es <strong>B2B</strong>. Eso nos permite ser especialistas en un solo tipo de negocio, no generalistas de todos.</p>
+    </div>
+    <div class="auth-grid">
+      <div class="auth r" data-cursor><div class="num">G</div><h3>Google Partner</h3><p>Acreditación oficial en Google Ads y medición.</p><a class="bmore" href="https://www.google.com/partners/agency?id=2992564471" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Ver credencial <span class="a">→</span></a></div>
+      <div class="auth r" data-cursor><div class="num">M</div><h3>Meta Certified</h3><p>Certificación en compra de medios en Meta.</p><a class="bmore" href="https://www.credly.com/badges/37bb50d2-e601-480a-b36c-eca1769e2d50" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Ver credencial <span class="a">→</span></a></div>
+      <div class="auth r" data-cursor><div class="num">7</div><h3>LATAM &amp; USA</h3><p>Operación multi-mercado en español e inglés.</p></div>
+      <div class="auth r" data-cursor><div class="num">B2B</div><h3>Foco B2B</h3><p>Cartera limitada y especializada. Cada cliente importa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
 <section class="section inv" id="blog">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r">Blog · Recursos</span>
-      <h2 class="h">Ideas para generar demanda B2B.</h2>
+      <span class="eyebrow r">Contenido</span>
+      <h2 class="h">Ideas para diseñar tu sistema de adquisición B2B.</h2>
     </div>
     <div class="blog-grid">
       <a class="bcard r" href="/blog/publicidad-en-chatgpt" data-cursor>
@@ -340,7 +426,7 @@ export const MARKUP = String.raw`
       </a>
       <a class="bcard r" href="/blog/caso-sika-agencia-publicidad-digital-b2b" data-cursor>
         <span class="btag">Caso de éxito</span>
-        <h3>Caso Sika: −72% de CPA con una agencia de publicidad digital B2B</h3>
+        <h3>Caso Sika: −72% de CPA rediseñando el sistema completo</h3>
         <p>Auditoría, medición en GA4/GTM y rediseño del plan de medios. El proceso completo y los números.</p>
         <span class="bmeta">14 de agosto, 2026 · 8 min</span>
         <span class="bmore">Leer artículo <span class="a">→</span></span>
@@ -354,34 +440,36 @@ export const MARKUP = String.raw`
 <section class="section" id="faq">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(07)</span> Preguntas frecuentes</span>
+      <span class="eyebrow r"><span class="lbl-idx">(10)</span> Preguntas frecuentes</span>
       <h2 class="h">Antes de hablar.</h2>
     </div>
     <div class="faq" id="faqList">
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Trabajan por proyecto o por retainer mensual?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Ambos. La mayoría de las relaciones son mensuales porque el crecimiento sostenido requiere continuidad, pero arrancamos siempre con una consultoría puntual para validar el encaje antes de cualquier compromiso largo.</div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Con qué presupuesto de pauta conviene empezar?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Trabajamos con distintos rangos según el mercado y el objetivo. En la consultoría inicial definimos un piso realista para que la inversión genere aprendizaje y resultados medibles, sin quemar presupuesto en pruebas sin dirección.</div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Qué incluye la consultoría inicial?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Un diagnóstico del funnel, una revisión del estado de la medición (GA4/GTM y conversiones) y un plan de acción con oportunidades concretas y KPIs. Salís con claridad sobre los próximos pasos, trabajes o no con nosotros.</div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿En qué se diferencian de otras agencias?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Empezamos por el diagnóstico y la medición, no por la campaña. Somos un equipo chico y especializado en B2B, con cartera limitada: sin account executives intermedios ni procesos vacíos. Crecemos si vos crecés.</div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Trabajan con empresas fuera de LATAM?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Sí. Gestionamos campañas en múltiples mercados de LATAM y USA, en español e inglés. Lideramos la publicidad digital de Sika para LATAM + USA en varios mercados simultáneos.</div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Cuánto tardan en verse resultados?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Depende del punto de partida y del ciclo de venta, pero las primeras semanas se enfocan en medición y estructura. A partir de ahí optimizamos sobre datos reales; en casos como Sika los números cambiaron de forma marcada en torno a los tres meses.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Por qué el programa dura 6 meses?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">La adquisición B2B necesita tiempo para diagnosticar, implementar, generar datos reales y optimizar sobre el pipeline. Es el mismo criterio que aplicamos con Sika: los resultados serios llegan con continuidad, no con un sprint de campaña.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Por qué el precio es fijo y visible desde el sitio?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Porque no buscamos la mayor cantidad de reuniones posibles, sino empresas con capacidad y voluntad real de invertir. El precio funciona también como un filtro.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Qué pasa después de enviar la solicitud de evaluación?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Revisamos la información de tu empresa para evaluar si existe fit real entre tu necesidad y nuestro enfoque. Si lo hay, coordinamos una primera conversación. Si no, te lo decimos igual.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿En qué se diferencian de una agencia de publicidad tradicional?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Empezamos por el diagnóstico del sistema completo — ICP, oferta, tracking, CRM y proceso comercial — no por la campaña. La pauta es una parte del trabajo, no el producto.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Trabajan con empresas fuera de LATAM?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Sí. Operamos en múltiples mercados de LATAM y USA, en español e inglés. Lideramos la publicidad digital de Sika para LATAM + USA en simultáneo.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Cuánto tardan en verse resultados?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Los primeros meses se enfocan en diagnóstico, medición y estructura. A partir de ahí optimizamos sobre datos reales del pipeline; en casos como Sika, los números cambiaron de forma marcada en torno a los tres meses.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Qué pasa si mi empresa no tiene CRM o su tracking está incompleto?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Es habitual, y forma parte de lo que evaluamos e implementamos dentro del programa. No hace falta que llegues con todo resuelto.</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CTA FINAL (green) -->
-<section class="section cta" id="contacto">
+<section class="section cta" id="evaluacion">
   <div class="wrap">
     <span class="eyebrow r">Hablemos</span>
-    <h2>Hacerlo bien <em>desde el principio.</em></h2>
-    <p class="lede r" style="color:var(--ink2);margin-left:auto;margin-right:auto">Empezamos con un análisis de tu cuenta para entender tu negocio. Sin compromisos, sin contratos largos.</p>
+    <h2>Quizás no necesitás <em>más publicidad.</em></h2>
+    <p class="lede r" style="color:var(--ink2);margin-left:auto;margin-right:auto">Quizás necesitás entender mejor tu sistema de adquisición. Por eso empezamos siempre con una evaluación, no con una campaña.</p>
     <div class="hero-cta r">
-      <a class="btn btn-dark mag" href="mailto:ivo@didaktomarketing.com" data-form data-cursor>Agendar consultoría <span class="a">→</span></a>
-      <a class="btn btn-ghost mag" href="#servicios" data-cursor>Ver servicios <span class="a">→</span></a>
+      <a class="btn btn-dark mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
+      <a class="btn btn-ghost mag" href="#sistema" data-cursor>Ver los 12 puntos <span class="a">→</span></a>
     </div>
     <div class="cta-meta r">
       <span><b>ivo@didaktomarketing.com</b></span>
       <span>Lun–Vie · 9:00–18:00</span>
       <span>100% online · LATAM &amp; USA</span>
+      <span>Cartera limitada</span>
     </div>
   </div>
 </section>
@@ -394,41 +482,75 @@ export const MARKUP = String.raw`
     <div class="foot-top">
       <div>
         <a class="brand" href="#top"><span class="iso"></span><b style="font-family:'Archivo';font-weight:800;letter-spacing:-.04em;font-size:22px">Didakto</b></a>
-        <p style="margin-top:16px;color:var(--ink2);font-size:14px;max-width:30ch">Generación de demanda B2B con criterio. Paid Media, datos e IA.</p>
+        <p style="margin-top:16px;color:var(--ink2);font-size:14px;max-width:30ch">Sistemas de adquisición B2B. Publicidad, datos, CRM y ventas conectados.</p>
       </div>
       <div class="foot-cols">
-        <div><h4>Servicios</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a><a href="/medicion-analytics-b2b">Medición &amp; Analytics</a><a href="/automatizacion-ia-b2b">Automatización con IA</a></div>
-        <div><h4>Mapa</h4><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#proceso">Proceso</a><a href="#faq">FAQ</a></div>
-        <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#contacto">Agendar</a></div>
+        <div><h4>Capacidades</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a><a href="/medicion-analytics-b2b">Medición &amp; Analytics</a><a href="/automatizacion-ia-b2b">Automatización con IA</a></div>
+        <div><h4>Mapa</h4><a href="#enfoque">Nuestro enfoque</a><a href="#como-trabajamos">Cómo trabajamos</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="/blog">Contenido</a></div>
+        <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#evaluacion">Solicitar evaluación</a></div>
       </div>
     </div>
-    <div class="foot-bot"><span>© 2026 Didakto Marketing</span><span>Hacerlo bien desde el principio.</span></div>
+    <div class="foot-bot"><span>© 2026 Didakto Marketing</span><span>Sistemas de adquisición B2B.</span></div>
   </div>
 </footer>
 
 <!-- MODAL FORMULARIO -->
 <div class="modal" id="modal" aria-hidden="true">
   <div class="modal-bg" data-close></div>
-  <div class="modal-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Agendar consultoría">
+  <div class="modal-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Solicitud de evaluación">
     <button class="modal-x" data-close aria-label="Cerrar">✕</button>
-    <span class="eyebrow">Agendá tu consultoría</span>
-    <h3 class="modal-title">Hablemos de tu proyecto.</h3>
+    <span class="eyebrow">Solicitud de evaluación</span>
+    <h3 class="modal-title">Contanos sobre tu empresa.</h3>
     <form id="leadForm" novalidate>
       <input type="text" name="_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="fsec">Sobre tu empresa</p>
       <div class="frow">
         <label>Nombre<input name="nombre" autocomplete="given-name" required></label>
         <label>Apellido<input name="apellido" autocomplete="family-name" required></label>
       </div>
       <div class="frow">
-        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Cargo<input name="cargo" autocomplete="organization-title" required></label>
+        <label>Email corporativo<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <div class="frow">
+        <label>Teléfono / WhatsApp<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="Cód. país + número"></label>
         <label>Empresa<input name="empresa" autocomplete="organization" required></label>
       </div>
-      <label>Teléfono / WhatsApp (opcional)<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="Cód. país + número"></label>
-      <label>Asunto<select name="asunto" required><option value="">Seleccioná un tema</option><option>Consultoría inicial</option><option>Paid Media</option><option>Medición &amp; Analytics</option><option>Automatización con IA</option><option>Otro</option></select></label>
-      <label>Mensaje (opcional)<textarea name="mensaje" rows="3" placeholder="Contanos brevemente tu situación (opcional)"></textarea></label>
-      <label style="display:flex;align-items:center;gap:10px;font-size:13px;flex-direction:row"><input type="checkbox" name="pauta_activa" value="si" style="width:16px;height:16px;flex:none;margin:0"> Ya tenemos pauta activa (Google, Meta o LinkedIn Ads)</label>
-      <button type="submit" class="btn btn-dark" id="leadSubmit">Enviar consulta <span class="a">→</span></button>
-      <p class="form-ok" id="formOk">✓ ¡Gracias! Te vamos a contactar pronto.</p>
+      <div class="frow">
+        <label>Sitio web<input name="sitio_web" autocomplete="url" placeholder="https://"></label>
+        <label>País<input name="pais" autocomplete="country-name"></label>
+      </div>
+      <div class="frow">
+        <label>Industria<input name="industria"></label>
+        <label>Cantidad de empleados<select name="empleados"><option value="">Seleccioná un rango</option><option>1–10</option><option>11–50</option><option>51–200</option><option>201–500</option><option>Más de 500</option></select></label>
+      </div>
+
+      <p class="fsec">Sobre tu situación actual</p>
+      <label>Principal desafío de adquisición o crecimiento<textarea name="desafio" rows="3" required></textarea></label>
+      <div class="frow">
+        <label>¿Hacen publicidad digital hoy?<select name="publicidad_activa"><option value="">Seleccioná una opción</option><option value="si">Sí</option><option value="no">No</option></select></label>
+        <label>Inversión mensual aprox. en publicidad<select name="inversion_actual"><option value="">Seleccioná un rango</option><option>No invertimos aún</option><option>Menos de USD 1.000</option><option>USD 1.000–3.000</option><option>USD 3.000–8.000</option><option>Más de USD 8.000</option></select></label>
+      </div>
+      <div class="frow">
+        <label>¿Utilizan CRM?<select name="usa_crm"><option value="">Seleccioná una opción</option><option value="si">Sí</option><option value="no">No</option></select></label>
+        <label>¿Cuál CRM? (si aplica)<input name="crm_cual"></label>
+      </div>
+      <label>Objetivo principal para los próximos 6–12 meses<textarea name="objetivo" rows="2"></textarea></label>
+      <label>¿Qué ocurre con los leads una vez que Marketing los genera?<textarea name="proceso_leads" rows="2"></textarea></label>
+      <label>¿Pueden identificar hoy qué campañas generan oportunidades o ventas?<select name="atribucion"><option value="">Seleccioná una opción</option><option value="si">Sí, con claridad</option><option value="parcial">Parcialmente</option><option value="no">No</option></select></label>
+
+      <p class="fsec">Sobre inversión</p>
+      <label>¿Están preparados para invertir desde USD 1.800 mensuales durante un período mínimo de 6 meses?
+        <div class="radio-row">
+          <label><input type="radio" name="inversion_lista" value="si" required> Sí</label>
+          <label><input type="radio" name="inversion_lista" value="evaluar"> Necesitamos evaluarlo</label>
+          <label><input type="radio" name="inversion_lista" value="no"> No</label>
+        </div>
+      </label>
+
+      <button type="submit" class="btn btn-dark" id="leadSubmit" style="margin-top:26px">Enviar solicitud <span class="a">→</span></button>
+      <p class="form-ok" id="formOk">✓ Solicitud recibida. Nuestro equipo revisará la información de tu empresa para evaluar si existe fit entre tus necesidades y nuestro enfoque. Si consideramos que Didakto puede aportar valor al proyecto, nos pondremos en contacto para coordinar una primera conversación.</p>
       <p class="form-note">Te respondemos en menos de 24 h hábiles.</p>
     </form>
   </div>
@@ -443,24 +565,5 @@ export const MARKUP = String.raw`
       <source src="" type="video/mp4">
     </video>
   </div>
-</div>
-
-<!-- WHATSAPP — solo mobile -->
-<button class="wa-fab" id="waFab" aria-label="Escribinos por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.42a9.9 9.9 0 0 0 4.62 1.14h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.34-.5.05-1 .25-3.38-.7-2.86-1.14-4.7-4.03-4.84-4.22-.14-.19-1.16-1.54-1.16-2.94s.72-2.09.98-2.38c.24-.26.53-.33.7-.33h.5c.16 0 .38-.03.58.44.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.3-.13.58.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.9.91.29.14.48.21.55.33.07.13.07.72-.17 1.4Z"></path></svg>
-  <span>WhatsApp</span>
-</button>
-<div class="wa-panel" id="waPanel">
-  <button class="wa-panel-x" data-wa-close aria-label="Cerrar">✕</button>
-  <h4>Escribinos por WhatsApp</h4>
-  <p>Si ya tenés pauta activa y buscás una respuesta directa, escribinos acá. Para un análisis completo de tu cuenta, mejor usá el formulario.</p>
-  <select id="waTopic">
-    <option value="">¿En qué te ayudamos?</option>
-    <option>Consultoría inicial</option>
-    <option>Paid Media (Google/Meta/LinkedIn Ads)</option>
-    <option>Medición &amp; Analytics</option>
-    <option>Otro</option>
-  </select>
-  <button class="btn" id="waSend">Escribir por WhatsApp <span class="a">→</span></button>
 </div>
 `;
