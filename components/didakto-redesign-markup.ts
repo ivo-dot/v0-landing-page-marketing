@@ -31,9 +31,10 @@ export const MARKUP = String.raw`
       <p class="hero-meta" style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:6px 14px;border:1px solid var(--line2);border-radius:100px;width:fit-content"><strong style="color:var(--green)">−72% CPA</strong> en Sika, rediseñando el sistema completo — no solo la pauta</p>
     </div>
     <h1 class="hero-title display">
-      <span class="ln"><span>Diseñamos e</span></span>
-      <span class="ln"><span>implementamos sistemas</span></span>
-      <span class="ln"><span>de <em class="serif hl">adquisición B2B<i class="bar"></i></em>.</span></span>
+      <span class="ln"><span>Diseñamos</span></span>
+      <span class="ln"><span>e implementamos</span></span>
+      <span class="ln"><span>sistemas de</span></span>
+      <span class="ln"><span><em class="serif hl">adquisición B2B<i class="bar"></i></em>.</span></span>
     </h1>
     <div class="hero-foot">
       <div class="hero-cta">
