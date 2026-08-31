@@ -269,6 +269,7 @@ export default function DidaktoRedesign() {
           const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
           const j = await res.json().catch(() => ({}))
           if (res.ok && j.success) {
+            btn.textContent = "Solicitud enviada ✓"
             okEl.style.display = "block"
             form.querySelectorAll("input,select,textarea,button").forEach((x) => ((x as HTMLInputElement).disabled = true))
             ;(window as any).dataLayer?.push({ event: "form_submit_evaluacion" })
