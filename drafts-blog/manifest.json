@@ -2,7 +2,8 @@
   "queue": [
     {
       "slug": "google-partner-que-significa",
-      "published": false
+      "published": true,
+      "publishedDate": "2026-08-31"
     },
     {
       "slug": "performance-max-para-b2b",

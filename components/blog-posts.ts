@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "google-partner-que-significa",
+    title: "Google Partner: qué significa la certificación y por qué debería importarte al elegir agencia",
+    excerpt:
+      "La insignia de Google Partner aparece en casi todas las webs de agencias. Te explicamos qué exige realmente, qué NO garantiza y cómo verificarla en 30 segundos antes de firmar con alguien.",
+    date: "2026-08-31",
+    dateLabel: "31 de agosto, 2026",
+    reading: "7 min",
+    tag: "Agencia & Estrategia",
+  },
+
+  {
     slug: "5-errores-publicidad-digital-b2b",
     title: "5 errores que no debés cometer en publicidad digital B2B",
     excerpt:
