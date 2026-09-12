@@ -34,9 +34,12 @@ export const metadata: Metadata = {
     template: "%s | Didakto Marketing",
   },
   description:
-    "Agencia de publicidad digital B2B y Google Partner. Paid Media experto (Google, Meta y LinkedIn), Data Intelligence y automatización con IA para generar leads calificados en LATAM y USA.",
+    "Agencia de publicidad digital B2B y Google Partner. Paid Media End-to-End: diseñamos e implementamos sistemas de adquisición B2B que conectan publicidad, datos, CRM y ventas para generar pipeline medible en LATAM y USA.",
   keywords: [
     "agencia de publicidad digital",
+    "sistemas de adquisición B2B",
+    "paid media end to end",
+    "agencia de adquisición B2B",
     "agencia google partner",
     "agencia google ads",
     "agencia meta ads",

@@ -221,7 +221,8 @@ export default function DidaktoRedesign() {
         const item = btn.closest(".faq-item")!
         const panel = item.querySelector<HTMLElement>(".faq-a")!
         const isOpen = item.classList.contains("open")
-        root.querySelectorAll(".faq-item.open").forEach((o) => {
+        const group = (btn.closest(".faq") as HTMLElement | null) ?? root
+        group.querySelectorAll(".faq-item.open").forEach((o) => {
           if (o !== item) { o.classList.remove("open"); o.querySelector(".faq-q")!.setAttribute("aria-expanded", "false"); gsap.to(o.querySelector(".faq-a"), { height: 0, duration: 0.4, ease: "power2.inOut" }) }
         })
         if (isOpen) { item.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); gsap.to(panel, { height: 0, duration: 0.4, ease: "power2.inOut" }) }

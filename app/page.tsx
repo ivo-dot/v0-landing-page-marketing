@@ -15,10 +15,26 @@ const faqJsonLd = {
     },
     {
       "@type": "Question",
-      name: "¿Por qué el precio es fijo y visible desde el sitio?",
+      name: "¿Por qué el precio está publicado en el sitio?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Porque no buscamos la mayor cantidad de reuniones posibles, sino empresas con capacidad y voluntad real de invertir. El precio funciona también como un filtro.",
+        text: "Porque no buscamos la mayor cantidad de reuniones posibles, sino empresas con capacidad y voluntad real de invertir. El precio funciona también como un filtro. El programa arranca desde USD 1.500 mensuales y el fee final se define según el alcance del sistema, los mercados y las plataformas involucradas.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿El precio incluye la inversión publicitaria?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Desde USD 1.500 mensuales corresponde a los honorarios de Didakto por diseñar y operar el sistema de adquisición. La inversión en plataformas es aparte y la define tu empresa, según los mercados y canales que definamos en la estrategia.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Puedo contratar solo publicidad digital sin el programa completo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí. Paid Media, medición y analítica, contenido y contenido generado con IA pueden contratarse como servicios especializados. En esa modalidad el alcance es específico y delimitado, no incluye la intervención sobre todo el sistema, y el pricing es proporcionalmente mayor que dentro del programa End-to-End.",
       },
     },
     {

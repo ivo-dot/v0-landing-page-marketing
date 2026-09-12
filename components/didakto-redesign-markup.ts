@@ -10,10 +10,11 @@ export const MARKUP = String.raw`
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Didakto — inicio"><span class="iso"></span></a>
   <nav class="nav-links" aria-label="Principal">
-    <a href="#enfoque"><span data-t="Nuestro enfoque">Nuestro enfoque</span></a>
+    <a href="#core"><span data-t="Core offer">Core offer</span></a>
+    <a href="#sistema"><span data-t="El sistema">El sistema</span></a>
     <a href="#como-trabajamos"><span data-t="Cómo trabajamos">Cómo trabajamos</span></a>
+    <a href="#modalidades"><span data-t="Modalidades">Modalidades</span></a>
     <a href="#resultados"><span data-t="Resultados">Resultados</span></a>
-    <a href="#nosotros"><span data-t="Nosotros">Nosotros</span></a>
     <a href="/blog"><span data-t="Contenido">Contenido</span></a>
   </nav>
   <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
@@ -26,7 +27,7 @@ export const MARKUP = String.raw`
   <div class="hero-blob" id="blob"></div>
   <div class="wrap">
     <div class="hero-top">
-      <span class="eyebrow">Sistemas de adquisición · B2B</span>
+      <span class="eyebrow">Paid Media End-to-End · B2B</span>
       <p class="hero-meta">Publicidad, datos, CRM y ventas conectados en un mismo sistema. LATAM &amp; USA · est. 2019.</p>
       <p class="hero-meta" style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:6px 14px;border:1px solid var(--line2);border-radius:100px;width:fit-content"><strong style="color:var(--green)">−72% CPA</strong> en Sika, rediseñando el sistema completo — no solo la pauta</p>
     </div>
@@ -115,11 +116,45 @@ export const MARKUP = String.raw`
   </div>
 </section>
 
-<!-- LOS 12 PUNTOS DEL SISTEMA -->
-<section class="section" id="sistema">
+<!-- CORE OFFER -->
+<section class="section" id="core">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(02)</span> El sistema</span>
+      <span class="eyebrow r"><span class="lbl-idx">(02)</span> Nuestro servicio principal</span>
+      <h2 class="h">Paid Media <em class="serif">End-to-End</em>.</h2>
+      <p class="lede r">Diseñamos, implementamos y operamos sistemas de adquisición B2B. Este es el core de Didakto: no la administración de campañas, sino el sistema completo que rodea a la inversión publicitaria.</p>
+    </div>
+
+    <div class="core r">
+      <div class="core-main">
+        <p class="core-kicker">El producto</p>
+        <h3 class="core-title display">Sistema de Adquisición B2B</h3>
+        <p class="core-desc">Trabajamos junto a tu equipo durante un período mínimo recomendado de <strong>seis meses</strong> para diseñar y operar tu sistema de adquisición. El objetivo no es generar más leads: es construir un sistema capaz de generar <strong>pipeline medible</strong>, aprender de la calidad de los leads y mejorar continuamente la inversión publicitaria.</p>
+        <p class="core-desc">Una campaña puede estar perfectamente configurada y aun así no generar negocio. El problema puede estar en el cliente ideal, en la oferta, en la landing, en la medición, en el CRM o en el proceso comercial. Nosotros analizamos todas esas variables como partes de un mismo sistema.</p>
+        <div class="core-chips">
+          <span>Estrategia</span><span>Paid Media</span><span>CRO / Landing pages</span><span>Analytics</span><span>Tracking</span><span>CRM</span><span>Data</span><span>Contenido</span><span>Automatización</span>
+        </div>
+        <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
+      </div>
+      <div class="core-side">
+        <div class="core-row"><span class="core-lbl">Categoría</span><b>Agencia de adquisición B2B</b></div>
+        <div class="core-row"><span class="core-lbl">Especialidad</span><b>Paid Media End-to-End</b></div>
+        <div class="core-row"><span class="core-lbl">Producto</span><b>Sistemas de Adquisición B2B</b></div>
+        <div class="core-row"><span class="core-lbl">Resultado</span><b>Pipeline medible y adquisición escalable</b></div>
+        <div class="core-row"><span class="core-lbl">Inversión</span><b>Desde USD 1.500 / mes · mínimo 6 meses</b></div>
+        <div class="core-row"><span class="core-lbl">Diferencial</span><b>No optimizamos solo campañas: optimizamos el sistema que transforma inversión en oportunidades.</b></div>
+      </div>
+    </div>
+
+    <p class="core-note r">No contratás servicios sueltos: contratás el sistema completo y el equipo necesario para hacerlo funcionar. Por eso el programa no se calcula sumando el precio individual de cada capacidad — cuesta menos y rinde más que contratar cada especialidad por separado.</p>
+  </div>
+</section>
+
+<!-- LOS 12 PUNTOS DEL SISTEMA -->
+<section class="section inv" id="sistema">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(03)</span> El sistema</span>
       <h2 class="h">Doce puntos, un solo sistema.</h2>
       <p class="lede r">No vendemos servicios sueltos. Analizamos e intervenimos estos doce puntos, según dónde esté realmente el problema de tu empresa.</p>
     </div>
@@ -137,6 +172,13 @@ export const MARKUP = String.raw`
       <div class="pt r" data-cursor><div class="pt-n">11</div><h3>Dashboards y atribución</h3><p>Reportes que conectan cada peso invertido con una oportunidad o una venta real.</p></div>
       <div class="pt r" data-cursor><div class="pt-n">12</div><h3>Optimización y escalamiento</h3><p>Una vez que el sistema funciona, escalamos presupuesto con criterio, no a ciegas.</p></div>
     </div>
+
+    <div class="shead pillars-head">
+      <span class="eyebrow r">En detalle</span>
+      <h2 class="h">Qué trabajamos en cada capa.</h2>
+      <p class="lede r">Los doce puntos se agrupan en siete pilares. Esto es exactamente lo que hacemos dentro de cada uno.</p>
+    </div>
+    <div class="faq pillars r" id="pillarList"><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">01</span>Estrategia e ICP</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>Antes de invertir, definimos con precisión a quién queremos captar.</p><ul><li>Ideal Customer Profile (ICP)</li><li>Segmentos prioritarios</li><li>Industrias y verticales</li><li>Empresas objetivo</li><li>Cargos y decisores</li><li>Problemas y necesidades reales</li><li>Propuesta de valor</li><li>Oferta comercial</li><li>Mercados prioritarios</li></ul><p class="pil-close">El objetivo es evitar que el presupuesto publicitario termine compensando una estrategia comercial poco clara.</p></div></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">02</span>Estrategia de adquisición</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>Diseñamos cómo debería producirse la captación de demanda antes de encender una sola campaña.</p><ul><li>Objetivos de negocio</li><li>Canales y plataformas</li><li>Presupuesto y distribución</li><li>Mercados</li><li>Mensajes y ángulos</li><li>Diseño del funnel</li><li>Activos necesarios</li><li>Conversiones a medir</li><li>Indicadores de éxito</li></ul><p class="pil-close">No elegimos Google, LinkedIn o Meta porque estén de moda: elegimos las herramientas que tengan sentido para el proceso de compra de tu cliente.</p></div></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">03</span>Paid Media</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>Diseñamos, implementamos y gestionamos las campañas de adquisición. Es el motor principal del sistema — pero nunca se trabaja de forma aislada.</p><ul><li>Google Ads · LinkedIn Ads · Meta Ads · TikTok Ads · Microsoft Ads</li><li>Arquitectura de campañas y cuentas</li><li>Segmentaciones y audiencias</li><li>Keywords y análisis de términos de búsqueda</li><li>Anuncios y creatividades</li><li>Distribución de presupuesto y pacing</li><li>Testing y optimización continua</li><li>Remarketing</li><li>Escalamiento</li></ul><p class="pil-close">Paid Media es nuestro core. Todo lo demás existe para que esa inversión genere mejores resultados de negocio.</p></div></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">04</span>Landing pages y conversión</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>Analizamos qué ocurre después del clic, que es donde se pierde buena parte del presupuesto.</p><ul><li>Landing pages</li><li>Formularios y formularios nativos de plataforma</li><li>Estructura de la información</li><li>Propuesta de valor en página</li><li>Llamados a la acción</li><li>Experiencia de conversión</li><li>Activos de generación de demanda</li></ul><p class="pil-close">El objetivo no es generar tráfico: es convertir tráfico calificado en oportunidades comerciales.</p></div></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">05</span>Tracking, medición y analytics</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>Antes de optimizar una campaña necesitamos poder confiar en los datos.</p><ul><li>Google Analytics 4</li><li>Google Tag Manager</li><li>Eventos y conversiones</li><li>Enhanced Conversions</li><li>UTMs, GCLID y FBCLID</li><li>Modelos de atribución</li><li>Dashboards</li><li>Conversiones offline</li><li>Conexión entre medios y resultados comerciales</li></ul><p class="pil-close">La medición tiene que poder responder qué campaña, anuncio, keyword o audiencia está generando oportunidades reales de negocio. No solamente formularios.</p></div></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">06</span>CRM y conexión con Ventas</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>En B2B el proceso no termina cuando llega un lead. Conectamos publicidad → lead → CRM → ventas → resultado comercial.</p><ul><li>Integración de formularios</li><li>Captura de fuente y origen</li><li>UTMs e identificadores publicitarios</li><li>Estados comerciales</li><li>Definición de MQL y SQL</li><li>Oportunidades y ventas</li><li>Feedback de resultados hacia las plataformas</li></ul><p class="pil-close">El objetivo es que Marketing y Ventas trabajen sobre la misma información, no sobre dos verdades distintas.</p></div></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="pil-t"><span class="pil-n">07</span>Data, reporting y optimización</span><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in"><p>No entregamos reportes para mostrar métricas. La información tiene que producir decisiones.</p><ul><li>Inversión, CPL y CPA</li><li>Calidad de lead</li><li>MQL, SQL y oportunidades</li><li>ROAS cuando corresponde</li><li>Performance por mercado</li><li>Performance por producto</li><li>Performance por audiencia</li><li>Performance por plataforma</li></ul><p class="pil-close">Cada período de análisis cierra igual: qué funcionó → qué aprendimos → qué vamos a cambiar.</p></div></div></div></div>
   </div>
 </section>
 
@@ -144,7 +186,7 @@ export const MARKUP = String.raw`
 <section class="section" id="como-trabajamos">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(03)</span> Cómo trabajamos</span>
+      <span class="eyebrow r"><span class="lbl-idx">(04)</span> Cómo trabajamos</span>
       <h2 class="h">Seis meses, un sistema completo.</h2>
       <p class="lede r">El mismo criterio que aplicamos con Sika: diagnóstico, implementación y optimización sobre datos reales. Sin importar cómo llegues, todo empieza acá.</p>
     </div>
@@ -163,9 +205,9 @@ export const MARKUP = String.raw`
 <section class="section" id="areas">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(04)</span> Áreas que podemos intervenir</span>
-      <h2 class="h">Herramientas dentro de un sistema mayor.</h2>
-      <p class="lede r">Google Ads, GA4, CRM, dashboards, IA. No vendemos plataformas: usamos las que hagan falta para que el sistema funcione.</p>
+      <span class="eyebrow r"><span class="lbl-idx">(05)</span> Capacidades</span>
+      <h2 class="h">Las capacidades que hacen posible el sistema.</h2>
+      <p class="lede r">Google Ads, GA4, CRM, dashboards, IA. No vendemos plataformas ni un listado de servicios: usamos las capacidades que hagan falta para que tu sistema de adquisición funcione.</p>
     </div>
     <div class="auth-grid areas">
       <div class="auth r" data-cursor><div class="num">01</div><h3><a href="/agencia-de-publicidad-digital" style="color:inherit;text-decoration:none">Paid Media</a></h3><p>Google Ads, LinkedIn Ads, Meta Ads y más.</p></div>
@@ -185,7 +227,7 @@ export const MARKUP = String.raw`
 <section class="section formats" id="formatos">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(05)</span> Formatos</span>
+      <span class="eyebrow r"><span class="lbl-idx">(06)</span> Formatos</span>
       <h2 class="h">Así se ven tus anuncios.</h2>
       <p class="lede r">Creatividades optimizadas para cada plataforma y formato publicitario.</p>
     </div>
@@ -234,11 +276,55 @@ export const MARKUP = String.raw`
   </div>
 </section>
 
+<!-- MODALIDADES DE CONTRATACIÓN -->
+<section class="section" id="modalidades">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow r"><span class="lbl-idx">(07)</span> Modalidades de contratación</span>
+      <h2 class="h">Una modalidad principal. Y una alternativa.</h2>
+      <p class="lede r">El programa End-to-End es nuestro producto y lo que recomendamos. Pero si tu empresa ya tiene resuelta parte de la infraestructura, algunas capacidades pueden contratarse por separado.</p>
+    </div>
+
+    <div class="mods">
+      <article class="mod mod-main r">
+        <span class="mod-badge">Recomendado</span>
+        <p class="mod-kicker">A · Modalidad principal</p>
+        <h3>Sistema de Adquisición B2B End-to-End</h3>
+        <p class="mod-desc">Integramos todas las capacidades necesarias dentro de una misma estrategia. No contratás servicios sueltos: contratás el sistema completo y el equipo que lo hace funcionar.</p>
+        <ul class="mod-list">
+          <li>Diagnóstico completo del sistema de adquisición</li>
+          <li>Estrategia, ICP y propuesta de valor</li>
+          <li>Paid Media en las plataformas que correspondan</li>
+          <li>Landing pages, formularios y conversión</li>
+          <li>Tracking, medición y analytics</li>
+          <li>Integración con CRM y alineación con Ventas</li>
+          <li>Dashboards, reporting y optimización continua</li>
+        </ul>
+        <div class="mod-price"><b>Desde USD 1.500 / mes</b><span>Compromiso mínimo de 6 meses</span></div>
+        <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
+      </article>
+
+      <article class="mod r">
+        <p class="mod-kicker">B · Alternativa</p>
+        <h3>Servicios especializados</h3>
+        <p class="mod-desc">Para empresas que ya tienen parte de su infraestructura resuelta y necesitan una especialidad concreta, con un alcance delimitado.</p>
+        <div class="svc-mini">
+          <div class="sm"><h4><a href="/agencia-de-publicidad-digital">Publicidad digital / Paid Media</a></h4><p>Gestión especializada de campañas: Google, LinkedIn, Meta, TikTok y Microsoft Ads. Estrategia, implementación, optimización y reporting.</p></div>
+          <div class="sm"><h4><a href="/medicion-analytics-b2b">Medición y analítica</a></h4><p>Auditoría de GA4, GTM, eventos, conversiones, Enhanced Conversions, UTMs, dashboards, conversiones offline y documentación.</p></div>
+          <div class="sm"><h4>Contenido para redes sociales</h4><p>Estrategia, planificación mensual, conceptos, copies y piezas. Orientado a posicionamiento y demanda, no a community management tradicional.</p></div>
+          <div class="sm"><h4><a href="/automatizacion-ia-b2b">Contenido generado con IA</a></h4><p>Imágenes, piezas publicitarias, adaptaciones y video generados con IA, cuando permiten producir mejores activos, más rápido o a menor costo.</p></div>
+        </div>
+        <p class="mod-note">Al contratarse de forma individual, estos servicios tienen un alcance específico, trabajan sobre objetivos delimitados, no incluyen la intervención sobre todo el sistema y su pricing es proporcionalmente mayor que dentro del programa End-to-End.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- PARA QUIÉN ES DIDAKTO -->
 <section class="section inv" id="para-quien">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(06)</span> Para quién es Didakto</span>
+      <span class="eyebrow r"><span class="lbl-idx">(08)</span> Para quién es Didakto</span>
       <h2 class="h">No trabajamos con cualquier empresa.</h2>
       <p class="lede r">Buscamos un número limitado de empresas B2B con las que exista un fit real entre su necesidad y nuestro enfoque.</p>
     </div>
@@ -247,8 +333,13 @@ export const MARKUP = String.raw`
       <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Con equipo comercial propio</h3><p>No solo un área de marketing aislada.</p></div></div>
       <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Ticket medio o alto</h3><p>Con procesos comerciales de cierta complejidad.</p></div></div>
       <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Necesidad real de pipeline</h3><p>No solo "más leads", sino más oportunidades reales.</p></div></div>
-      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Disposición a invertir</h3><p>Desde USD 1.800 mensuales en el programa.</p></div></div>
+      <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Disposición a invertir</h3><p>Desde USD 1.500 mensuales en el programa End-to-End.</p></div></div>
       <div class="inc-item r"><div class="inc-tick">✓</div><div><h3>Compromiso mínimo de 6 meses</h3><p>El tiempo necesario para ver el sistema funcionar.</p></div></div>
+    </div>
+    <div class="fit r">
+      <p class="fit-lbl">Donde mejor funciona nuestro enfoque</p>
+      <div class="fit-chips"><span>Industria</span><span>Construcción</span><span>Manufactura</span><span>Tecnología B2B</span><span>Servicios profesionales</span><span>Servicios industriales</span><span>Estructuras comerciales complejas</span></div>
+      <p class="fit-note">No buscamos administrar cientos de cuentas. Buscamos una cartera limitada donde podamos intervenir estratégicamente.</p>
     </div>
   </div>
 </section>
@@ -257,19 +348,20 @@ export const MARKUP = String.raw`
 <section class="section" id="precio">
   <div class="wrap">
     <div class="shead" style="margin-inline:auto;text-align:center;max-width:640px">
-      <span class="eyebrow r" style="justify-content:center"><span class="lbl-idx">(07)</span> Precio</span>
+      <span class="eyebrow r" style="justify-content:center"><span class="lbl-idx">(09)</span> Precio</span>
       <h2 class="h" style="margin-inline:auto">Sin sorpresas, desde el principio.</h2>
     </div>
     <div class="price-box r" style="margin-top:56px">
-      <p class="price-tag">Programa de Adquisición B2B</p>
-      <div class="price-num">USD 1.800<span>/mes</span></div>
-      <p class="price-sub">Compromiso mínimo de 6 meses. Cartera limitada de cuentas por trimestre para sostener el estándar de trabajo en cada una.</p>
+      <p class="price-tag">Programa de Adquisición B2B · desde</p>
+      <div class="price-num">USD 1.500<span>/mes</span></div>
+      <p class="price-sub">Compromiso mínimo de 6 meses. El fee final se define según el alcance del sistema, los mercados y las plataformas involucradas. Cartera limitada de cuentas por trimestre para sostener el estándar de trabajo en cada una.</p>
       <ul class="price-list">
         <li>Sin contratos ocultos</li>
         <li>Diagnóstico incluido</li>
         <li>Cartera limitada</li>
       </ul>
       <a class="btn mag" href="#evaluacion" data-form data-cursor>Solicitar evaluación <span class="a">→</span></a>
+      <p class="price-foot">El fee corresponde a nuestros honorarios: no incluye la inversión publicitaria en plataformas. Algunas capacidades también pueden contratarse como <a href="#modalidades">servicios especializados</a>.</p>
     </div>
   </div>
 </section>
@@ -278,7 +370,7 @@ export const MARKUP = String.raw`
 <section class="section inv cases-pin" id="resultados">
   <div class="wrap cases-head">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(08)</span> Resultados</span>
+      <span class="eyebrow r"><span class="lbl-idx">(10)</span> Resultados</span>
       <h2 class="h">Resultados reales, clientes reales.</h2>
     </div>
     <div class="drag-hint r">Scrolleá →</div>
@@ -386,7 +478,7 @@ export const MARKUP = String.raw`
 <section class="section" id="nosotros">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(09)</span> Quiénes somos</span>
+      <span class="eyebrow r"><span class="lbl-idx">(11)</span> Quiénes somos</span>
       <h2 class="h">Un equipo, no una cuenta más.</h2>
     </div>
     <div class="manif-cols" style="margin-top:40px">
@@ -441,12 +533,14 @@ export const MARKUP = String.raw`
 <section class="section" id="faq">
   <div class="wrap">
     <div class="shead">
-      <span class="eyebrow r"><span class="lbl-idx">(10)</span> Preguntas frecuentes</span>
+      <span class="eyebrow r"><span class="lbl-idx">(12)</span> Preguntas frecuentes</span>
       <h2 class="h">Antes de hablar.</h2>
     </div>
     <div class="faq" id="faqList">
       <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Por qué el programa dura 6 meses?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">La adquisición B2B necesita tiempo para diagnosticar, implementar, generar datos reales y optimizar sobre el pipeline. Es el mismo criterio que aplicamos con Sika: los resultados serios llegan con continuidad, no con un sprint de campaña.</div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Por qué el precio es fijo y visible desde el sitio?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Porque no buscamos la mayor cantidad de reuniones posibles, sino empresas con capacidad y voluntad real de invertir. El precio funciona también como un filtro.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Por qué el precio está publicado en el sitio?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Porque no buscamos la mayor cantidad de reuniones posibles, sino empresas con capacidad y voluntad real de invertir. El precio funciona también como un filtro. El programa arranca desde USD 1.500 mensuales y el fee final se define según el alcance del sistema, los mercados y las plataformas involucradas.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿El precio incluye la inversión publicitaria?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">No. Desde USD 1.500 mensuales corresponde a los honorarios de Didakto por diseñar y operar el sistema. La inversión en plataformas es aparte y la define tu empresa, según los mercados y canales que definamos en la estrategia.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Puedo contratar solo publicidad digital sin el programa completo?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Sí. Paid Media, medición y analítica, contenido y contenido generado con IA pueden contratarse como servicios especializados. En esa modalidad el alcance es específico y delimitado, no incluye la intervención sobre todo el sistema, y el pricing es proporcionalmente mayor que dentro del programa End-to-End.</div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Qué pasa después de enviar la solicitud de evaluación?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Revisamos la información de tu empresa para evaluar si existe fit real entre tu necesidad y nuestro enfoque. Si lo hay, coordinamos una primera conversación. Si no, te lo decimos igual.</div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">¿En qué se diferencian de una agencia de publicidad tradicional?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Empezamos por el diagnóstico del sistema completo — ICP, oferta, tracking, CRM y proceso comercial — no por la campaña. La pauta es una parte del trabajo, no el producto.</div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">¿Trabajan con empresas fuera de LATAM?<span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">Sí. Operamos en múltiples mercados de LATAM y USA, en español e inglés. Lideramos la publicidad digital de Sika para LATAM + USA en simultáneo.</div></div></div>
@@ -483,15 +577,15 @@ export const MARKUP = String.raw`
     <div class="foot-top">
       <div>
         <a class="brand" href="#top"><span class="iso"></span><b style="font-family:'Archivo';font-weight:800;letter-spacing:-.04em;font-size:22px">Didakto</b></a>
-        <p style="margin-top:16px;color:var(--ink2);font-size:14px;max-width:30ch">Sistemas de adquisición B2B. Publicidad, datos, CRM y ventas conectados.</p>
+        <p style="margin-top:16px;color:var(--ink2);font-size:14px;max-width:30ch">Paid Media End-to-End. Diseñamos e implementamos sistemas de adquisición B2B: publicidad, datos, CRM y ventas conectados.</p>
       </div>
       <div class="foot-cols">
         <div><h4>Capacidades</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a><a href="/medicion-analytics-b2b">Medición &amp; Analytics</a><a href="/automatizacion-ia-b2b">Automatización con IA</a></div>
-        <div><h4>Mapa</h4><a href="#enfoque">Nuestro enfoque</a><a href="#como-trabajamos">Cómo trabajamos</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="/blog">Contenido</a></div>
+        <div><h4>Mapa</h4><a href="#core">Core offer</a><a href="#sistema">El sistema</a><a href="#como-trabajamos">Cómo trabajamos</a><a href="#modalidades">Modalidades</a><a href="#precio">Precio</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="/blog">Contenido</a></div>
         <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#evaluacion">Solicitar evaluación</a></div>
       </div>
     </div>
-    <div class="foot-bot"><span>© 2026 Didakto Marketing</span><span>Sistemas de adquisición B2B.</span></div>
+    <div class="foot-bot"><span>© 2026 Didakto Marketing</span><span>Paid Media End-to-End · Sistemas de adquisición B2B.</span></div>
   </div>
 </footer>
 
@@ -542,7 +636,7 @@ export const MARKUP = String.raw`
       <label>¿Pueden identificar hoy qué campañas generan oportunidades o ventas?<select name="atribucion"><option value="">Seleccioná una opción</option><option value="si">Sí, con claridad</option><option value="parcial">Parcialmente</option><option value="no">No</option></select></label>
 
       <p class="fsec">Sobre inversión</p>
-      <label>¿Están preparados para invertir desde USD 1.800 mensuales durante un período mínimo de 6 meses?
+      <label>¿Están preparados para invertir desde USD 1.500 mensuales en honorarios durante un período mínimo de 6 meses?
         <div class="radio-row">
           <label><input type="radio" name="inversion_lista" value="si" required> Sí</label>
           <label><input type="radio" name="inversion_lista" value="evaluar"> Necesitamos evaluarlo</label>
