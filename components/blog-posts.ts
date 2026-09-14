@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "performance-max-para-b2b",
+    title: "Performance Max en B2B: cuándo suma y cuándo diluye presupuesto",
+    excerpt:
+      "Performance Max promete alcance y automatización, pero en B2B puede quemar presupuesto en leads que no cierran. Te contamos cuándo usarlo y cuándo no.",
+    date: "2026-09-14",
+    dateLabel: "14 de septiembre, 2026",
+    reading: "9 min",
+    tag: "Paid Media",
+  },
+
+  {
     slug: "google-partner-que-significa",
     title: "Google Partner: qué significa la certificación y por qué debería importarte al elegir agencia",
     excerpt:
