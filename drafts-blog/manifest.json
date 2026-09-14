@@ -7,7 +7,8 @@
     },
     {
       "slug": "performance-max-para-b2b",
-      "published": false
+      "published": true,
+      "publishedDate": "2026-09-14"
     },
     {
       "slug": "mql-vs-sql-lead-scoring-b2b",
