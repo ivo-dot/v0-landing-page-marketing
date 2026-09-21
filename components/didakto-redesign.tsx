@@ -114,10 +114,15 @@ export default function DidaktoRedesign() {
         if (el.tagName === "H2" && el.closest(".cta")) return false
         return true
       })
+      /* Los de la sección pineada se revelan aparte: dentro del pin, el start del
+         batch se calcula antes de pinear y deja de alcanzarse. */
+      const pinnedRs = rs.filter((el) => el.closest(".cases-pin"))
+      const freeRs = rs.filter((el) => !el.closest(".cases-pin"))
       if (reduce) gsap.set(rs, { opacity: 1, y: 0 })
       else {
         gsap.set(rs, { y: 34, autoAlpha: 0 })
-        ScrollTrigger.batch(rs, { start: "top 88%", onEnter: (b) => gsap.to(b, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.09, ease: "power3.out", overwrite: true }) })
+        ScrollTrigger.batch(freeRs, { start: "top 88%", onEnter: (b) => gsap.to(b, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.09, ease: "power3.out", overwrite: true }) })
+        if (pinnedRs.length) gsap.to(pinnedRs, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.09, ease: "power3.out", overwrite: true, scrollTrigger: { trigger: ".cases-pin", start: "top 80%" } })
       }
 
       /* ── Headings con SplitText ── */

@@ -96,7 +96,11 @@ export default function DkPage({ children }: { children: ReactNode }) {
       if (reduce) gsap.set(rs, { opacity: 1, y: 0 })
       else {
         gsap.set(rs, { y: 34, autoAlpha: 0 })
-        ScrollTrigger.batch(rs, { start: "top 90%", onEnter: (b) => gsap.to(b, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.09, ease: "power3.out", overwrite: true }) })
+        // Los de la sección pineada se revelan aparte: dentro del pin, el start del
+        // batch se calcula antes de pinear y deja de alcanzarse.
+        const pinnedRs = rs.filter((el) => el.closest(".cases-pin"))
+        ScrollTrigger.batch(rs.filter((el) => !el.closest(".cases-pin")), { start: "top 90%", onEnter: (b) => gsap.to(b, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.09, ease: "power3.out", overwrite: true }) })
+        if (pinnedRs.length) gsap.to(pinnedRs, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.09, ease: "power3.out", overwrite: true, scrollTrigger: { trigger: ".cases-pin", start: "top 80%" } })
       }
 
       // headings con SplitText
