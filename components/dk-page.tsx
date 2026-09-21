@@ -151,7 +151,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
         if (casesTrack && casesPin) {
           const mm = gsap.matchMedia()
           matchMedias.push(mm)
-          mm.add("(min-width:860px)", () => {
+          mm.add("(min-width:1100px)", () => {
             const viewportW = () => document.documentElement.clientWidth
             gsap.to(casesTrack, { x: () => -(casesTrack.scrollWidth - viewportW()), ease: "none", scrollTrigger: { trigger: casesPin, start: "top top", end: () => "+=" + (casesTrack.scrollWidth - viewportW()), pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1 } })
           })

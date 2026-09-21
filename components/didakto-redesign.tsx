@@ -195,7 +195,7 @@ export default function DidaktoRedesign() {
       /* ── Casos: scroll horizontal pineado (desktop) ── */
       if (!reduce) {
         const mm = gsap.matchMedia(); matchMedias.push(mm)
-        mm.add("(min-width:860px)", () => {
+        mm.add("(min-width:1100px)", () => {
           const track = root.querySelector<HTMLElement>("#casesTrack")!
           const pin = root.querySelector<HTMLElement>(".cases-pin")!
           const viewportW = () => document.documentElement.clientWidth
