@@ -46,6 +46,13 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
+  async redirects() {
+    return [
+      { source: "/politica-de-privacidad", destination: "/privacy", permanent: true },
+      { source: "/privacidad", destination: "/privacy", permanent: true },
+    ]
+  },
+
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }]
   },

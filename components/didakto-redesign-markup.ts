@@ -582,7 +582,7 @@ export const MARKUP = String.raw`
       <div class="foot-cols">
         <div><h4>Capacidades</h4><a href="/agencia-de-publicidad-digital">Publicidad digital</a><a href="/generacion-de-leads-b2b">Generación de leads B2B</a><a href="/google-ads">Google Ads</a><a href="/meta-ads">Meta Ads</a><a href="/linkedin-ads-b2b">LinkedIn Ads</a><a href="/medicion-analytics-b2b">Medición &amp; Analytics</a><a href="/automatizacion-ia-b2b">Automatización con IA</a></div>
         <div><h4>Mapa</h4><a href="#core">Core offer</a><a href="#sistema">El sistema</a><a href="#como-trabajamos">Cómo trabajamos</a><a href="#modalidades">Modalidades</a><a href="#precio">Precio</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="/blog">Contenido</a></div>
-        <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#evaluacion">Solicitar evaluación</a></div>
+        <div><h4>Contacto</h4><a href="mailto:ivo@didaktomarketing.com">Email</a><a href="https://www.linkedin.com/in/ivo-roman-crisman/" target="_blank" rel="noopener">LinkedIn</a><a href="#evaluacion">Solicitar evaluación</a><a href="/privacy">Política de privacidad</a></div>
       </div>
     </div>
     <div class="foot-bot"><span>© 2026 Didakto Marketing</span><span>Paid Media End-to-End · Sistemas de adquisición B2B.</span></div>
