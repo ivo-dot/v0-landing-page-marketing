@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { evaluateLead, verifyTurnstile } from "@/lib/lead-filter";
 
 // El hook vive en ZAPIER_WEBHOOK_URL (Vercel → Settings → Environment Variables).
 // El valor de abajo es el hook viejo, que quedó publicado en la historia de este
@@ -25,6 +26,8 @@ const ALLOWED = [
   "desafio", "proceso_leads", "usa_crm", "crm_cual", "atribucion",
   // formulario de contacto de las páginas internas (dk-page.tsx)
   "asunto", "mensaje",
+  // origen de la campaña (los arma components/lead-form.ts)
+  "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "referrer", "pagina",
 ]
 
 const MAX_BODY_BYTES = 32 * 1024   // ~32 KB, de sobra para un formulario
@@ -67,13 +70,13 @@ export async function POST(request: Request) {
       )
     }
 
+    // El navegador siempre manda Origin en un POST del formulario. Sin Origin es un
+    // script (curl, bot): se corta acá. Es spoofeable, pero saca el ruido más básico.
     const origin = request.headers.get("origin")
-    if (origin) {
-      let host = ""
-      try { host = new URL(origin).hostname } catch { host = "" }
-      if (!ALLOWED_HOSTS.includes(host)) {
-        return NextResponse.json({ success: false, message: "Origen no permitido" }, { status: 403 })
-      }
+    let host = ""
+    try { host = origin ? new URL(origin).hostname : "" } catch { host = "" }
+    if (!ALLOWED_HOSTS.includes(host)) {
+      return NextResponse.json({ success: false, message: "Origen no permitido" }, { status: 403 })
     }
 
     const raw = await request.text()
@@ -117,8 +120,23 @@ export async function POST(request: Request) {
 
     // Si se sumó un campo al formulario y no al allowlist, que quede en el log de
     // Vercel en vez de desaparecer sin rastro.
-    const descartados = Object.keys(body).filter((k) => k !== "_hp" && !ALLOWED.includes(k))
+    const descartados = Object.keys(body).filter((k) => !["_hp", "_t", "cf_token"].includes(k) && !ALLOWED.includes(k))
     if (descartados.length) console.warn("[contact] campos fuera del allowlist:", descartados.join(", "))
+
+    // Captcha (Cloudflare Turnstile): solo se exige si TURNSTILE_SECRET_KEY está cargada.
+    if (!(await verifyTurnstile(body.cf_token, ip))) {
+      console.warn("[contact] lead descartado: captcha no superado")
+      return NextResponse.json({ success: true, message: "OK" }, { status: 200 })
+    }
+
+    // Filtro anti-basura (ver lib/lead-filter.ts). Los bots reciben "OK" sin que se
+    // reenvíe nada; si el dato es corregible (email/teléfono/nombre) se le avisa a la persona.
+    const verdict = evaluateLead(payload, { elapsedMs: Number.isFinite(Number(body._t)) && body._t !== undefined ? Number(body._t) : 0 })
+    if (!verdict.ok) {
+      console.warn("[contact] lead descartado:", verdict.reason, "| dominio:", (payload.email || "").split("@")[1] || "-")
+      if (verdict.silent) return NextResponse.json({ success: true, message: "OK" }, { status: 200 })
+      return NextResponse.json({ success: false, message: verdict.message }, { status: 400 })
+    }
 
     const r = await fetch(ZAPIER_URL, {
       method: "POST",

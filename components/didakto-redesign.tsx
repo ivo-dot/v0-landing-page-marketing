@@ -8,6 +8,7 @@ import { Draggable } from "gsap/Draggable"
 import { InertiaPlugin } from "gsap/InertiaPlugin"
 import Lenis from "lenis"
 import { MARKUP } from "./didakto-redesign-markup"
+import { initLeadModal } from "./lead-form"
 
 export default function DidaktoRedesign() {
   const rootRef = useRef<HTMLDivElement>(null)
@@ -236,57 +237,8 @@ export default function DidaktoRedesign() {
       }, { signal })
     })
 
-    /* ── Modal de formulario → /api/contact ── */
-    const modal = root.querySelector<HTMLElement>("#modal")
-    if (modal) {
-      const panel = modal.querySelector<HTMLElement>(".modal-panel")!
-      const form = root.querySelector<HTMLFormElement>("#leadForm")!
-      const openModal = () => {
-        modal.classList.add("on"); modal.setAttribute("aria-hidden", "false")
-        if (lenis) lenis.stop(); document.body.style.overflow = "hidden"
-        if (!reduce) { gsap.fromTo(".modal-bg", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }); gsap.fromTo(panel, { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, ease: "power3.out" }) }
-        setTimeout(() => { (form.querySelector("[name=nombre]") as HTMLElement | null)?.focus() }, 260)
-      }
-      const closeModal = () => { modal.classList.remove("on"); modal.setAttribute("aria-hidden", "true"); if (lenis) lenis.start(); document.body.style.overflow = "" }
-      document.querySelectorAll("[data-form]").forEach((el) => el.addEventListener("click", (e) => { e.preventDefault(); openModal() }, { signal }))
-      modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeModal, { signal }))
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("on")) closeModal() }, { signal })
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault()
-        const f = form as any
-        if (f._hp.value) { closeModal(); return }
-        const data = {
-          nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), cargo: f.cargo.value.trim(),
-          email: f.email.value.trim(), telefono: f.telefono.value.trim(), empresa: f.empresa.value.trim(),
-          sitio_web: f.sitio_web.value.trim(), pais: f.pais.value.trim(), industria: f.industria.value.trim(),
-          empleados: f.empleados.value, desafio: f.desafio.value.trim(),
-          publicidad_activa: f.publicidad_activa.value, inversion_actual: f.inversion_actual.value,
-          usa_crm: f.usa_crm.value, crm_cual: f.crm_cual.value.trim(), objetivo: f.objetivo.value.trim(),
-          proceso_leads: f.proceso_leads.value.trim(), atribucion: f.atribucion.value,
-          inversion_lista: (f.inversion_lista as RadioNodeList | HTMLInputElement)?.value || "",
-          _hp: "",
-        }
-        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.cargo || !data.desafio || !data.inversion_lista) { form.reportValidity?.(); return }
-        const btn = root.querySelector<HTMLButtonElement>("#leadSubmit")!
-        const okEl = root.querySelector<HTMLElement>("#formOk")!
-        const okHtml = okEl.innerHTML
-        btn.textContent = "Enviando..."; btn.disabled = true
-        try {
-          const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
-          const j = await res.json().catch(() => ({}))
-          if (res.ok && j.success) {
-            btn.textContent = "Solicitud enviada ✓"
-            okEl.style.display = "block"
-            form.querySelectorAll("input,select,textarea,button").forEach((x) => ((x as HTMLInputElement).disabled = true))
-            ;(window as any).dataLayer?.push({ event: "form_submit_evaluacion" })
-          } else throw new Error(j.message || "fail")
-        } catch {
-          btn.textContent = "Enviar solicitud →"; btn.disabled = false
-          okEl.innerHTML = okHtml
-          okEl.textContent = "No se pudo enviar. Escribinos a ivo@didaktomarketing.com"; okEl.style.color = "#c0392b"; okEl.style.display = "block"
-        }
-      }, { signal })
-    }
+    /* ── Modal de formulario (compartido con las landings) → /api/contact ── */
+    initLeadModal(root, { reduce, signal, getLenis: () => lenis, event: "form_submit_evaluacion" })
 
     /* ── Modal de video testimonio ── */
     const videoModal = root.querySelector<HTMLElement>("#videoModal")

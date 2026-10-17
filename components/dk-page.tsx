@@ -5,6 +5,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 import Lenis from "lenis"
+import { initLeadModal } from "./lead-form"
+import { LEAD_MODAL_HTML } from "./lead-form-html"
 
 /* Chrome compartido (nav + footer + modal) + animaciones GSAP/Lenis.
    Reutiliza el sistema de diseño de la home para páginas internas. */
@@ -178,59 +180,8 @@ export default function DkPage({ children }: { children: ReactNode }) {
       }, { signal })
     })
 
-    // Modal → /api/contact
-    const modal = root.querySelector<HTMLElement>("#modal")
-    if (modal) {
-      const panel = modal.querySelector<HTMLElement>(".modal-panel")!
-      const form = root.querySelector<HTMLFormElement>("#leadForm")!
-      const openModal = () => {
-        modal.classList.add("on"); modal.setAttribute("aria-hidden", "false")
-        if (lenis) lenis.stop(); document.body.style.overflow = "hidden"
-        if (!reduce) { gsap.fromTo(".modal-bg", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }); gsap.fromTo(panel, { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, ease: "power3.out" }) }
-        setTimeout(() => { (form.querySelector("[name=nombre]") as HTMLElement | null)?.focus() }, 260)
-      }
-      const closeModal = () => { modal.classList.remove("on"); modal.setAttribute("aria-hidden", "true"); if (lenis) lenis.start(); document.body.style.overflow = "" }
-      document.querySelectorAll("[data-form]").forEach((el) => el.addEventListener("click", (e) => { e.preventDefault(); openModal() }, { signal }))
-      modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeModal, { signal }))
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("on")) closeModal() }, { signal })
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault()
-        const f = form as any
-        if (f._hp.value) { closeModal(); return }
-        const data = { nombre: f.nombre.value.trim(), apellido: f.apellido.value.trim(), email: f.email.value.trim(), empresa: f.empresa.value.trim(), telefono: f.telefono.value.trim(), asunto: f.asunto.value, mensaje: f.mensaje.value.trim(), _hp: "" }
-        if (!data.nombre || !data.apellido || !data.email || !data.empresa || !data.asunto) { form.reportValidity?.(); return }
-        const btn = root.querySelector<HTMLButtonElement>("#leadSubmit")!
-        const okEl = root.querySelector<HTMLElement>("#formOk")!
-        btn.textContent = "Enviando..."; btn.disabled = true
-        try {
-          const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
-          const j = await res.json().catch(() => ({}))
-          if (res.ok && j.success) {
-            okEl.style.display = "block"
-            form.querySelectorAll("input,select,textarea,button").forEach((x) => ((x as HTMLInputElement).disabled = true))
-            ;(window as any).dataLayer?.push({ event: "form_submit_contacto" })
-          } else throw new Error(j.message || "fail")
-        } catch {
-          btn.textContent = "Enviar consulta →"; btn.disabled = false
-          okEl.textContent = "No se pudo enviar. Escribinos a ivo@didaktomarketing.com"; okEl.style.color = "#c0392b"; okEl.style.display = "block"
-        }
-      }, { signal })
-    }
-
-    // WhatsApp FAB (mobile)
-    const waFab = root.querySelector<HTMLButtonElement>("#waFab")
-    const waPanel = root.querySelector<HTMLElement>("#waPanel")
-    if (waFab && waPanel) {
-      waFab.addEventListener("click", () => waPanel.classList.toggle("on"), { signal })
-      waPanel.querySelectorAll("[data-wa-close]").forEach((el) => el.addEventListener("click", () => waPanel.classList.remove("on"), { signal }))
-      waPanel.querySelector<HTMLButtonElement>("#waSend")!.addEventListener("click", () => {
-        const topic = (waPanel.querySelector<HTMLSelectElement>("#waTopic")!).value || "una consulta"
-        const text = encodeURIComponent(`Hola! Vengo desde la web de Didakto. Quiero hablar sobre: ${topic}.`)
-        ;(window as any).dataLayer?.push({ event: "whatsapp_click" })
-        window.open(`https://wa.me/5493573456577?text=${text}`, "_blank")
-        waPanel.classList.remove("on")
-      }, { signal })
-    }
+    // Modal de formulario (el mismo de la home) → /api/contact
+    initLeadModal(root, { reduce, signal, getLenis: () => lenis, event: "form_submit_contacto" })
 
     if (document.fonts?.ready) document.fonts.ready.then(() => ScrollTrigger.refresh())
     window.addEventListener("load", () => ScrollTrigger.refresh(), { signal })
@@ -296,40 +247,7 @@ export default function DkPage({ children }: { children: ReactNode }) {
         </div>
       </footer>
 
-      <div className="modal" id="modal" aria-hidden="true">
-        <div className="modal-bg" data-close />
-        <div className="modal-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Agendar consultoría">
-          <button className="modal-x" data-close aria-label="Cerrar" type="button">✕</button>
-          <span className="eyebrow">Agendá tu consultoría</span>
-          <h3 className="modal-title">Hablemos de tu proyecto.</h3>
-          <form id="leadForm" noValidate>
-            <input type="text" name="_hp" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-            <div className="frow">
-              <label>Nombre<input name="nombre" autoComplete="given-name" required /></label>
-              <label>Apellido<input name="apellido" autoComplete="family-name" required /></label>
-            </div>
-            <div className="frow">
-              <label>Email<input type="email" name="email" autoComplete="email" required /></label>
-              <label>Empresa<input name="empresa" autoComplete="organization" required /></label>
-            </div>
-            <label>Teléfono / WhatsApp (opcional)<input type="tel" name="telefono" autoComplete="tel" inputMode="tel" placeholder="Cód. país + número" /></label>
-            <label>Asunto
-              <select name="asunto" required defaultValue="">
-                <option value="">Seleccioná un tema</option>
-                <option>Consultoría inicial</option>
-                <option>Paid Media</option>
-                <option>Medición &amp; Analytics</option>
-                <option>Automatización con IA</option>
-                <option>Otro</option>
-              </select>
-            </label>
-            <label>Mensaje (opcional)<textarea name="mensaje" rows={3} placeholder="Contanos brevemente tu situación (opcional)" /></label>
-            <button type="submit" className="btn btn-dark" id="leadSubmit">Enviar consulta <span className="a">→</span></button>
-            <p className="form-ok" id="formOk">✓ ¡Gracias! Te vamos a contactar pronto.</p>
-            <p className="form-note">Te respondemos en menos de 24 h hábiles.</p>
-          </form>
-        </div>
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: LEAD_MODAL_HTML }} />
 
       {/* WhatsApp — solo mobile */}
       <button className="wa-fab" id="waFab" aria-label="Escribinos por WhatsApp" type="button">
