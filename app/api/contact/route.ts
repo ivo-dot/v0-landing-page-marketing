@@ -2,12 +2,8 @@ import { NextResponse } from "next/server";
 import { evaluateLead, verifyTurnstile } from "@/lib/lead-filter";
 
 // El hook vive en ZAPIER_WEBHOOK_URL (Vercel → Settings → Environment Variables).
-// El valor de abajo es el hook viejo, que quedó publicado en la historia de este
-// repo (que es público) y por lo tanto hay que darlo por comprometido: queda como
-// fallback para no cortar el formulario, y se borra en cuanto se rote el hook en
-// Zapier y se cargue la variable de entorno.
-const ZAPIER_FALLBACK = "https://hooks.zapier.com/hooks/catch/22126987/u1edvyw/";
-const ZAPIER_URL = process.env.ZAPIER_WEBHOOK_URL || ZAPIER_FALLBACK;
+// No se versiona en el repo (es público): sin la variable, el endpoint falla a propósito.
+const ZAPIER_URL = process.env.ZAPIER_WEBHOOK_URL;
 
 // Compartido por el formulario de evaluación de la home (didakto-redesign-markup.ts)
 // y el formulario de contacto de las páginas internas (dk-page.tsx) — solo se exige
@@ -136,6 +132,14 @@ export async function POST(request: Request) {
       console.warn("[contact] lead descartado:", verdict.reason, "| dominio:", (payload.email || "").split("@")[1] || "-")
       if (verdict.silent) return NextResponse.json({ success: true, message: "OK" }, { status: 200 })
       return NextResponse.json({ success: false, message: verdict.message }, { status: 400 })
+    }
+
+    if (!ZAPIER_URL) {
+      console.error("[contact] falta ZAPIER_WEBHOOK_URL en el entorno")
+      return NextResponse.json(
+        { success: false, message: "No pudimos registrar tu consulta. Escribinos a ivo@didaktomarketing.com." },
+        { status: 500 }
+      )
     }
 
     const r = await fetch(ZAPIER_URL, {
