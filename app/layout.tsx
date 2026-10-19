@@ -55,6 +55,9 @@ export const metadata: Metadata = {
   publisher: "Didakto Marketing",
   category: "Marketing",
   alternates: { canonical: "https://didaktomarketing.com" },
+  other: {
+    "facebook-domain-verification": "0eicu3xnt85ezk0m52ccgzh4fm61rg",
+  },
   icons: {
     icon: "/logo-didakto-iso.png",
     shortcut: "/logo-didakto-iso.png",
