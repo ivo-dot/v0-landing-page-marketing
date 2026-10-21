@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "mql-vs-sql-lead-scoring-b2b",
+    title: "MQL vs SQL: cómo alinear marketing y ventas para que el lead scoring funcione de verdad",
+    excerpt:
+      "La mayoría de las peleas entre marketing y ventas se resumen en una palabra: 'lead'. Cómo definir MQL y SQL con criterios objetivos, armar un scoring simple y usarlo para optimizar campañas B2B.",
+    date: "2026-09-21",
+    dateLabel: "21 de septiembre, 2026",
+    reading: "9 min",
+    tag: "Generación de leads",
+  },
+
+  {
     slug: "performance-max-para-b2b",
     title: "Performance Max en B2B: cuándo suma y cuándo diluye presupuesto",
     excerpt:
