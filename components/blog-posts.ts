@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "landing-pages-b2b-elementos-conversion",
+    title: "Landing pages B2B: los 5 elementos que más mueven la conversión",
+    excerpt:
+      "Analizamos landings B2B reales y encontramos un patrón: cinco elementos explican casi toda la diferencia entre una landing que convierte al 2% y una que convierte al 8%. Acá están, con ejemplos concretos.",
+    date: "2026-11-04",
+    dateLabel: "4 de noviembre, 2026",
+    reading: "8 min",
+    tag: "Generación de leads",
+  },
+
+  {
     slug: "performance-max-para-b2b",
     title: "Performance Max en B2B: cuándo suma y cuándo diluye presupuesto",
     excerpt:
