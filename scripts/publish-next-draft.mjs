@@ -35,7 +35,10 @@ function jsonLdScript(varName, expr) {
 
 function main() {
   const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"))
-  const next = manifest.queue.find((q) => !q.published)
+  // Slugs que ya tienen una rama blog/publish-<slug> en GitHub (PR abierto sin mergear
+  // o rama vieja): se saltean para que el workflow no se trabe repitiendo el mismo post.
+  const skip = new Set((process.env.SKIP_SLUGS || "").split(",").map((s) => s.trim()).filter(Boolean))
+  const next = manifest.queue.find((q) => !q.published && !skip.has(q.slug))
   if (!next) {
     console.log("No unpublished drafts left in manifest.json — nothing to do.")
     const outFile = process.env.GITHUB_OUTPUT

@@ -25,8 +25,17 @@ jobs:
         with:
           node-version: 20
 
+      - name: Find drafts that already have a branch/PR
+        id: existing
+        run: |
+          SKIP=$(git ls-remote --heads origin 'blog/publish-*' | sed 's#.*refs/heads/blog/publish-##' | paste -sd, -)
+          echo "Slugs ya propuestos: $SKIP"
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+
       - name: Publish next draft
         id: publish
+        env:
+          SKIP_SLUGS: ${{ steps.existing.outputs.skip }}
         run: node scripts/publish-next-draft.mjs
 
       - name: Create branch, commit and open PR
