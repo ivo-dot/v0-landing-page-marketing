@@ -54,7 +54,12 @@ const nextConfig = {
   },
 
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }]
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // Landings de campaña (solo tráfico pago): fuera del índice de buscadores aunque alguien tenga el link.
+      // Va por header además del meta robots, y NO se bloquea en robots.txt: Google Ads necesita poder rastrear la página.
+      { source: "/lp/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, noarchive" }] },
+    ]
   },
 }
 
