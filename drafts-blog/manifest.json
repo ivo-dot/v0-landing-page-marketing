@@ -21,7 +21,8 @@
     },
     {
       "slug": "reportes-que-sirven-vs-vanidad",
-      "published": false
+      "published": true,
+      "publishedDate": "2026-11-09"
     },
     {
       "slug": "campanas-por-etapa-del-funnel-b2b",
