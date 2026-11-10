@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "reportes-que-sirven-vs-vanidad",
+    title: "Reportes que sirven vs. reportes de vanidad: qué debería mostrarte tu agencia cada mes",
+    excerpt:
+      "Impresiones, alcance y clics suben todos los meses y no dicen nada del negocio. Te mostramos qué métricas mirar en su lugar y cómo debería ser una reunión mensual con tu agencia.",
+    date: "2026-11-09",
+    dateLabel: "9 de noviembre, 2026",
+    reading: "7 min",
+    tag: "Agencia & Estrategia",
+  },
+
+  {
     slug: "mql-vs-sql-lead-scoring-b2b",
     title: "MQL vs SQL: cómo alinear marketing y ventas para que el lead scoring funcione de verdad",
     excerpt:
