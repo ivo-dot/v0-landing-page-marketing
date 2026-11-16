@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "campanas-por-etapa-del-funnel-b2b",
+    title: "Cómo estructurar campañas de Google Ads por etapa del funnel en B2B (TOFU/MOFU/BOFU)",
+    excerpt:
+      "Meter todo el presupuesto en campañas de búsqueda de marca o de "solución + precio" funciona hasta que se agota la demanda existente. Así se estructura una cuenta de Google Ads B2B en tres capas para no depender solo de quien ya te está buscando.",
+    date: "2026-11-16",
+    dateLabel: "16 de noviembre, 2026",
+    reading: "9 min",
+    tag: "Paid Media",
+  },
+
+  {
     slug: "reportes-que-sirven-vs-vanidad",
     title: "Reportes que sirven vs. reportes de vanidad: qué debería mostrarte tu agencia cada mes",
     excerpt:
