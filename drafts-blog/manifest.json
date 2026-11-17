@@ -26,7 +26,8 @@
     },
     {
       "slug": "campanas-por-etapa-del-funnel-b2b",
-      "published": false
+      "published": true,
+      "publishedDate": "2026-11-16"
     },
     {
       "slug": "gtm-server-side-para-b2b",
