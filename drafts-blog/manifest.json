@@ -31,7 +31,8 @@
     },
     {
       "slug": "gtm-server-side-para-b2b",
-      "published": false
+      "published": true,
+      "publishedDate": "2026-11-23"
     },
     {
       "slug": "retargeting-b2b-ciclo-de-venta-largo",
