@@ -11,6 +11,17 @@ export type PostMeta = {
 // Ordenados del más nuevo al más viejo.
 export const POSTS: PostMeta[] = [
   {
+    slug: "gtm-server-side-para-b2b",
+    title: "Server-side tracking (GTM Server-Side) para B2B: qué es y cuándo vale la pena migrarlo",
+    excerpt:
+      "GTM Server-Side no es un capricho técnico: es una forma de recuperar datos de conversión que hoy estás perdiendo por bloqueadores, Safari/ITP y cookies de terceros. Te explicamos cómo funciona y cuándo realmente conviene migrarlo en B2B.",
+    date: "2026-11-23",
+    dateLabel: "23 de noviembre, 2026",
+    reading: "9 min",
+    tag: "Data & Medición",
+  },
+
+  {
     slug: "campanas-por-etapa-del-funnel-b2b",
     title: "Cómo estructurar campañas de Google Ads por etapa del funnel en B2B (TOFU/MOFU/BOFU)",
     excerpt:
